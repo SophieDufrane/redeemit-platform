@@ -9,6 +9,7 @@
   - [Typography & Colours](#typography--colours)
 - [Project Planning](#project-planning)
   - [User Stories](#user-stories)
+  - [Flowchart](#flowchart)
   - [Agile Planning](#agile-planning)
   - [Features in Detail](#features-in-detail)
 - [Database Design](#database-design)
@@ -187,6 +188,19 @@ These stories define the core functionality, ensuring the platform meets user ex
 13. **Redeem Items** *(must have)*
     Employees can finalise the redemption process, confirming their selected rewards and updating their points balance.
 
+
+### Flowchart
+The following flowchart illustrates the user journey for both **employees** and **admin users**. It maps out the key actions they can perform, such as logging in, redeeming rewards, and managing the catalogue.</br>
+It was created using [Lucidchart](https://www.lucidchart.com/pages/).
+
+<details>
+  <summary>Click to view Flowchart</summary>
+
+  ![Flowchart](images-documentation/readme_images/redemption_platform_flowchart.png)
+
+</details>
+
+
 ### Agile Planning
 The development process followed an agile methodology, breaking the project into smaller user stories and tasks. This iterative approach allowed for incremental progress, flexibility, and better alignment with user needs.
 
@@ -195,7 +209,32 @@ The platform offers a variety of features based on user stories, providing funct
 
 ---
 
-## Database Design
+### Database Design  
+
+The database was designed to allow full **CRUD functionality** for both **employees** and **admin users**.
+
+- **Users**
+  Employees can **register**, **log in**, and manage their profiles, enabling the creation and updating of personal information and details in the `user_profiles` table.
+
+- **Catalogue Management**
+  Admins can **add**, **edit**, and **delete** items in the reward catalogue. Each item includes details such as the reward name, description, required points, and an optional image. This data is stored in the `rewards` table.
+
+- **Redemptions**
+  Employees can **view** available rewards, add them to their cart, and **finalise** the redemption process. The `redemptions` table tracks employee redemptions, including reward ID, user ID, and redemption date.
+
+- **User Testimonials**
+  Employees can **submit testimonials** about their redemption experience, view others' submissions, and manage their own entries (update or delete). Testimonials include ratings and comments to encourage interaction, stored in the `testimonials` table.
+
+- **Comments**
+  Employees can provide **feedback** on testimonials. The `comments` table allows users to **add**, **edit**, or **delete** comments associated with specific testimonials, enhancing engagement and community interaction.
+
+---
+
+#### Entity Relationship Diagram
+
+The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/) to visualise the database structure and relationships between tables.
+
+![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
 
 ---
 
