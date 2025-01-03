@@ -99,15 +99,16 @@ The colour palette also draws inspiration from the tech industry and current des
 #### Colour Scheme
 The chosen colour palette draws inspiration from **Workhuman**'s branding and aligns with a modern, tech-inspired aesthetic.
 
-| **Colour**                                                       | **Name**             |  
-|------------------------------------------------------------------|----------------------|  
-| <span style="background-color:#300E82; color:#FFF; padding:5px 10px; border-radius:5px;">#300E82</span> | Persian Indigo       |
-| <span style="background-color:#586BBE; color:#FFF; padding:5px 10px; border-radius:5px;">#586BBE</span> | Savoy Blue           |
-| <span style="background-color:#9B6B82; color:#FFF; padding:5px 10px; border-radius:5px;">#9B6B82</span> | Mountbatten Pink     |
-| <span style="background-color:#DECD62; color:#000; padding:5px 10px; border-radius:5px;">#DECD62</span> | Citron               |
-| <span style="background-color:#484848; color:#FFF; padding:5px 10px; border-radius:5px;">#484848</span> | Davy's Grey          |
+| **Colour** | **Name**             |  
+|------------|----------------------|  
+| #300E82  | Persian Indigo       |
+| #586BBE  | Savoy Blue           |
+| #9B6B82  | Mountbatten Pink     |
+| #DECD62  | Citron               |
+| #484848  | Davy's Grey          |
 
 </br>
+
 
 <details>
   <summary>Click to view inspiration from Workhuman website</summary>
