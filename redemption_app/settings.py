@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bm0@!@1kt3mr^ht8wev+()^%=@rd%ha&r92a^u8xz=-09&^#hj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-sophiedufra-pp4redempti-at0meauvr85.ws.codeinstitute-ide.net']
 
@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalogue'
+    'django.contrib.sites',
+	# 'allauth',
+	# 'allauth.account',
+	# 'allauth.socialaccount',
+    'catalogue',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
