@@ -1,5 +1,5 @@
 """
-ASGI config for redemption_app project.
+ASGI config for redemption_platform project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'redemption_app.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'redemption_platform.settings')
 
 application = get_asgi_application()
