@@ -22,3 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalogue/', hello_catalogue, name='hello_catalogue'),
 ]
+
