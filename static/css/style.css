@@ -1,0 +1,40 @@
+/* General Body Styling */
+body {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #300e82;
+}
+
+.navbar a {
+    color: white;
+}
+
+/* Hover Link Styling */
+.nav-link:hover {
+    color: #decd62;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #300e82;
+}
+
+.footer p {
+    font-family: "Montserrat", serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
+}
+
+

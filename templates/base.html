@@ -11,8 +11,13 @@
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -27,9 +32,9 @@
 </head>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'catalogue_home' %}">Welcome to RedeemIt!</a>
+        <a class="navbar-brand" href="{% url 'catalogue_home' %}">RedeemIt - Recognition Platform</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,9 +42,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}" href="{% url 'catalogue_home' %}">Catalogue</a>
+                    <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}"
+                        href="{% url 'catalogue_home' %}">Catalogue</a>
                 </li>
-                {% if user.is_authenticated %} <!-- For later when login/logout/register functionalities will be added -->
+                {% if user.is_authenticated %}
+                <!-- For later when login/logout/register functionalities will be added -->
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
@@ -50,7 +57,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                 </li>
-                {% endif %} <!-- For later when login/logout/register functionalities will be added -->
+                {% endif %}
+                <!-- For later when login/logout/register functionalities will be added -->
             </ul>
         </div>
     </div>
@@ -64,8 +72,8 @@
 </main>
 
 <!-- Footer Section -->
-<footer class="footer mt-auto py-3 dark-bg">
-    <p class="m-0 text-center text-white">
+<footer class="footer py-3">
+    <p class="m-0 text-center">
         {% block copyright %}
         © RedeemIt - Your Employee Recognition Platform 2025
         {% endblock %}
