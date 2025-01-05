@@ -1,0 +1,120 @@
+/* -------------------------------------- General Body Styling */
+body {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.quicksand-font {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* -------------------------------------- Navigation Bar */
+.navbar {
+    background-color: #300e82;
+}
+
+.navbar a {
+    color: white;
+}
+
+/* Hover Link Styling */
+.nav-link:hover {
+    color: #decd62;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+    text-decoration: underline;
+}
+
+/* TO DO! Icon burger not visible */
+/* TO DO! Icon burger not visible */
+
+/* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
+#hero-section {
+    margin: 0;
+    padding: 20px 30px;
+    background-color: #300e82;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcome {
+    color: white;
+}
+
+#welcome-name h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+#welcome-message h4 {
+    font-size: 1rem;
+}
+
+/* Square image with gradient Background */
+#square-image {
+    width: 210px;
+}
+
+.gradient-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
+    padding: 20px;
+}
+
+/* Search Button */
+
+.button {
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid #decd62;
+    color: #decd62;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #decd62;
+    color: #300e82;
+}
+
+/* Catalogue Header */
+#catalogue-header {
+    background-color: #dbc962;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#catalogue-header h5 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* -------------------------------------- Footer styling */
+.footer {
+    background-color: #300e82;
+}
+
+.footer p {
+    font-family: "Montserrat", serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
+}
+
+
