@@ -1,0 +1,80 @@
+{% load static %}
+
+{% url 'catalogue_home' as catalogue_url %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Redemption Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'catalogue_home' %}">Welcome to RedeemIt!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}" href="{% url 'catalogue_home' %}">Catalogue</a>
+                </li>
+                {% if user.is_authenticated %} <!-- For later when login/logout/register functionalities will be added -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                {% endif %} <!-- For later when login/logout/register functionalities will be added -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Dynamic Content Section -->
+<main class="flex-shrink-0">
+    {% block content %}
+    <!-- Page-specific content goes here -->
+    {% endblock %}
+</main>
+
+<!-- Footer Section -->
+<footer class="footer mt-auto py-3 dark-bg">
+    <p class="m-0 text-center text-white">
+        {% block copyright %}
+        © RedeemIt - Your Employee Recognition Platform 2025
+        {% endblock %}
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
