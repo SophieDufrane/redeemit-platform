@@ -3,9 +3,40 @@
 
 {% block content %}
 
-<div class="container mt-5">
-    <h1 class="text-center">Welcome to the Redemption Catalogue</h1>
-    <p class="text-center">Browse and redeem rewards below.</p>
+<!-- Hero section -->
+<div id="hero-section">
+    <!-- Welcome Section -->
+    <div class="container mt-4">
+        <div class="row align-items-start">
+            <!-- Left Column -->
+            <div class="welcome col-md-6 text-start mb-4 ml-5">
+                <div class="mb-4" id="welcome-name">
+                    <h1>WELCOME,</h1>
+                    <h2><span>Sophie</span></h2>
+                </div>
+                <div id="welcome-message">
+                    <h4 class="quicksand-font">Explore, Choose, Redeem.</h4>
+                </div>
+            </div>
+            <!-- Right Column -->
+            <div class="col-md-6 mb-4 text-center gradient-background">
+                <img id="square-image" src="{% static 'media/images/couple.webp' %}"
+                    alt="Happy couple in black and white">
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container text-center mb-2">
+        <button class="button quicksand-font">Search...</button>
+    </div>
+</div>
+
+<!-- Catalogue Header -->
+<div class="container-fluid text-center" id="catalogue-header">
+    <div class="row justify-content-center">
+        <h5>All our Gift Cards</h5>
+    </div>
 </div>
 
 {% endblock content %}

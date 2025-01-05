@@ -34,7 +34,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'catalogue_home' %}">RedeemIt - Recognition Platform</a>
+        <a class="navbar-brand" href="{% url 'catalogue_home' %}">RedeemIt</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}"
-                        href="{% url 'catalogue_home' %}">Catalogue</a>
+                        href="{% url 'catalogue_home' %}">Home</a>
                 </li>
                 {% if user.is_authenticated %}
                 <!-- For later when login/logout/register functionalities will be added -->
@@ -59,6 +59,9 @@
                 </li>
                 {% endif %}
                 <!-- For later when login/logout/register functionalities will be added -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -72,7 +75,7 @@
 </main>
 
 <!-- Footer Section -->
-<footer class="footer py-3">
+<footer class="footer py-2">
     <p class="m-0 text-center">
         {% block copyright %}
         © RedeemIt - Your Employee Recognition Platform 2025
