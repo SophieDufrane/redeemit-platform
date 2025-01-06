@@ -6,9 +6,9 @@ class CatalogueItem(models.Model):
     reward_name = models.CharField(max_length=100, unique=True)
     points_cost = models.PositiveIntegerField(default=0)
     description = models.TextField()
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None)
+    image = models.ImageField(upload_to='reward_images/')
     stock_quantity = models.IntegerField(default=0)
-    # admin = models.ForeignKey('User', on_delete=models.CASCADE) # Referencing the built-in User model
+    reward_value = models.DecimalField(max_digits=6, decimal_places=2, default=0)
 
     def __str__(self):
          return self.reward_name
