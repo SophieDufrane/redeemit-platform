@@ -3,10 +3,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Amazon Gift Card",
+            "reward_name": "Amazon",
             "points_cost": 1500,
             "description": "Use this gift card to shop from a vast selection of products, including electronics, books, fashion, and more. Valid for purchases on Amazon. No expiration date.",
-            "image": "media/images/reward_images/amazon-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 100,
             "reward_value": 50.00
         }
@@ -15,10 +15,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Arnotts Gift Card",
+            "reward_name": "Arnotts",
             "points_cost": 3000,
             "description": "Treat yourself to luxury fashion, homeware, and beauty products at Arnotts, Ireland’s largest and longest-established department store. Valid in-store and online.",
-            "image": "media/images/reward_images/arnotts-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 80,
             "reward_value": 100.00
         }
@@ -27,10 +27,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Gym+Coffee Gift Card",
+            "reward_name": "Gym+Coffee",
             "points_cost": 1500,
             "description": "Elevate your active lifestyle with high-quality athleisure wear from Gym+Coffee, the leading Irish brand for stylish gym and casual clothing. Redeemable online and in stores.",
-            "image": "media/images/reward_images/gymcoffee-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 90,
             "reward_value": 50.00
         }
@@ -39,10 +39,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Zalando Gift Card",
+            "reward_name": "Zalando",
             "points_cost": 1500,
             "description": "Shop from Europe’s leading online fashion platform, Zalando. Enjoy a wide range of clothing, shoes, and accessories from top brands. Redeemable online with no expiry.",
-            "image": "media/images/reward_images/zalando-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 70,
             "reward_value": 50.00
         }
@@ -51,10 +51,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Decathlon Gift Card",
+            "reward_name": "Decathlon",
             "points_cost": 1500,
             "description": "Gear up for any sport with Decathlon, offering affordable and high-quality sports equipment and apparel. Valid in-store and online across all categories.",
-            "image": "media/images/reward_images/decathlon-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 75,
             "reward_value": 50.00
         }
@@ -63,10 +63,10 @@
         "model": "catalogue.catalogueitem",
         "pk": null,
         "fields": {
-            "reward_name": "Tesco Gift Card",
+            "reward_name": "Tesco",
             "points_cost": 1500,
             "description": "Use the Tesco gift card to purchase groceries, household essentials, and more. Redeemable at Tesco stores across Ireland and online.",
-            "image": "media/images/reward_images/tesco-gift-card.webp",
+            "image": "reward_images/generic_gift_card.png",
             "stock_quantity": 150,
             "reward_value": 50.00
         }
