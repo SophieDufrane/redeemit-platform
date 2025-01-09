@@ -27,7 +27,6 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-
 /* Hover Link Styling */
 .nav-link:hover {
     color: #decd62;
@@ -38,9 +37,17 @@ body {
     text-decoration: underline;
 }
 
-/* TO DO! Icon burger not visible */
+/* -------------------------------------- Footer styling */
+.footer {
+    background-color: #300e82;
+}
 
-/* TO DO! Icon burger not visible */
+.footer p {
+    font-family: "Montserrat", serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: white;
+}
 
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
 #hero-section {
@@ -81,7 +88,6 @@ body {
 }
 
 /* Search Button */
-
 .button {
     width: 250px;
     background-color: transparent;
@@ -101,14 +107,9 @@ body {
 /* Catalogue Header */
 #catalogue-header {
     background-color: #dbc962;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #catalogue-header h5 {
-    margin-bottom: 0;
     font-size: 1rem;
     color: #333;
 }
@@ -116,19 +117,5 @@ body {
 /* -------------------------------------- Catalogue Grid styling */
 
 
-
-/* -------------------------------------- Footer styling */
-.footer {
-    background-color: #300e82;
-}
-
-.footer p {
-    font-family: "Montserrat", serif;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
-    padding: 10px 0;
-}
 
 

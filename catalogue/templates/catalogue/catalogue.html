@@ -20,7 +20,7 @@
             </div>
             <!-- Right Column -->
             <div class="col-md-6 mb-4 text-center gradient-background">
-                <img id="square-image" src="{% static 'media/images/couple.webp' %}"
+                <img id="square-image" src="{% static 'images/couple.webp' %}"
                     alt="Happy couple in black and white">
             </div>
         </div>
@@ -33,9 +33,9 @@
 </div>
 
 <!-- Catalogue Header -->
-<div class="container-fluid text-center" id="catalogue-header">
+<div class="container-fluid text-center py-3" id="catalogue-header">
     <div class="row justify-content-center">
-        <h5>All our Gift Cards</h5>
+        <h5>Our Selection of Gift Cards</h5>
     </div>
 </div>
 
@@ -46,7 +46,7 @@
         <div class="col-6 col-md-4 col-lg-3 mt-3">
             <div class="card">
                 <!-- Need to be updated to reflect reward image -->
-                <img src="{% static 'images/generic_gift_card.webp' %}" alt="Generic Gift Card">
+                <img src="{{ item.image.url }}" alt="{{ item.reward_name }}">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ item.reward_name }} <small>{{ item.reward_value }}&euro;</small></h5>
                     <p class="card-text">{{ item.points_cost }} Points</p>
