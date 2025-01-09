@@ -48,7 +48,7 @@
                 <!-- Need to be updated to reflect reward image -->
                 <img src="{% static 'images/generic_gift_card.webp' %}" alt="Generic Gift Card">
                 <div class="card-body text-center">
-                    <h5 class="card-title">{{ item.reward_name }}</h5>
+                    <h5 class="card-title">{{ item.reward_name }} <small>{{ item.reward_value }}&euro;</small></h5>
                     <p class="card-text">{{ item.points_cost }} Points</p>
                 </div>
             </div>

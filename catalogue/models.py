@@ -9,6 +9,7 @@ class CatalogueItem(models.Model):
     image = models.ImageField(upload_to='reward_images/')
     stock_quantity = models.IntegerField(default=0)
     reward_value = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    reward_Terms_And_Conditions = models.TextField(default='Terms & Conditions')
 
     def __str__(self):
          return self.reward_name
