@@ -112,10 +112,13 @@ body {
 #catalogue-header h5 {
     font-size: 1rem;
     color: #333;
+    margin: 0;
 }
 
 /* -------------------------------------- Catalogue Grid styling */
 
-
+.card-title {
+    color: #300e82;
+}
 
 
