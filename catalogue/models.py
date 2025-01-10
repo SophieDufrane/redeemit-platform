@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class CatalogueItem(models.Model):
@@ -7,7 +8,7 @@ class CatalogueItem(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     points_cost = models.PositiveIntegerField(default=0)
     description = models.TextField()
-    image = models.ImageField(upload_to='reward_images/')
+    image = CloudinaryField('image', default='placeholder')
     stock_quantity = models.IntegerField(default=0)
     reward_value = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     reward_Terms_And_Conditions = models.TextField(default='Terms & Conditions')
