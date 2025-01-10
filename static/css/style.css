@@ -16,7 +16,8 @@ body {
 }
 
 .navbar .navbar-brand {
-    color: white !important; /* Ensures it overrides any Bootstrap defaults */
+    color: white !important;
+    /* Ensures it overrides any Bootstrap defaults */
 }
 
 .navbar .nav-link {
@@ -72,10 +73,6 @@ body {
 }
 
 /* Square image with gradient Background */
-#square-image {
-    width: 210px;
-}
-
 .gradient-background {
     display: flex;
     align-items: center;
@@ -84,7 +81,10 @@ body {
     height: 250px;
     margin: 0 auto;
     background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
-    padding: 20px;
+}
+
+#square-image {
+    width: 92%;
 }
 
 /* Search Button */
@@ -93,7 +93,7 @@ body {
     background-color: transparent;
     border: 2px solid #decd62;
     color: #decd62;
-    padding: 10px;
+    padding: 8px;
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
@@ -122,3 +122,47 @@ body {
 }
 
 
+/* -------------------------------------- media queries for screens 768px */
+@media (min-width: 768px) {
+    .gradient-background {
+        width: 400px;
+        height: 400px;
+    }
+
+    #welcome-name h1 {
+        font-size: 3rem;
+    }
+    
+    #welcome-message h4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* media queries for screens 992px and larger */
+@media (min-width: 992px) {
+    #hero-section .container {
+        width: 80%;
+    }
+
+    .gradient-background {
+        width: 450px;
+        height: 450px;
+    }
+
+    .welcome {
+        margin-top: 30px;
+    }
+
+    #welcome-name h1 {
+        font-size: 3.5rem;
+    }
+    
+    #welcome-message h4 {
+        font-size: 2rem;
+    }
+
+    .button {
+        width: 50%;
+        margin: 15px 0;
+    }
+}
