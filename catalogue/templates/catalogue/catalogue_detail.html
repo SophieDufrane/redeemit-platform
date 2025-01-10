@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h1>{{ selected_item.reward_name }}</h1>
+    <img src="{{ selected_item.image.url }}" alt="{{ selected_item.reward_name }}">
+    <p>{{ selected_item.reward_value }}&euro;</p>
+    <p>Points Cost: {{ selected_item.points_cost }}</p>
+    <p>{{ selected_item.description }}</p>
+    <p>{{ selected_item.reward_Terms_And_Conditions }}</p>
+</div>
+
+{% endblock %}
