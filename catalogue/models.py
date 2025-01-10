@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class CatalogueItem(models.Model):
     reward_name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     points_cost = models.PositiveIntegerField(default=0)
     description = models.TextField()
     image = models.ImageField(upload_to='reward_images/')

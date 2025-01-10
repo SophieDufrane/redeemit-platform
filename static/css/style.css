@@ -16,8 +16,7 @@ body {
 }
 
 .navbar .navbar-brand {
-    color: white !important;
-    /* Ensures it overrides any Bootstrap defaults */
+    color: white;
 }
 
 .navbar .nav-link {
