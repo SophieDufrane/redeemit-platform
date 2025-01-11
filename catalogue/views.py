@@ -10,4 +10,5 @@ def catalogue_detail(request, slug):
     return render(request, 'catalogue/catalogue_detail.html', {'selected_item': selected_item})
 
 def cart_page(request):
+    cart = []  # Placeholder for the cart
     return render(request, 'catalogue/cart.html', {'cart': cart})
