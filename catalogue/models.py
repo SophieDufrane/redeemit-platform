@@ -13,6 +13,9 @@ class CatalogueItem(models.Model):
     reward_value = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     reward_Terms_And_Conditions = models.TextField(default='Terms & Conditions')
 
+    def resized_image_url(self, width=400):
+        return self.image.url.replace('/upload/', f'/upload/w_{width},q_auto/')
+
     def __str__(self):
          return self.reward_name
 
