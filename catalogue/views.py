@@ -8,3 +8,6 @@ def catalogue_home(request):
 def catalogue_detail(request, slug):
     selected_item = get_object_or_404(CatalogueItem, slug=slug)  # Fetch item by slug
     return render(request, 'catalogue/catalogue_detail.html', {'selected_item': selected_item})
+
+def cart_page(request):
+    return render(request, 'catalogue/cart.html', {'cart': cart})
