@@ -113,14 +113,19 @@ body {
     margin: 0;
 }
 
-.card-title {
+.card-title, .card-text {
     color: #300e82;
+}
+
+.card-title {
+    text-transform: uppercase;
 }
 
 /* -------------------------------------- Catalogue detail */
 /* General Styles for the Catalogue Detail Page */
 .card-detail.container {
     width: 90%;
+    height: 80vh;
 }
 
 /* Add to Cart Button Styling */
