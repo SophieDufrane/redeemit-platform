@@ -87,18 +87,17 @@ body {
 }
 
 /* Search Button */
-.button {
+.search-button {
     width: 250px;
     background-color: transparent;
-    border: 2px solid #decd62;
     color: #decd62;
+    border: 2px solid #decd62;
     padding: 8px;
     border-radius: 25px;
     font-size: 1rem;
-    cursor: pointer;
 }
 
-.button:hover {
+.search-button:hover {
     background-color: #decd62;
     color: #300e82;
 }
@@ -114,10 +113,35 @@ body {
     margin: 0;
 }
 
-/* -------------------------------------- Catalogue Grid styling */
+.card-title, .card-text {
+    color: #300e82;
+}
 
 .card-title {
+    text-transform: uppercase;
+}
+
+/* -------------------------------------- Catalogue detail */
+/* General Styles for the Catalogue Detail Page */
+.card-detail.container {
+    width: 90%;
+    height: 80vh;
+}
+
+/* Add to Cart Button Styling */
+.add-cart-button {
+    width: 250px;
+    background-color: #decd62;
     color: #300e82;
+    border: 2px solid transparent;
+    padding: 8px;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.add-cart-button:hover {
+    background-color: #300e82;
+    color: white;
 }
 
 
