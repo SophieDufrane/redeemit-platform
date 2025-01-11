@@ -87,18 +87,17 @@ body {
 }
 
 /* Search Button */
-.button {
+.search-button {
     width: 250px;
     background-color: transparent;
-    border: 2px solid #decd62;
     color: #decd62;
+    border: 2px solid #decd62;
     padding: 8px;
     border-radius: 25px;
     font-size: 1rem;
-    cursor: pointer;
 }
 
-.button:hover {
+.search-button:hover {
     background-color: #decd62;
     color: #300e82;
 }
@@ -119,20 +118,27 @@ body {
 }
 
 /* -------------------------------------- Catalogue detail */
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+/* General Styles for the Catalogue Detail Page */
+.card-detail.container {
+    width: 90%;
 }
 
-.card-detail-container {
-    flex: 1;
+/* Add to Cart Button Styling */
+.add-cart-button {
+    width: 250px;
+    background-color: #decd62;
+    color: #300e82;
+    border: 2px solid transparent;
+    padding: 8px;
+    border-radius: 25px;
+    font-size: 1rem;
 }
 
-.card-detail {
-    width: 80%;
-    margin: 0 auto;
+.add-cart-button:hover {
+    background-color: #300e82;
+    color: white;
 }
+
 
 /* -------------------------------------- media queries for screens 768px */
 @media (min-width: 768px) {

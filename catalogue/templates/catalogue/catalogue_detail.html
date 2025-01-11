@@ -3,25 +3,26 @@
 
 {% block content %}
 
-
-<div class="page-container">
-    <div class="card-detail card border-light mb-3">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="{{ selected_item.image.url }}" class="img-fluid rounded-start"
-                    alt="{{ selected_item.reward_name }}">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{ selected_item.reward_name }}</h5>
-                    <p class="card-text">{{ selected_item.reward_value }}&euro;</p>
-                    <p class="card-text">Points Cost: {{ selected_item.points_cost }}</p>
-                    <p class="card-text"><small class="text-body-secondary">{{ selected_item.description }}</small></p>
-                    <p class="card-text"><small
-                            class="text-body-secondary">{{ selected_item.reward_Terms_And_Conditions }}</small></p>
-                </div>
-            </div>
+<div class="card-detail container my-5">
+    <div class="row align-items-center">
+        <!-- Image section -->
+        <div class="col-12 col-md-4 text-center my-4">
+            <img src="{{ selected_item.image.url }}" class="img-fluid img-thumbnail" alt="{{ selected_item.reward_name }}">
         </div>
+        <!-- Details section -->
+        <div class="col-12 col-md-8 ">
+            <h5 class="text-primary fw-bold">{{ selected_item.reward_name }} - <small>{{ selected_item.reward_value }}&euro;</small></h5>
+            <p class="text-secondary"><strong>Points Cost: {{ selected_item.points_cost }}</strong></p>
+            <h6 class="text-uppercase text-muted mt-4">About</h6>
+            <p>{{ selected_item.description }}</p>
+            <h6 class="text-uppercase text-muted mt-4">Terms & Conditions</h6>
+            <p class="text-muted"><small>{{ selected_item.reward_Terms_And_Conditions }}</small></p>
+        </div>
+        <!-- Add to Cart Button -->
+         <div class="col-12 mt-4 text-center">
+            <button class="add-cart-button quicksand-font">Add to Cart</button>
+         </div>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
