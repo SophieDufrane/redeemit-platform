@@ -3,13 +3,25 @@
 
 {% block content %}
 
-<div class="container mt-4">
-    <h1>{{ selected_item.reward_name }}</h1>
-    <img src="{{ selected_item.image.url }}" alt="{{ selected_item.reward_name }}">
-    <p>{{ selected_item.reward_value }}&euro;</p>
-    <p>Points Cost: {{ selected_item.points_cost }}</p>
-    <p>{{ selected_item.description }}</p>
-    <p>{{ selected_item.reward_Terms_And_Conditions }}</p>
-</div>
 
-{% endblock %}
+<div class="page-container">
+    <div class="card-detail card border-light mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ selected_item.image.url }}" class="img-fluid rounded-start"
+                    alt="{{ selected_item.reward_name }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ selected_item.reward_name }}</h5>
+                    <p class="card-text">{{ selected_item.reward_value }}&euro;</p>
+                    <p class="card-text">Points Cost: {{ selected_item.points_cost }}</p>
+                    <p class="card-text"><small class="text-body-secondary">{{ selected_item.description }}</small></p>
+                    <p class="card-text"><small
+                            class="text-body-secondary">{{ selected_item.reward_Terms_And_Conditions }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

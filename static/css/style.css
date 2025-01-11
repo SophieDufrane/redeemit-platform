@@ -114,12 +114,25 @@ body {
     margin: 0;
 }
 
-/* -------------------------------------- Catalogue Grid styling */
-
 .card-title {
     color: #300e82;
 }
 
+/* -------------------------------------- Catalogue detail */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+.card-detail-container {
+    flex: 1;
+}
+
+.card-detail {
+    width: 80%;
+    margin: 0 auto;
+}
 
 /* -------------------------------------- media queries for screens 768px */
 @media (min-width: 768px) {
