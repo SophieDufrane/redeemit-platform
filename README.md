@@ -242,6 +242,27 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 
 ## Testing
 
+### ADMIN - Catalogue Management
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| Create a new item | Item is successfully created with all required fields and displayed on the platform | PASS |
+| View list of existing items | All items are listed on the admin dashboard & the platform | PASS |
+| Edit an existing item | Changes are saved and reflected on the admin dashboard & the platform | PASS |
+| Delete an item | Item is removed from both the admin dashboard & the platform | PASS |
+
+### EMPLOYEE (User) - Add to Cart
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| View detailed page of an item | Detailed information about the item is displayed | PASS |
+| Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
+| Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
+| View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
+
+
+
+
 
 ### Fixed Bugs
 
