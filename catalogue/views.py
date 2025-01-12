@@ -32,7 +32,7 @@ def cart_page(request):
         'total_points_cost': total_points_cost
         })
 
-def add_to_cart(request, item_id):
+def add_to_cart(request, slug):
     """
     Adds an item to the cart for the current session or user.
 
@@ -42,16 +42,16 @@ def add_to_cart(request, item_id):
 
     **Flow**
 
-    - Fetch the item to add with it's id.
+    - Fetch the item to add using the slug.
     - Retrieve or create the cart.
     - Add the item to the cart OR increase the quantity if it already exists.
     - Redirect to the catalogue_detail page.
     """
-    item = get_object_or_404(CatalogueItem, pk=item_id)
+    item = get_object_or_404(CatalogueItem, slug=slug)
     cart, _ = Cart.objects.get_or_create(user=request.user)
     cart_item, created = CartItem.objects.get_or_create(cart=cart, item=item)
     if not created:
-        cart_item += 1
+        cart_item.quantity += 1
         cart_item.save()
 
     return redirect('catalogue_detail', slug=item.slug)
