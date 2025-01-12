@@ -22,9 +22,10 @@ class CatalogueItem(models.Model):
     def __str__(self):
          return self.reward_name
 
+
 class Cart(models.Model):
     """
-    A shopping cart for a user (for now allowing anonymous user too).
+    A shopping cart for a user (supports anonymous users for now).
     """
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -33,9 +34,10 @@ class Cart(models.Model):
     def __str__(self):
          return f"Cart {self.id}"
 
+
 class CartItem(models.Model):
     """
-    An item in the cart.
+    An item added to a shopping cart.
     """
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     item = models.ForeignKey(CatalogueItem, on_delete=models.CASCADE)

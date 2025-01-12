@@ -4,22 +4,8 @@
 {% block content %}
 
 <div class="container my-5">
-    <h1>Your cart</h1>{% if items %}
-    <ul>
-        {% for item in items %}
-        <li>
-            <h3>{{ item.reward_name }}</h3>
-            <p>{{ item.points_cost }} Points</p>
-            <p>{{ item.stock_quantity }} Available</p>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'catalogue_home' %}">Back to Catalogue</a>
-    {% else %}
-    <p>Your cart is empty.</p>
-    <a href="{% url 'catalogue_home' %}">Start Adding Items</a>
-    {% endif %}
-
+    <h1>Your cart</h1>
+    <p>No items in your cart</p>
     <button class="add-cart-button quicksand-font">Proceed to Checkout</button>
 </div>
 
