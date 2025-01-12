@@ -2,11 +2,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import CatalogueItem, Cart, CartItem
 
 def catalogue_home(request):
+    """
+    Displays all items available in catalogue.
+    """
     catalogue_items = CatalogueItem.objects.all()
     return render(request, 'catalogue/catalogue.html', {'catalogue_items': catalogue_items})
 
 def catalogue_detail(request, slug):
-    selected_item = get_object_or_404(CatalogueItem, slug=slug)  # Fetch item by slug
+    """
+    Displays detailed information for the item selected.
+    """
+    selected_item = get_object_or_404(CatalogueItem, slug=slug)
     return render(request, 'catalogue/catalogue_detail.html', {'selected_item': selected_item})
 
 def cart_page(request):
@@ -30,7 +36,7 @@ def cart_page(request):
     return render(request, 'catalogue/cart.html', {
         'cart_items': cart_items,
         'total_points_cost': total_points_cost
-        })
+    })
 
 def add_to_cart(request, slug):
     """
@@ -38,20 +44,24 @@ def add_to_cart(request, slug):
 
     **Context**
 
-    - `item_id`: ID of the CatalogueItem to add to the cart.
+    - `slug`: Slug of the CatalogueItem to add to cart.
 
     **Flow**
 
+    - Only allow adding items via a POST request.
     - Fetch the item to add using the slug.
     - Retrieve or create the cart.
     - Add the item to the cart OR increase the quantity if it already exists.
     - Redirect to the catalogue_detail page.
     """
-    item = get_object_or_404(CatalogueItem, slug=slug)
-    cart, _ = Cart.objects.get_or_create(user=request.user)
-    cart_item, created = CartItem.objects.get_or_create(cart=cart, item=item)
-    if not created:
-        cart_item.quantity += 1
-        cart_item.save()
+    if request.method == "POST":
+        item = get_object_or_404(CatalogueItem, slug=slug)
+        cart, _ = Cart.objects.get_or_create(user=request.user)
+        cart_item, created = CartItem.objects.get_or_create(cart=cart, item=item)
+        if not created:
+            cart_item.quantity += 1
+            cart_item.save()
 
-    return redirect('catalogue_detail', slug=item.slug)
+        return redirect('catalogue_detail', slug=item.slug)
+
+    return redirect('catalogue_detail', slug=slug)

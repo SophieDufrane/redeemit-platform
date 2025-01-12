@@ -5,7 +5,18 @@
 
 <div class="container my-5">
     <h1>Your cart</h1>
-    <p>No items in your cart</p>
+    {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    {{ item.item.reward_name }} - Quantity: {{ item.quantity }} - Total Points: {{ item.item.points_cost|add:item.item.points_cost }}
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Total Points Cost: {{ total_points_cost }}</p>
+    {% else %}
+        <p>No items in your cart.</p>
+    {% endif %}
     <button class="add-cart-button quicksand-font">Proceed to Checkout</button>
 </div>
 

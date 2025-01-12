@@ -7,11 +7,13 @@
     <div class="row align-items-center">
         <!-- Image section -->
         <div class="col-12 col-md-4 text-center my-4">
-            <img src="{{ selected_item.image.url }}" class="img-fluid img-thumbnail" alt="{{ selected_item.reward_name }}">
+            <img src="{{ selected_item.image.url }}" class="img-fluid img-thumbnail"
+                alt="{{ selected_item.reward_name }}">
         </div>
         <!-- Details section -->
         <div class="col-12 col-md-8 ">
-            <h5 class="card-title">{{ selected_item.reward_name }} - <small>{{ selected_item.reward_value }}&euro;</small></h5>
+            <h5 class="card-title">{{ selected_item.reward_name }} -
+                <small>{{ selected_item.reward_value }}&euro;</small></h5>
             <p class="text-secondary"><strong>Points Cost: {{ selected_item.points_cost }}</strong></p>
             <h6 class="card-title mt-4">About</h6>
             <p>{{ selected_item.description }}</p>
@@ -19,9 +21,12 @@
             <p class="text-muted"><small>{{ selected_item.reward_Terms_And_Conditions }}</small></p>
         </div>
         <!-- Add to Cart Button -->
-         <div class="col-12 mt-4 text-center">
-            <button class="add-cart-button quicksand-font">Add to Cart</button>
-         </div>
+        <div class="col-12 mt-4 text-center">
+            <form method="POST" action="{% url 'add_to_cart' selected_item.slug %}">
+                {% csrf_token %}
+                <button type="submit" class="add-cart-button quicksand-font">Add to Cart</button>
+            </form>
+        </div>
     </div>
 </div>
 
