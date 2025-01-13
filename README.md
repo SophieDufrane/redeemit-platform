@@ -292,7 +292,7 @@ The site was deployed successfully to [Heroku](https://redemption-website-ec86c7
     - Click on `Connect`
 7. Once App deployed, the message *Your app was successfully deployed.*
 
-The live link can be found here: [Moodtracker](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/)
+The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/)
 
 ---
 

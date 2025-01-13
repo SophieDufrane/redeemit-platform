@@ -25,4 +25,5 @@ urlpatterns = [
     path('catalogue/<slug:slug>/add-to-cart/', add_to_cart, name='add_to_cart'),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path('', catalogue_home, name='catalogue_home'),
 ]
