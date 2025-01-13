@@ -24,7 +24,7 @@
 
 ## Introduction
 
-The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
+The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
 In this project, admin functionality includes managing the catalogue (and updating employees' points balances? TO CONFIRM!!).
 This project is a simplified version of the actual system, designed for learning and portfolio purposes, showcasing full-stack development skills using Django framework.
 
@@ -99,6 +99,8 @@ The colour palette also draws inspiration from the tech industry and current des
 
 #### Colour Scheme
 The chosen colour palette draws inspiration from **Workhuman**'s branding and aligns with a modern, tech-inspired aesthetic.
+
+![Colour Inspiration](images-documentation/readme_images/color_scheme.png)
 
 | **Colour** | **Name**             |  
 |------------|----------------------|  
@@ -243,28 +245,6 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 
 ## Testing
 
-### Known Issues and Limitations
-
-**Description**:  
-In the current implementation, the cart functionality assumes a logged-in user to associate the cart items. Locally, the application works as expected, but in the production environment (Heroku), attempting to add items to the cart as an anonymous user results in a `TypeError`.
-
-**Error Details**:  
-- **Error**:  
-  `Field 'id' expected a number but got <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f14843b75c0>>.`
-  
-- **Cause**:  
-  When an anonymous user tries to add to cart, the application expects an user ID, hence the error since the user is not authenticated.
-
-**Local Development Adjustment**:  
-- To allow testing without user authentication, the `user` field in the `Cart` model is set with `null=True` and `blank=True`.  
-  ```python
-  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
-  # null and blank to be changed once user authentication is implemented.
-
-**Planned Fix**:  
-- Implement user authentication as part of the project’s future features.  
-- Remove the need to accommodate anonymous users and ensure all cart interactions are linked to authenticated sessions.
-
 ### ADMIN - Catalogue Management
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
@@ -293,11 +273,26 @@ In the current implementation, the cart functionality assumes a logged-in user t
 
 The site was deployed successfully to [Heroku](https://redemption-website-ec86c7604627.herokuapp.com/) following the steps below:
 
-1.  
-2.  
-3.  
-4.  
-5.  
+1. In *Gitpod*, create a list of dependencies in `requirements.txt` file:
+    - Run `pip3 freeze > requirements.txt` in the terminal.
+2. In *Heroku* account, create the new App:
+    - Select `New` and `Create a new app`.
+    - Name the App and choose a region: `Europe` 
+    - Click `Create App`.
+3. In the new App page, access to the `Settings` section.
+4. In `Config Var` add :
+    - `DATABASE_URL` and its value.
+    - `SECRET_KEY` and its value.
+    - `CLOUDINARY_URL` and its value.
+    - Click `Add`.
+5. Access to the `Deploy` section.
+6. Select the deployment method:
+    - Select `GitHub`
+    - Search for the repository by taping the name in the search barre.
+    - Click on `Connect`
+7. Once App deployed, the message *Your app was successfully deployed.*
+
+The live link can be found here: [Moodtracker](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/)
 
 ---
 
