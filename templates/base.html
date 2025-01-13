@@ -1,6 +1,9 @@
 {% load static %}
 
 {% url 'catalogue_home' as catalogue_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,16 +49,18 @@
                         href="{% url 'catalogue_home' %}">Home</a>
                 </li>
                 {% if user.is_authenticated %}
-                <!-- For later when login/logout/register functionalities will be added -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_signup' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_login' %}">Login</a>
                 </li>
                 {% endif %}
                 <!-- Cart Icon linking to cart_page -->
@@ -75,7 +80,7 @@
 </main>
 
 <!-- Footer Section -->
-<footer class="footer py-3">
+<footer class="footer mt-auto py-3">
     <p class="m-0 text-center">
         {% block copyright %}
         © RedeemIt - Your Employee Recognition Platform 2025

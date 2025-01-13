@@ -16,6 +16,7 @@
 - [Technology](#technology)
   - [Tools Used](#tools-used)
 - [Testing](#testing)
+  - [Known Issues and Limitations](#known-issues-and-limitations)
   - [Fixed Bugs](#fixed-bugs)
 - [Deployment](#deployment)
 - [Forking and Cloning](#forking-and-cloning)
@@ -242,6 +243,28 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 
 ## Testing
 
+### Known Issues and Limitations
+
+**Description**:  
+In the current implementation, the cart functionality assumes a logged-in user to associate the cart items. Locally, the application works as expected, but in the production environment (Heroku), attempting to add items to the cart as an anonymous user results in a `TypeError`.
+
+**Error Details**:  
+- **Error**:  
+  `Field 'id' expected a number but got <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f14843b75c0>>.`
+  
+- **Cause**:  
+  When an anonymous user tries to add to cart, the application expects an user ID, hence the error since the user is not authenticated.
+
+**Local Development Adjustment**:  
+- To allow testing without user authentication, the `user` field in the `Cart` model is set with `null=True` and `blank=True`.  
+  ```python
+  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
+  # null and blank to be changed once user authentication is implemented.
+
+**Planned Fix**:  
+- Implement user authentication as part of the project’s future features.  
+- Remove the need to accommodate anonymous users and ensure all cart interactions are linked to authenticated sessions.
+
 ### ADMIN - Catalogue Management
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
@@ -259,8 +282,6 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 | Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
 | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
 | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
-
-
 
 
 
