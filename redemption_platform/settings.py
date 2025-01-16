@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 	'allauth.socialaccount',
     'cloudinary',
     'catalogue',
+    'home',
 ]
 
 SITE_ID = 1
@@ -153,5 +154,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+DEBUG = os.environ.get("DEBUG") == "True"
 

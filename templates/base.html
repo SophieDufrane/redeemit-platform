@@ -34,62 +34,65 @@
 
 </head>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'catalogue_home' %}">RedeemIt</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}"
-                        href="{% url 'catalogue_home' %}">Home</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_signup' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_login' %}">Login</a>
-                </li>
-                {% endif %}
-                <!-- Cart Icon linking to cart_page -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cart_page' %}"><i class="fas fa-shopping-cart"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'catalogue_home' %}">RedeemIt</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}"
+                                href="{% url 'catalogue_home' %}">Home</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                        <!-- Cart Icon linking to cart_page -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'cart_page' %}"><i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation -->
 
-<!-- Dynamic Content Section -->
-<main class="flex-shrink-0">
-    {% block content %}
-    <!-- Page-specific content goes here -->
-    {% endblock %}
-</main>
-
-<!-- Footer Section -->
-<footer class="footer mt-auto py-3">
-    <p class="m-0 text-center">
-        {% block copyright %}
-        © RedeemIt - Your Employee Recognition Platform 2025
+    <!-- Dynamic Content Section -->
+    <main class="flex-shrink-0">
+        {% block content %}
+        <!-- Page-specific content goes here -->
         {% endblock %}
-    </p>
-</footer>
+    </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{% static 'js/script.js' %}"></script>
+    <!-- Footer Section -->
+    <footer class="footer mt-auto py-3">
+        <p class="m-0 text-center">
+            {% block copyright %}
+            © RedeemIt - Your Employee Recognition Platform 2025
+            {% endblock %}
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
