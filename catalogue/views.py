@@ -106,7 +106,11 @@ def update_cart_quantity(request, slug):
     if request.method == 'POST':
             # Get the item and cart_item for the current user
             item = get_object_or_404(CatalogueItem, slug=slug)
-            cart_item = get_object_or_404(CartItem, cart__user=request.user, item=item)
+            cart_item = get_object_or_404(
+                CartItem,
+                cart__user=request.user,
+                item=item
+                )
 
             # Parse and validate the new quantity
             new_quantity = int(request.POST.get('quantity', 1))
@@ -117,3 +121,29 @@ def update_cart_quantity(request, slug):
                 cart_item.save()
 
     return redirect('cart_page')
+
+
+@login_required
+def delete_cart_item(request, slug):
+    """
+    Delete an existing item in the cart.
+
+    **Flow**
+
+    - Accepts a POST request to delete a specific cart item.
+    - Finds the `CartItem` using the slug and the user's cart.
+    - Deletes the `CartItem` and redirects back to the cart page.
+    """
+    if request.method == 'POST':
+        # Find the cart item to delete
+        cart_item = get_object_or_404(
+            CartItem,
+            cart__user=request.user,
+            item__slug=slug
+            )
+        cart_item.delete()
+
+    return redirect('cart_page')
+
+
+

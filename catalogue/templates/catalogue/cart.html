@@ -17,6 +17,10 @@
                 <button type="submit" class="btn btn-sm btn-primary">Update</button>
             </form>
             - Total Points: {{ item.total_points }}
+            <form method="POST" action="{% url 'delete_cart_item' item.item.slug %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
         </li>
         {% endfor %}
     </ul>
