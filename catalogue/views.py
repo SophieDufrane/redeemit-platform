@@ -1,20 +1,35 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import CatalogueItem, Cart, CartItem
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def catalogue_home(request):
     """
     Displays all items available in catalogue.
     """
     catalogue_items = CatalogueItem.objects.all()
-    return render(request, 'catalogue/catalogue.html', {'catalogue_items': catalogue_items})
+    return render(
+        request,
+        'catalogue/catalogue.html',
+        {'catalogue_items': catalogue_items}
+        )
 
+
+@login_required
 def catalogue_detail(request, slug):
     """
     Displays detailed information for the item selected.
     """
     selected_item = get_object_or_404(CatalogueItem, slug=slug)
-    return render(request, 'catalogue/catalogue_detail.html', {'selected_item': selected_item})
+    return render(
+        request,
+        'catalogue/catalogue_detail.html',
+        {'selected_item': selected_item}
+        )
 
+
+@login_required
 def cart_page(request):
     """
     Displays the user's cart and total points cost.
@@ -29,15 +44,21 @@ def cart_page(request):
     - catalogue/cart.html
 
     """
-    cart = Cart.objects.filter(user=request.user).first() # Get cart for the current user (Returns the first object matched by the queryset, or None))
-    cart_items = cart.cartitem_set.all() if cart else [] # Fetch cart items if exists, else an empty cart
-    total_points_cost = sum(item.item.points_cost * item.quantity for item in cart_items)
+    # Get cart for the current user (1st object or None)
+    cart = Cart.objects.filter(user=request.user).first()
+    # Fetch cart items if exists, else an empty cart
+    cart_items = cart.cartitem_set.all() if cart else []
+    total_points_cost = sum(
+        item.item.points_cost * item.quantity for item in cart_items
+        )
 
     return render(request, 'catalogue/cart.html', {
         'cart_items': cart_items,
         'total_points_cost': total_points_cost
     })
 
+
+@login_required
 def add_to_cart(request, slug):
     """
     Adds an item to the cart for the current session or user.
@@ -57,7 +78,10 @@ def add_to_cart(request, slug):
     if request.method == "POST":
         item = get_object_or_404(CatalogueItem, slug=slug)
         cart, _ = Cart.objects.get_or_create(user=request.user)
-        cart_item, created = CartItem.objects.get_or_create(cart=cart, item=item)
+        cart_item, created = CartItem.objects.get_or_create(
+            cart=cart,
+            item=item
+            )
         if not created:
             cart_item.quantity += 1
             cart_item.save()

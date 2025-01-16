@@ -45,29 +45,33 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Catalogue Home -->
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == catalogue_url %}active{% endif %}"
-                                href="{% url 'catalogue_home' %}">Home</a>
+                            <a class="nav-link {% if request.path == '/catalogue/' %}active{% endif %}"
+                                href="{% url 'catalogue_home' %}">Catalogue</a>
                         </li>
+                        <!-- Authenticated Links -->
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
-                        <!-- Cart Icon linking to cart_page -->
+                        <!-- Cart Icon -->
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cart_page' %}"><i class="fas fa-shopping-cart"></i></a>
+                            <a class="nav-link {% if request.path == '/cart/' %}active{% endif %}"
+                                href="{% url 'cart_page' %}">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
