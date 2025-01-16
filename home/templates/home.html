@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Welcome to RedeemIt!</h1>
+<div class="background-image-form" style="background-image: linear-gradient(to bottom, rgba(48, 14, 130, 0.9), rgba(48,
+    14, 130, 0)), url('{% static "images/signup_resized.jpeg" %}');">
+    <div class="form-container">
+        <h3>Welcome to RedeemIt!</h3>
+        <p class="mb-4">
+            Your platform for employee recognition and rewards.
+        </p>
+        <p>Log in or sign up to get started.</p>
+        <br>
+        <div class="">
+            <a href="{% url 'account_login' %}" class="home-button">Log In</a>
+            <a href="{% url 'account_signup' %}" class="home-button">Sign Up</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

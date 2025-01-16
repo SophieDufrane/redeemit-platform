@@ -113,7 +113,8 @@ body {
     margin: 0;
 }
 
-.card-title, .card-text {
+.card-title,
+.card-text {
     color: #300e82;
 }
 
@@ -144,6 +145,48 @@ body {
     color: white;
 }
 
+/* -------------------------------------- Home page and login / Register*/
+/* Full-screen background image */
+.background-image-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 80%;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.form-container h3 {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.home-button {
+    width: 250px;
+    background-color: #300e82;
+    color: white;
+    border: 2px solid transparent;
+    padding: 8px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #decd62;
+    color: white;
+}
 
 /* -------------------------------------- media queries for screens 768px */
 @media (min-width: 768px) {
@@ -155,7 +198,7 @@ body {
     #welcome-name h1 {
         font-size: 3rem;
     }
-    
+
     #welcome-message h4 {
         font-size: 1.5rem;
     }
@@ -179,7 +222,7 @@ body {
     #welcome-name h1 {
         font-size: 3.5rem;
     }
-    
+
     #welcome-message h4 {
         font-size: 2rem;
     }

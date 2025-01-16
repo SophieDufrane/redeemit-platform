@@ -24,7 +24,7 @@
 
 ## Introduction
 
-The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
+The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
 In this project, admin functionality includes managing the catalogue (and updating employees' points balances? TO CONFIRM!!).
 This project is a simplified version of the actual system, designed for learning and portfolio purposes, showcasing full-stack development skills using Django framework.
 
@@ -292,7 +292,7 @@ The site was deployed successfully to [Heroku](https://redemption-website-ec86c7
     - Click on `Connect`
 7. Once App deployed, the message *Your app was successfully deployed.*
 
-The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/catalogue/)
+The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/)
 
 ---
 
