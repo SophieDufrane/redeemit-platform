@@ -70,7 +70,7 @@ def add_to_cart(request, slug):
     **Flow**
 
     - Only allow adding items via a POST request.
-    - Fetch the item to add using the slug.
+    - Fetch the item to add using the slug of the `CatalogueItem`.
     - Retrieve or create the cart.
     - Add the item to the cart OR increase the quantity if it already exists.
     - Redirect to the catalogue_detail page.
@@ -89,3 +89,31 @@ def add_to_cart(request, slug):
         return redirect('catalogue_detail', slug=item.slug)
 
     return redirect('catalogue_detail', slug=slug)
+
+
+@login_required
+def update_cart_quantity(request, slug):
+    """
+    Update the quantity of an existing item in the cart.
+
+    **Flow**
+
+    - Accepts a POST request with the new quantity.
+    - Finds the `CartItem` using the slug of the `CatalogueItem`.
+    - Updates the quantity of the `CartItem` if valid.
+    - Redirects back to the cart page.
+    """
+    if request.method == 'POST':
+            # Get the item and cart_item for the current user
+            item = get_object_or_404(CatalogueItem, slug=slug)
+            cart_item = get_object_or_404(CartItem, cart__user=request.user, item=item)
+
+            # Parse and validate the new quantity
+            new_quantity = int(request.POST.get('quantity', 1))
+            if new_quantity < 1:
+                cart_item.delete()
+            else:
+                cart_item.quantity = new_quantity
+                cart_item.save()
+
+    return redirect('cart_page')

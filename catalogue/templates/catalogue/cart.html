@@ -6,16 +6,23 @@
 <div class="container my-5">
     <h1>Your cart</h1>
     {% if cart_items %}
-        <ul>
-            {% for item in cart_items %}
-                <li>
-                    {{ item.item.reward_name }} - Quantity: {{ item.quantity }} - Total Points: {{ item.item.points_cost|add:item.item.points_cost }}
-                </li>
-            {% endfor %}
-        </ul>
-        <p>Total Points Cost: {{ total_points_cost }}</p>
+    <ul>
+        {% for item in cart_items %}
+        <li>
+            {{ item.item.reward_name }} -
+            Quantity:
+            <form method="POST" action="{% url 'update_cart_quantity' item.item.slug %}" style="display: inline;">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width: 50px;">
+                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+            </form>
+            - Total Points: {{ item.total_points }}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Total Points Cost: {{ total_points_cost }}</p>
     {% else %}
-        <p>No items in your cart.</p>
+    <p>No items in your cart.</p>
     {% endif %}
     <button class="add-cart-button quicksand-font">Proceed to Checkout</button>
 </div>

@@ -79,5 +79,11 @@ class CartItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     added_on = models.DateTimeField(auto_now_add=True)
 
+    def total_points(self):
+        """
+        Calculates the total points cost for this cart item.
+        """
+        return self.item.points_cost * self.quantity
+
     def __str__(self):
         return f"{self.item.reward_name} (x{self.quantity})"
