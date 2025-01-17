@@ -92,6 +92,14 @@ Wireframes were designed to outline the layout and functionality of each page an
 
 </details>
 
+#### Cart Page
+<details>
+  <summary>Click to view the Cart Page wireframe</summary>
+
+  ![Cart Page Wireframe](images-documentation/wireframes/cart_page.png)
+
+</details>
+
 ### Typography & Colours
 For this project, I aimed to offer a fresh and distinct version of the existing platform while keeping the functionalities simple and user-friendly. To maintain a connection to the company’s identity, I incorporated branding colours from the Workhuman website to reflect the style and spirit of the company.</br>
 The colour palette also draws inspiration from the tech industry and current design trends, creating a clean, professional, and modern aesthetic. The chosen typography ensures readability and enhances the overall user experience, while the colour scheme provides a visually appealing and accessible interface.
