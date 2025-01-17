@@ -32,7 +32,7 @@ def catalogue_detail(request, slug):
 @login_required
 def cart_page(request):
     """
-    Displays the user's cart and total points cost.
+    Displays the user's cart with all details: image, name, quantity, points cost.
 
     **Context**
 
@@ -44,13 +44,9 @@ def cart_page(request):
     - catalogue/cart.html
 
     """
-    # Get cart for the current user (1st object or None)
     cart = Cart.objects.filter(user=request.user).first()
-    # Fetch cart items if exists, else an empty cart
     cart_items = cart.cartitem_set.all() if cart else []
-    total_points_cost = sum(
-        item.item.points_cost * item.quantity for item in cart_items
-        )
+    total_points_cost = sum(item.total_points() for item in cart_items)
 
     return render(request, 'catalogue/cart.html', {
         'cart_items': cart_items,
