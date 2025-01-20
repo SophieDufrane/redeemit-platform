@@ -52,8 +52,21 @@
                             <a class="nav-link {% if request.path == '/catalogue/' %}active{% endif %}"
                                 href="{% url 'catalogue_home' %}">Catalogue</a>
                         </li>
+                        <!-- Logout Option -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        <!-- Cart icon -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/cart/' %}active{% endif %}"
+                                href="{% url 'cart_page' %}">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            <!-- Points Balance -->
+                        <li class="nav-item">
+                            <span class="nav-link">
+                                {{ user.userprofile.point_balance }} points
+                            </span>
                         </li>
                         {% else %}
                         <!-- None Authenticated Links -->
@@ -62,15 +75,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
-                        </li>
-                        {% endif %}
-                        <!-- Cart Icon -->
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/cart/' %}active{% endif %}"
-                                href="{% url 'cart_page' %}">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
                         </li>
                         {% endif %}
                     </ul>
