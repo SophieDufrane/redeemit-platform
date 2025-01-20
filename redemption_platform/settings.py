@@ -57,6 +57,12 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/catalogue/'
 LOGOUT_REDIRECT_URL = '/'
+# Allauth configuration
+ACCOUNT_AUTHENTICATION_METHOD = 'username'  # Authenticate using username only
+ACCOUNT_USERNAME_REQUIRED = True  # Username is mandatory
+ACCOUNT_EMAIL_REQUIRED = False  # Email is not required
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Skip email verification
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

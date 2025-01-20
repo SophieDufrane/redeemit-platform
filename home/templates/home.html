@@ -4,6 +4,18 @@
 {% block content %}
 <div class="background-image-form" style="background-image: linear-gradient(to bottom, rgba(48, 14, 130, 0.9), rgba(48,
     14, 130, 0)), url('{% static "images/signup_resized.jpeg" %}');">
+    {% if user.is_authenticated %}
+    <div class="form-container">
+        <h3>Welcome Back, {{ user.username }}</h3>
+        <p class="mb-4">
+            You are already logged in. Access your catalogue now.
+        </p>
+        <br>
+        <div class="">
+            <a href="{% url 'catalogue_home' %}" class="home-button">GO!</a>
+        </div>
+    </div>
+    {% else %}
     <div class="form-container">
         <h3>Welcome to RedeemIt!</h3>
         <p class="mb-4">
@@ -12,9 +24,10 @@
         <p>Log in or sign up to get started.</p>
         <br>
         <div class="">
+            <a href="{% url 'account_signup' %}" class="home-button">Register</a>
             <a href="{% url 'account_login' %}" class="home-button">Log In</a>
-            <a href="{% url 'account_signup' %}" class="home-button">Sign Up</a>
         </div>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
