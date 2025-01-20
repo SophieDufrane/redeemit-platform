@@ -24,7 +24,13 @@
         {% endfor %}
     </ul>
     <div class="text-center">
+        {% if balance_sufficient %}
         <button class="add-cart-button quicksand-font">RedeemIt - {{ total_points_cost }} Points</button>
+        {% else %}
+        <button class="add-cart-button quicksand-font" disabled>
+            Need {{ missing_points }} points more!
+        </button>
+        {% endif %}
     </div>
     {% else %}
     <h1 class="text-center">Your Cart in Empty</h1>

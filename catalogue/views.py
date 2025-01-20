@@ -48,9 +48,16 @@ def cart_page(request):
     cart_items = cart.cartitem_set.all() if cart else []
     total_points_cost = sum(item.total_points() for item in cart_items)
 
+    user_balance = request.user.userprofile.point_balance
+    balance_sufficient = user_balance >= total_points_cost
+    missing_points = total_points_cost - user_balance if not balance_sufficient else 0
+
     return render(request, 'catalogue/cart.html', {
         'cart_items': cart_items,
-        'total_points_cost': total_points_cost
+        'total_points_cost': total_points_cost,
+        'user_balance': user_balance,
+        'balance_sufficient': balance_sufficient,
+        'missing_points': missing_points,
     })
 
 
