@@ -25,19 +25,19 @@
     </ul>
     <div class="text-center">
         {% if balance_sufficient %}
-        <button class="add-cart-button quicksand-font">RedeemIt - {{ total_points_cost }} Points</button>
+        <button class="redeemit-button yellow-button">RedeemIt - {{ total_points_cost }} Points</button>
         {% else %}
-        <button class="add-cart-button quicksand-font" disabled>
+        <button class="redeemit-button yellow-button" disabled>
             Need {{ missing_points }} points more!
         </button>
         {% endif %}
     </div>
     <!-- Confirm and Cancel Buttons -->
     <div class="text-center" style="display: none;">
-        <button id="confirm-btn">
+        <button id="redeemit-button confirm-btn">
             Confirm Redemption
         </button>
-        <button id="cancel-btn">
+        <button id="redeemit-button cancel-btn">
             Cancel
         </button>
     </div>

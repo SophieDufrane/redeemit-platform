@@ -50,6 +50,52 @@ body {
     color: white;
 }
 
+/* -------------------------------------- Form generic styling */
+
+
+
+/* -------------------------------------- Button generic styling */
+.redeemit-button {
+    width: 250px;
+    padding: 8px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.blue-button {
+    background-color: #300e82;
+    border: 2px solid transparent;
+    color: white;
+}
+
+.blue-button:hover {
+    background-color: #decd62;
+    color: #300e82;
+}
+
+.yellow-button {
+    background-color: #decd62;
+    border: 2px solid transparent;
+    color: #300e82;
+}
+
+.yellow-button:hover {
+    background-color: #300e82;
+    color: white;
+}
+
+.transparent-button {
+    background-color: transparent;
+    border: 2px solid #decd62;
+    color: #decd62;
+}
+
+.transparent-button:hover {
+    background-color: #decd62;
+    color: #300e82;
+}
+
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
 #hero-section {
     margin: 0;
@@ -87,22 +133,6 @@ body {
     width: 92%;
 }
 
-/* Search Button */
-.search-button {
-    width: 250px;
-    background-color: transparent;
-    color: #decd62;
-    border: 2px solid #decd62;
-    padding: 8px;
-    border-radius: 25px;
-    font-size: 1rem;
-}
-
-.search-button:hover {
-    background-color: #decd62;
-    color: #300e82;
-}
-
 /* Catalogue Header */
 #catalogue-header {
     background-color: #dbc962;
@@ -128,22 +158,6 @@ body {
 .card-detail.container {
     width: 90%;
     height: 80vh;
-}
-
-/* Add to Cart Button Styling */
-.add-cart-button {
-    width: 250px;
-    background-color: #decd62;
-    color: #300e82;
-    border: 2px solid transparent;
-    padding: 8px;
-    border-radius: 25px;
-    font-size: 1rem;
-}
-
-.add-cart-button:hover {
-    background-color: #300e82;
-    color: white;
 }
 
 /* -------------------------------------- Home page and login & Register */
@@ -182,23 +196,6 @@ body {
 
 .form-container h3 {
     text-transform: uppercase;
-}
-
-.home-button {
-    display: inline-block;
-    width: 60%;
-    background-color: #300e82;
-    color: white;
-    border: 2px solid transparent;
-    padding: 5px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin: 20px 0;
-}
-
-.home-button:hover {
-    background-color: #decd62;
-    color: white;
 }
 
 /* -------------------------------------- media queries for screens 768px */
