@@ -7,7 +7,7 @@ class UserProfile(models.Model):
     """
     Extends the default User model with additional fields.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     point_balance = models.IntegerField(default=0)
     join_date = models.DateTimeField(auto_now_add=True)
 
@@ -20,7 +20,6 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
 
-
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    instance.userprofile.save()
