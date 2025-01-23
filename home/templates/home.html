@@ -16,16 +16,17 @@
         </div>
     </div>
     {% else %}
-    <div class="form-container">
-        <h3>Welcome to RedeemIt!</h3>
-        <p class="mb-4">
-            Your platform for employee recognition and rewards.
-        </p>
-        <p>Log in or sign up to get started.</p>
-        <br>
-        <div class="">
-            <a href="{% url 'account_signup' %}" class="home-button">Register</a>
-            <a href="{% url 'account_login' %}" class="home-button">Log In</a>
+    <div class="form-gradient-background">
+        <div class="form-container">
+            <h3 class="my-4">Welcome to RedeemIt!</h3>
+            <p class="mb-4">
+                Your platform for employee recognition and rewards.
+            </p class="mb-4">
+            <p>Log in or sign up to get started.</p>
+            <div class="mb-4">
+                <a href="{% url 'account_signup' %}" class="home-button">Register</a>
+                <a href="{% url 'account_login' %}" class="home-button">Log In</a>
+            </div>
         </div>
     </div>
     {% endif %}

@@ -1,5 +1,13 @@
 # RedeemIt - Your Employee Recognition Platform
 
+## Introduction
+
+The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
+In this project, admin functionality includes managing the catalogue and updating employees' points balances.
+This project is a simplified version of the actual system, designed for learning and portfolio purposes, showcasing full-stack development skills using Django framework.
+
+---
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -22,25 +30,17 @@
 - [Forking and Cloning](#forking-and-cloning)
 - [Credits](#credits)
 
-## Introduction
-
-The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
-In this project, admin functionality includes managing the catalogue (and updating employees' points balances? TO CONFIRM!!).
-This project is a simplified version of the actual system, designed for learning and portfolio purposes, showcasing full-stack development skills using Django framework.
-
----
-
 ## Key Features
 
 ### Admin Access
 - **Manage Catalogue**
   Admins can keep the reward catalogue up to date by:
   - Adding new gift card.
-  - Editing details of existing gift card (e.g., name, points required, description, terms and conditions).
+  - Editing details of existing gift card (e.g. name, image, points required, description, terms and conditions).
   - Removing gift card.
 
-- **Manage User's Points Balance - TO CONFIRM!!**
-  Admins can update and manage employees' reward points.
+- **Manage User's Points Balance**
+  Admins can update and manage employees' reward points balance.
 
 ### Employee Access
 - **Employee Login & Logout**
@@ -51,7 +51,8 @@ This project is a simplified version of the actual system, designed for learning
 
 - **Redemption**
   Employees can seamlessly redeem their points by:
-  - Selecting gift card to add to their cart.
+  - Selecting gift card and viewing details.
+  - Add a gift card to their cart.
   - Viewing and reviewing their cart.
   - Modifying items in the cart if necessary.
   - Finalising the redemption process.

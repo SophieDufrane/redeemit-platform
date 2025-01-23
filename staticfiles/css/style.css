@@ -2,6 +2,7 @@
 body {
     background-color: white;
     font-family: "Poppins", sans-serif;
+    color: #333;
 }
 
 .quicksand-font {
@@ -145,42 +146,51 @@ body {
     color: white;
 }
 
-/* -------------------------------------- Home page and login / Register*/
+/* -------------------------------------- Home page and login & Register */
 /* Full-screen background image */
 .background-image-form {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
+    height: 89vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.form-gradient-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
+    height: 60%;
+    margin: 0 auto;
+    background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
+}
+
 .form-container {
     background: rgba(255, 255, 255, 0.9);
-    max-width: 80%;
-    padding: 25px;
+    width: 90%;
+    height: 90%;
+    padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 .form-container h3 {
-    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    color: #333;
 }
 
 .home-button {
-    width: 250px;
+    display: inline-block;
+    width: 60%;
     background-color: #300e82;
     color: white;
     border: 2px solid transparent;
-    padding: 8px;
+    padding: 5px;
     border-radius: 25px;
-    font-size: 1rem;
     text-decoration: none;
+    margin: 20px 0;
 }
 
 .home-button:hover {
@@ -201,6 +211,15 @@ body {
 
     #welcome-message h4 {
         font-size: 1.5rem;
+    }
+
+    .form-gradient-background {
+        width: 50%;
+        height: 60%;
+    }
+
+    .form-container {
+        padding: 30px;
     }
 }
 
@@ -230,5 +249,13 @@ body {
     .button {
         width: 50%;
         margin: 15px 0;
+    }
+
+    .form-gradient-background {
+        width: 40%;
+    }
+
+    .form-container {
+        padding: 40px;
     }
 }
