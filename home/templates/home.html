@@ -5,14 +5,16 @@
 <div class="background-image-form" style="background-image: linear-gradient(to bottom, rgba(48, 14, 130, 0.9), rgba(48,
     14, 130, 0)), url('{% static "images/signup_resized.jpeg" %}');">
     {% if user.is_authenticated %}
-    <div class="form-container">
-        <h3>Welcome Back, {{ user.username }}</h3>
-        <p class="mb-4">
-            You are already logged in. Access your catalogue now.
-        </p>
-        <br>
-        <div class="">
-            <a href="{% url 'catalogue_home' %}" class="home-button">GO!</a>
+    <div class="form-gradient-background">
+        <div class="form-container">
+            <h3>Welcome Back, {{ user.username }}</h3>
+            <p class="mb-4">
+                You are already logged in. Access your catalogue now.
+            </p>
+            <br>
+            <div class="mb-4">
+                <a href="{% url 'catalogue_home' %}" class="home-button">GO!</a>
+            </div>
         </div>
     </div>
     {% else %}

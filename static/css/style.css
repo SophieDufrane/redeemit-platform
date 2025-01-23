@@ -156,6 +156,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,
+            rgba(48, 14, 130, 0.9),
+            rgba(48, 14, 130, 0))
 }
 
 .form-gradient-background {
