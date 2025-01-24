@@ -56,11 +56,14 @@ body {
 
 /* -------------------------------------- Button generic styling */
 .redeemit-button {
-    width: 250px;
-    padding: 7px;
+    width: 90%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 8px;
     border-radius: 25px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-decoration: none;
+    display: block;
 }
 
 .blue-button {
@@ -101,21 +104,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    padding: 15px;
     background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
 }
 
 /* -------------------------------------- Form generic styling */
 .form-container {
     background: rgba(255, 255, 255, 0.9);
-    width: 95%;
-    height: 95%;
+    width: 100%;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
-.form-container h3 {
+.form-content h3 {
     text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.form-content p {
+    font-size: 0.8rem;
+    margin: 10px 0;
 }
 
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
@@ -189,33 +202,25 @@ body {
     background-repeat: no-repeat;
 }
 
-.home-form-gradient {
-    width: 300px;
-    height: 400px;
+.signup-form label {
+    display: none;
 }
 
-.login-form-gradient {
-    width: 300px;
-    height: 500px;
+.signup-form li {
+    font-size: 0.6rem;
+    text-align: left;
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 0;
 }
 
-.logout-form-gradient {
-    width: 300px;
-    height: 300px;
-}
-
-.signup-form-gradient {
-    width: 300px;
-    height: 500px;
+.signup-form p {
+    font-size: 1rem;
+    list-style: none;
 }
 
 /* -------------------------------------- media queries for screens 768px */
 @media (min-width: 768px) {
-    .gradient-background {
-        width: 400px;
-        height: 400px;
-    }
-
     #welcome-name h1 {
         font-size: 3rem;
     }
@@ -224,13 +229,20 @@ body {
         font-size: 1.5rem;
     }
 
-    .form-gradient-background {
-        width: 50%;
-        height: 60%;
+    .form-container {
+        padding: 24px;
     }
 
-    .form-container {
-        padding: 30px;
+    .form-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .form-content p {
+        font-size: 1rem;
+    }
+
+    .redeemit-button {
+        font-size: 1rem;
     }
 }
 
@@ -238,11 +250,6 @@ body {
 @media (min-width: 992px) {
     #hero-section .container {
         width: 80%;
-    }
-
-    .gradient-background {
-        width: 450px;
-        height: 450px;
     }
 
     .welcome {
@@ -257,16 +264,27 @@ body {
         font-size: 2rem;
     }
 
-    .button {
-        width: 50%;
-        margin: 15px 0;
-    }
-
-    .form-gradient-background {
-        width: 40%;
-    }
-
     .form-container {
-        padding: 40px;
+        padding: 30px;
     }
+
+    .form-content h3 {
+        font-size: 2.2rem;
+    }
+
+    .form-content p {
+        font-size: 1.2rem;
+    }
+
+    .redeemit-button {
+        font-size: 1.2rem;
+    }
+}
+
+/* media queries for screens 1200px and larger */
+@media (min-width: 1200px) {
+    .form-container {
+        padding: 45px;
+    }
+
 }

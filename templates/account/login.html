@@ -9,11 +9,11 @@
 {% block content %}
 <div class="home-background-image" style="background-image: linear-gradient(to bottom,
 rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
-    <div class="gradient login-form-gradient">
+    <div class="gradient">
         <div class="form-container">
-            <h3 class="mb-4">{% trans "SIGN IN" %}</h3>
-            <p class="mb-4">{% blocktrans %}Welcome back to RedeemIt!</p>
-            <p class="mb-4">If you don't have an account yet, <a class="link" href="{{ signup_url }}">sign up!</a>
+            <h3>{% trans "SIGN IN" %}</h3>
+            <p>{% blocktrans %}Welcome back to RedeemIt!</p>
+            <p>If you don't have an account yet, <a class="link" href="{{ signup_url }}">sign up!</a>
                 {% endblocktrans %}</p>
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
