@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container my-5">
+
+<div class="cart-container my-5">
     {% if cart_items %}
     <h1 class="text-center">Your Cart</h1>
     <ul>
         {% for item in cart_items %}
-        <li class="d-flex align-items-center justify-content-between mb-3">
+        <li class="d-flex align-items-center justify-content-between mb-5">
             <!-- Item Image -->
-            <img src="{{ item.item.image.url }}" alt="{{ item.item.image_description }}" class="img-thumbnail"
-                style="width: 100px; height: auto;">
+            <img class="cart-image" src="{{ item.item.image.url }}" alt="{{ item.item.image_description }}">
             <!-- Item Details -->
             <div>
                 <p class="m-0 card-title"><strong>{{ item.item.reward_name }}</strong></p>
@@ -18,7 +18,7 @@
             <form method="POST" action="{% url 'update_cart_quantity' item.item.slug %}">
                 {% csrf_token %}
                 <input type="number" name="quantity" value="{{ item.quantity }}" min="0" style="width: 50px;">
-                <button type="submit" class="btn btn-outline-secondary">Update</button>
+                <button type="submit" class="blue-button">Update</button>
             </form>
         </li>
         {% endfor %}
@@ -28,7 +28,7 @@
         <button class="redeemit-button yellow-button">RedeemIt - {{ total_points_cost }} Points</button>
         {% else %}
         <button class="redeemit-button yellow-button" disabled>
-            Need {{ missing_points }} points more!
+            Oops, {{ missing_points }} points short!
         </button>
         {% endif %}
     </div>
@@ -45,4 +45,5 @@
     <h1 class="text-center">Your Cart in Empty</h1>
     {% endif %}
 </div>
+
 {% endblock %}

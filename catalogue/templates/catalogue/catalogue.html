@@ -4,23 +4,18 @@
 {% block content %}
 
 <!-- Hero section -->
-<div id="hero-section">
+<div class="hero-section">
     <!-- Welcome Section -->
     <div class="container mt-4">
         <div class="row align-items-start">
             <!-- Left Column -->
-            <div class="welcome col-md-6 text-start mb-4 ml-5">
-                <div class="mb-4" id="welcome-name">
-                    <h1>WELCOME, </h1>
-                    <!-- Will dynamically add the name based on the user profile -->
-                    <h2>{{ user.first_name }}</h2>
-                </div>
-                <div id="welcome-message">
-                    <h4 class="quicksand-font">Explore, Choose, Redeem.</h4>
-                </div>
+            <div class="welcome-section col-md-6 text-start mb-4 ml-5">
+                <h1>WELCOME, </h1>
+                <h2>{{ user.first_name }}</h2>
+                <h4 class="quicksand-font">Explore, Choose, Redeem.</h4>
             </div>
             <!-- Right Column -->
-            <div class="gradient hero-gradient col-md-6 mb-4 text-center">
+            <div class="gradient col-md-6 mb-4 text-center">
                 <img class="hero-image " src="{% static 'images/couple.webp' %}" alt="Happy couple in black and white">
             </div>
         </div>
