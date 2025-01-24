@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-<div class="background-image-form" style="background-image: linear-gradient(to bottom, rgba(48, 14, 130, 0.9), rgba(48,
-    14, 130, 0)), url('{% static "images/signup_resized.jpeg" %}');">
+<div class="home-background-image" style="background-image: linear-gradient(to bottom,
+rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
     {% if user.is_authenticated %}
-    <div class="form-gradient-background">
+    <div class="gradient home-form-gradient">
         <div class="form-container">
             <h3>Welcome Back, {{ user.username }}</h3>
             <p class="mb-4">
@@ -18,7 +18,7 @@
         </div>
     </div>
     {% else %}
-    <div class="form-gradient-background">
+    <div class="gradient home-form-gradient">
         <div class="form-container">
             <h3 class="my-4">Welcome to RedeemIt!</h3>
             <p class="mb-4">

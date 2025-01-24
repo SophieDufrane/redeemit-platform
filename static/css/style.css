@@ -57,7 +57,7 @@ body {
 /* -------------------------------------- Button generic styling */
 .redeemit-button {
     width: 250px;
-    padding: 8px;
+    padding: 7px;
     border-radius: 25px;
     font-size: 1rem;
     text-decoration: none;
@@ -96,6 +96,28 @@ body {
     color: #300e82;
 }
 
+/* -------------------------------------- Gradient generic styling */
+.gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
+}
+
+/* -------------------------------------- Form generic styling */
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    width: 95%;
+    height: 95%;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container h3 {
+    text-transform: uppercase;
+}
+
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
 #hero-section {
     margin: 0;
@@ -119,18 +141,13 @@ body {
 }
 
 /* Square image with gradient Background */
-.gradient-background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-gradient {
     width: 250px;
     height: 250px;
-    margin: 0 auto;
-    background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
 }
 
-#square-image {
-    width: 92%;
+.hero-image {
+    width: 95%;
 }
 
 /* Catalogue Header */
@@ -160,9 +177,9 @@ body {
     height: 80vh;
 }
 
-/* -------------------------------------- Home page and login & Register */
+/* -------------------------------------- Home page, forms for login, logout & Register */
 /* Full-screen background image */
-.background-image-form {
+.home-background-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,32 +187,26 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to bottom,
-            rgba(48, 14, 130, 0.9),
-            rgba(48, 14, 130, 0))
 }
 
-.form-gradient-background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 70%;
-    height: 60%;
-    margin: 0 auto;
-    background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
+.home-form-gradient {
+    width: 300px;
+    height: 400px;
 }
 
-.form-container {
-    background: rgba(255, 255, 255, 0.9);
-    width: 90%;
-    height: 90%;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+.login-form-gradient {
+    width: 300px;
+    height: 500px;
 }
 
-.form-container h3 {
-    text-transform: uppercase;
+.logout-form-gradient {
+    width: 300px;
+    height: 300px;
+}
+
+.signup-form-gradient {
+    width: 300px;
+    height: 500px;
 }
 
 /* -------------------------------------- media queries for screens 768px */

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 
@@ -6,8 +7,9 @@
 
 {% block content %}
 
-<div class="background-image-form">
-  <div class="form-gradient-background">
+<div class="home-background-image" style="background-image: linear-gradient(to bottom,
+rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
+  <div class="gradient signup-form-gradient">
     <div class="form-container">
       <h1>{% trans "Sign Up" %}</h1>
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
@@ -18,7 +20,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="home-button" type="submit">{% trans "Sign Up" %} &raquo;</button>
+        <button class="redeemit-button blue-button" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
   </div>
