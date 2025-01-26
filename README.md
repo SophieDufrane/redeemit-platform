@@ -34,39 +34,41 @@ This project is a simplified version of the actual system, designed for learning
 ## Key Features
 
 ### Admin Access
-- **Manage Catalogue**
-  Admins can keep the reward catalogue up to date by:
-  - Adding new gift card.
-  - Editing details of existing gift card (e.g. name, image, points required, description, terms and conditions).
-  - Removing gift card.
+Admins have full control over the catalogue and user points balances via the admin panel. Features include:
 
-- **Manage User's Points Balance**
-  Admins can update and manage employees' reward points balance.
+- **Manage Catalogue:**
+  - Add new gift card with details such as name, points required, stock quantity, and T&Cs.
+  - Edit existing gift cards to update descriptions, points required, or stock.
+  - Delete gift cards no longer available.
 
-### Employee Access
-- **Security Features**
-  - Secure login/logout via **Django Allauth**.
-  - Only authenticated users can access employee or admin functionality.
-  - Admin access is restricted to authorised users through the admin panel.
+- **Manage User Points:**
+  - Update employees' point balances through the admin panel.
 
-- **Browse Available Rewards**
-  View the catalogue to explore available gift cards.
+### Employee Access (users)
+Employees have an intuitive interface to manage their redemptions. Features include:
 
-- **Redemption**
-  Employees can seamlessly redeem their points by:
-  - Selecting gift card and viewing details.
-  - Add a gift card to their cart.
-  - Viewing and reviewing their cart.
-  - Modifying items in the cart if necessary.
-  - Finalising the redemption process.
+- **Security Features: Login & Logout:**
+  - Secure authentication via **Django Allauth** for accessing the platform.
 
-- **View User Profile Details - TO CONFIRM!!**
-  Employees can view their personal details, including their reward points balance.
+- **Browse Rewards:**
+  - View available gift cards in the catalogue.
+  - Access detailed information for each gift card.
+
+- **Redemption Process:**
+  - Add items to a cart, creating new cart records in the database.
+  - Modify cart items, including updating quantities and removing items.
+  - Redeem items, deducting points and clearing the cart.
+
+- **Responsive Feedback:**
+  - Employees receive immediate success or error messages for actions such as redemption or insufficient balance.
 
 
 ## User Experience
 
-The user experience focuses on creating a seamless, intuitive interface for both employees and administrators. The platform aims to simplify navigation, reduce friction during interactions, and ensure tasks are completed efficiently.
+The user experience focuses on creating a seamless, intuitive interface for both employees and administrators. The platform aims to simplify navigation and ensure tasks are completed efficiently.
+
+### Mobile-First Design
+The platform was developed using a **mobile-first design methodology**, ensuring optimal usability on smaller screens before scaling up to larger devices. This approach guarantees a responsive and accessible experience for employees, regardless of their device.
 
 ### Wireframes
 Wireframes were designed to outline the layout and functionality of each page and to help visualise the user flow. This ensures the platform’s structure is logical, responsive, and user-friendly.</br>
@@ -218,7 +220,30 @@ It was created using [Lucidchart](https://www.lucidchart.com/pages/).
 
 
 ### Agile Planning
+
 The development process followed an agile methodology, breaking the project into smaller user stories and tasks. This iterative approach allowed for incremental progress, flexibility, and better alignment with user needs.
+
+#### Prioritisation with MOSCOW Methodology
+
+The **MOSCOW** methodology was applied to prioritise features into **Must Have**, **Should Have**, and **Could Have** categories, ensuring focus on important functionality. Below is the breakdown of priorities:
+
+- **Must Have (54%)**: Core features essential for the platform to function, including:
+  - Employee login/logout
+  - Browsing rewards
+  - Managing the cart
+  - Redeeming items
+  - Admin functionality to add new rewards to the catalogue
+
+- **Should Have (38%)**: Important but not critical features, such as:
+  - Modifying the cart
+  - Accessing detailed pages for individual items
+  - Administrative tools for editing and deleting rewards, as well as managing user points
+
+- **Could Have (8%)**: Features that are desirable but not essential:
+  - Allowing employees to view their profile details
+
+This prioritisation ensured a balanced approach to development, focusing on delivering a functional and user-centric product.
+
 
 ### Features in Detail
 The platform offers a variety of features based on user stories, providing functionalities such as secure login, reward catalogue management, and a streamlined redemption process.
@@ -260,13 +285,6 @@ Admins have full CRUD capabilities to manage the reward catalogue directly from 
 - **Create**: Add new rewards to the catalogue, specifying details such as reward name, description, and required points.
 - **Update**: Modify existing rewards, updating any of the provided details.
 - **Delete**: Remove rewards from the catalogue, permanently deleting the associated record from the `Catalogue` table.
-
----
-
-### Why This Matters
-This setup ensures that:
-- Employees have intuitive tools to manage their reward redemptions without relying on admin panel access.
-- Admins retain full control over the reward catalogue, ensuring a seamless process for maintaining and updating the available rewards.
 
 ---
 
