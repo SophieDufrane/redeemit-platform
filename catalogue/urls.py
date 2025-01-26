@@ -1,5 +1,13 @@
 from django.urls import path
-from .views import catalogue_home, catalogue_detail, cart_page, add_to_cart, update_cart_quantity, delete_cart_item
+from .views import (
+    catalogue_home,
+    catalogue_detail,
+    cart_page,
+    add_to_cart,
+    update_cart_quantity,
+    delete_cart_item,
+    redeem_cart
+    )
 
 urlpatterns = [
     path('', catalogue_home, name='catalogue_home'),
@@ -16,4 +24,5 @@ urlpatterns = [
         delete_cart_item,
         name='delete_cart_item'
         ),
+    path('cart/redeem/', redeem_cart, name='redeem-cart'),
 ]

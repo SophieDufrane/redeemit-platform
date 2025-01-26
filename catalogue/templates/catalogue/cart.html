@@ -8,7 +8,8 @@
         {% for item in cart_items %}
         <li class="d-flex align-items-center justify-content-between mb-5">
             <!-- Item Image -->
-            <img class="cart-image" src="{{ item.item.image.url }}" alt="{{ item.item.image_description }}">
+            <img class="img-thumbnail cart-image" src="{{ item.item.image.url }}"
+                alt="{{ item.item.image_description }}">
             <!-- Item Details -->
             <div>
                 <p class="m-0 card-title"><strong>{{ item.item.reward_name }}</strong></p>
@@ -34,10 +35,10 @@
     </div>
     <!-- Confirm and Cancel Buttons -->
     <div class="text-center" style="display: none;">
-        <button id="redeemit-button confirm-btn">
-            Confirm Redemption
+        <button id="confirm-redemption" class="redeemit-button blue-button">
+            Confirm
         </button>
-        <button id="redeemit-button cancel-btn">
+        <button id="cancel-redemption" class="redeemit-button blue-button">
             Cancel
         </button>
     </div>

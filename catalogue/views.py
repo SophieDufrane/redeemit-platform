@@ -147,6 +147,3 @@ def delete_cart_item(request, slug):
         cart_item.delete()
 
     return redirect('cart_page')
-
-
-

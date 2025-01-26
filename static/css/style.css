@@ -284,14 +284,6 @@ body {
     .form-content p {
         font-size: 1.2rem;
     }
-
-    .redeemit-button {
-        font-size: 1.2rem;
-    }
-
-    .cart-container {
-        width: 70%;
-    }
 }
 
 /* media queries for screens 1200px and larger */

@@ -7,7 +7,7 @@ rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp
     {% if user.is_authenticated %}
     <div class="gradient">
         <div class="form-container">
-            <h3>Welcome Back, {{ user.username }}</h3>
+            <h3>Welcome Back {{ user.first_name }}</h3>
             <p>You are already logged in. Access your catalogue now.</p>
             <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">GO!</a>
         </div>
