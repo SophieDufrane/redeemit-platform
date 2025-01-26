@@ -167,7 +167,14 @@ def redeem_cart_item(request):
             # Redirect if insufficient points
             return redirect('cart_page')
         
-        # Placeholder for further logic
+        # Deduct points from the user's balance
+        user_profile.point_balance = user_profile.point_balance - total_points_cost
+        user_profile.save()
+
+        # Clear cart 
+        cart.cartitem_set.all().delete()
+        
+        # Redirect after successful redemption
         return redirect('cart_page')
     
     return redirect('cart_page')
