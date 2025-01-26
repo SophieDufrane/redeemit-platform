@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import CatalogueItem, Cart, CartItem
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 @login_required
@@ -164,15 +165,23 @@ def redeem_cart(request):
         # Validate the user's balance
         user_profile = request.user.userprofile
         if user_profile.point_balance < total_points_cost:
-            # Redirect if insufficient points
+            # Add error message
+            messages.error(request, "You don't have enough points to redeem.")
             return redirect('cart_page')
         
         # Deduct points from the user's balance
-        user_profile.point_balance = user_profile.point_balance - total_points_cost
+        user_profile.point_balance = (
+            user_profile.point_balance - total_points_cost
+            )
         user_profile.save()
-
         # Clear cart
         cart.cartitem_set.all().delete()
+
+        # Add success message
+        messages.success(
+            request, 
+            "Redemption successful! Your cart has been cleared."
+            )
         
         # Redirect after successful redemption
         return redirect('cart_page')
