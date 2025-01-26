@@ -272,6 +272,22 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
 | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
 
+### EMPLOYEE (User) - Cart Management
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
+| Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
+
+
+### EMPLOYEE (User) - Redemption Logic
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| Redeem with sufficient balance | Balance is reduced, cart is cleared, and changes show in the admin dashboard | PASS |
+| Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
+| Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
+| Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
 
 
 ### Fixed Bugs
