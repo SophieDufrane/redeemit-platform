@@ -147,3 +147,20 @@ def delete_cart_item(request, slug):
         cart_item.delete()
 
     return redirect('cart_page')
+
+
+@login_required
+def redeem_cart_item(request):
+    """
+    Handles redemption requests from the cart.
+    """
+    if request.method == 'POST':
+        # Get or create the user's cart
+        cart, _ = Cart.objects.get_or_create(user=request.user)
+        # Fetch cart items
+        cart_items = cart.cartitem_set.all()
+        
+        # Placeholder for further logic
+        return redirect('cart_page')
+    
+    return redirect('cart_page')
