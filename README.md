@@ -222,19 +222,43 @@ The platform offers a variety of features based on user stories, providing funct
 
 ---
 
-### Database Design  
+### Database Design
 
-The database was designed to allow full **CRUD functionality** for both **employees** and **admin users**.
+The database was designed to provide full **CRUD functionality** for both **employees** and **admin users** through user-friendly interfaces.
 
-- **Users**
-  Employees can **register**, **log in**, and manage their profiles - TO CONFIRM!!, enabling the creation and updating of personal information in the `Employee` table.
+---
 
-- **Catalogue Management**
-  Admins can **add**, **edit**, and **delete** items in the reward catalogue. Each item includes details such as the reward name, description, required points. This data is stored in the `Catalogue` table.
+#### **Redemptions Process** (Employees)
+From the front end, employees (users) can interact with rewards in the catalogue and cart, enabling the following CRUD actions:
 
-- **Redemptions**
-  Employees can **view** available rewards, add them to their cart, and **finalise** the redemption process. The `Transaction` table tracks redemptions, including reward ID, user ID, and redemption date.
+- **View**: Browse the available rewards in the catalogue, with detailed information about each item (reward name, description, and required points).
+- **Create**: Add items to their cart using the "Add to Cart" button. This action creates a new `CartItem` record in the database if it doesn't already exist.
+- **Update**: Adjust the quantity of items in their cart directly from the cart page, modifying the corresponding `CartItem` record.
+- **Delete**: Remove items from their cart by setting the quantity to 0, which deletes the associated `CartItem` record in the database.
 
+---
+
+#### **Catalogue Management** (Admins)
+Admins have full CRUD capabilities to manage the reward catalogue directly from the admin panel:
+
+- **View**: Access a complete list of rewards stored in the `Catalogue` table.
+- **Create**: Add new rewards to the catalogue, specifying details such as reward name, description, and required points.
+- **Update**: Modify existing rewards, updating any of the provided details.
+- **Delete**: Remove rewards from the catalogue, permanently deleting the associated record from the `Catalogue` table.
+
+---
+
+### Why This Matters
+This setup ensures that:
+- Employees have intuitive tools to manage their reward redemptions without relying on admin panel access.
+- Admins retain full control over the reward catalogue, ensuring a seamless process for maintaining and updating the available rewards.
+
+---
+
+### MVC Architecture
+- **Model:** Handles the database logic (e.g., CatalogueItem, Cart, and CartItem models).
+- **View:** Renders templates like `catalogue.html` or `cart.html`.
+- **Controller:** Processes user's input and manages data between models and templates, through views.
 
 ---
 
@@ -249,6 +273,20 @@ The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https:/
 ## Technology
 
 ### Tools Used
+
+The following tools and technologies were used to build this project:
+
+- **Django**: Web framework used for building the application.
+- **Python**: Primary programming language for backend logic.
+- **PostgreSQL**: Database used to store all application data, including user profiles, reward catalogue and cart items.
+- **Cloudinary**: Service used for managing and hosting media files (e.g., images of rewards).
+- **HTML/CSS**: For the front-end structure and styling.
+- **Bootstrap**: Front-end framework for responsive design and styling components.
+- **Whitenoise**: Library for serving static files in production.
+- **Gunicorn**: WSGI HTTP server used to run the application in production.
+- **Django Allauth**: Library for user authentication and account management.
+- **dj-database-url**: Library for configuring the database via environment variables.
+- **psycopg2**: PostgreSQL adapter for Python, allowing Django to interact with the database.
 
 ---
 

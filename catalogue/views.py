@@ -33,7 +33,7 @@ def catalogue_detail(request, slug):
 @login_required
 def cart_page(request):
     """
-    Displays the user's cart with all details: image, name, quantity, points cost.
+    Displays a user's cart with all details: image, name, quantity, points cost.
 
     **Context**
 
@@ -64,7 +64,7 @@ def cart_page(request):
 @login_required
 def add_to_cart(request, slug):
     """
-    Adds an item to the cart for the current session or user.
+    Create functionality: Adds a new CartItem to the cart for the current user.
 
     **Context**
 
@@ -74,8 +74,8 @@ def add_to_cart(request, slug):
 
     - Only allow adding items via a POST request.
     - Fetch the item to add using the slug of the `CatalogueItem`.
-    - Retrieve or create the cart.
-    - Add the item to the cart OR increase the quantity if it already exists.
+    - Retrieve or create the cart (if it doesn’t already exist for the user).
+    - Create a new CartItem in the database OR increase quantity
     - Redirect to the catalogue_detail page.
     """
     if request.method == "POST":
