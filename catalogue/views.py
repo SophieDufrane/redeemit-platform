@@ -47,7 +47,6 @@ def cart_page(request):
     cart = Cart.objects.filter(user=request.user).first()
     cart_items = cart.cartitem_set.all() if cart else []
     total_points_cost = sum(item.total_points() for item in cart_items)
-
     user_balance = request.user.userprofile.point_balance
     balance_sufficient = user_balance >= total_points_cost
     missing_points = total_points_cost - user_balance if not balance_sufficient else 0
@@ -159,6 +158,14 @@ def redeem_cart_item(request):
         cart, _ = Cart.objects.get_or_create(user=request.user)
         # Fetch cart items
         cart_items = cart.cartitem_set.all()
+        # Calculate total points cost
+        total_points_cost = sum(item.total_points() for item in cart_items)
+
+        # Validate the user's balance
+        user_profile = request.user.userprofile
+        if user_profile.point_balance < total_points_cost:
+            # Redirect if insufficient points
+            return redirect('cart_page')
         
         # Placeholder for further logic
         return redirect('cart_page')
