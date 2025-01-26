@@ -30,6 +30,7 @@ This project is a simplified version of the actual system, designed for learning
 - [Forking and Cloning](#forking-and-cloning)
 - [Credits](#credits)
 
+
 ## Key Features
 
 ### Admin Access
@@ -43,8 +44,10 @@ This project is a simplified version of the actual system, designed for learning
   Admins can update and manage employees' reward points balance.
 
 ### Employee Access
-- **Employee Login & Logout**
-  Secure functionalities for employees to log in and out of their accounts.
+- **Security Features**
+  - Secure login/logout via **Django Allauth**.
+  - Only authenticated users can access employee or admin functionality.
+  - Admin access is restricted to authorised users through the admin panel.
 
 - **Browse Available Rewards**
   View the catalogue to explore available gift cards.
@@ -225,6 +228,18 @@ The platform offers a variety of features based on user stories, providing funct
 ### Database Design
 
 The database was designed to provide full **CRUD functionality** for both **employees** and **admin users** through user-friendly interfaces.
+
+#### Data Overview
+- **CatalogueItem Table:** Stores details of all available rewards, including:
+  - `reward_name`: The name of the reward.
+  - `points_cost`: The points required to redeem the reward.
+  - `stock_quantity`: The current stock level for each reward.
+  - `image`: The image associated with the reward.
+- **UserProfile Table:** Extends the default `User` model to include:
+  - `point_balance`: Tracks the user’s remaining reward points.
+- **Cart and CartItem Tables:** Used to manage user selections before redemption:
+  - `Cart`: Represents a user’s cart session, linked to their profile.
+  - `CartItem`: Tracks individual items and their quantities in the cart.
 
 ---
 
