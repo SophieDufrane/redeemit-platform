@@ -111,7 +111,8 @@ class CartItem(models.Model):
 
     def total_points(self):
         """
-        Calculates the total points cost for this cart item based on its quantity.
+        Calculates the total points cost for this cart item.
+        The total is based on the item's quantity and value.
         """
         return self.item.points_cost * self.quantity
 
