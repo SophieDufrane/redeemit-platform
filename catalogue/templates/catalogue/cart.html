@@ -25,13 +25,18 @@
         {% endfor %}
     </ul>
     <div class="text-center">
-        {% if balance_sufficient %}
-        <button class="redeemit-button yellow-button">RedeemIt - {{ total_points_cost }} Points</button>
-        {% else %}
-        <button class="redeemit-button yellow-button" disabled>
-            Oops, {{ missing_points }} points short!
-        </button>
-        {% endif %}
+        <form action="{% url 'redeemm-cart' %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            {% if balance_sufficient %}
+            <button type="submit" class="redeemit-button yellow-button">
+                RedeemIt - {{ total_points_cost }} Points
+            </button>
+            {% else %}
+            <button type="submit" class="redeemit-button yellow-button" disabled>
+                Oops, {{ missing_points }} points short!
+            </button>
+            {% endif %}
+        </form>
     </div>
     <!-- Confirm and Cancel Buttons -->
     <div class="text-center" style="display: none;">
