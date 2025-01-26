@@ -82,7 +82,17 @@
             </div>
         </nav>
     </header>
-    <!-- Navigation -->
+
+    <!-- Displaying Django messages -->
+    <div class="messages-container">
+        <div>
+            {% for message in messages %}
+            <div>
+                {{ message | safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <!-- Dynamic Content Section -->
     <main class="flex-shrink-0">
