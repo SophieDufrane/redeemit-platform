@@ -25,7 +25,7 @@
         {% endfor %}
     </ul>
     <div class="text-center">
-        <form action="{% url 'redeemm-cart' %}" method="POST" style="display: inline;">
+        <form action="{% url 'redeem-cart' %}" method="POST" style="display: inline;">
             {% csrf_token %}
             {% if balance_sufficient %}
             <button type="submit" class="redeemit-button yellow-button">

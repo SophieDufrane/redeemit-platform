@@ -149,7 +149,7 @@ def delete_cart_item(request, slug):
 
 
 @login_required
-def redeem_cart_item(request):
+def redeem_cart(request):
     """
     Handles redemption requests from the cart.
     """
@@ -171,7 +171,7 @@ def redeem_cart_item(request):
         user_profile.point_balance = user_profile.point_balance - total_points_cost
         user_profile.save()
 
-        # Clear cart 
+        # Clear cart
         cart.cartitem_set.all().delete()
         
         # Redirect after successful redemption
