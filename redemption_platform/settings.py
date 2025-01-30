@@ -49,6 +49,8 @@ INSTALLED_APPS = [
 	'allauth',
 	'allauth.account',
 	'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'cloudinary',
     'catalogue',
     'home',
@@ -62,6 +64,9 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'  # Authenticate using username only
 ACCOUNT_USERNAME_REQUIRED = True  # Username is mandatory
 ACCOUNT_EMAIL_REQUIRED = False  # Email is not required
 ACCOUNT_EMAIL_VERIFICATION = 'none'  # Skip email verification
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 MIDDLEWARE = [
