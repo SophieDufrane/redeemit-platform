@@ -9,4 +9,5 @@ node_modules/
 cloudinary_python.txt
 db.sqlite3
 env.py
-catalogue/fixtures/ 
+catalogue/fixtures/
+.venv

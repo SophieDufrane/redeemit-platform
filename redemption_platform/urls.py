@@ -6,7 +6,7 @@ urlpatterns = [
     path('', include('home.urls')),
 
     # Accounts: Includes routes for user authentication
-    path("accounts/", include("allauth.urls")),
+    path('accounts/', include('allauth.urls')),
 
     # Admin: Django's default admin interface
     path('admin/', admin.site.urls),

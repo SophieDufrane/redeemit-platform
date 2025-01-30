@@ -22,6 +22,12 @@ class UserProfile(models.Model):
         help_text="The date and time when the user joined the platform."
         )
 
+    @property
+    def user_first_letter(self):
+        first_name = self.user.first_name or ""
+        last_name = self.user.last_name or ""
+        return f"{first_name[:1]}{last_name[:1]}".upper()
+
     def __str__(self):
          return self.user.username
 
