@@ -14,7 +14,7 @@ rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp
       <h1>{% trans "Sign Up" %}</h1>
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
       </p>
-      <form id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form id="signup_form" method="post" action="{% url 'signup_view' %}">
         {% csrf_token %}
         {{ form|crispy }}
         {% if redirect_field_value %}
