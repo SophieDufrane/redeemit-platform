@@ -16,7 +16,10 @@ body {
     background-color: #300e82;
 }
 
-.navbar .navbar-brand,
+.navbar .navbar-brand {
+    color: white;
+}
+
 .navbar .nav-link {
     color: white;
 }
@@ -221,6 +224,17 @@ body {
     display: none;
 }
 
+.empty-cart {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.empty-cart img {
+    max-width: 300px;
+    width: 100%;
+    margin-top: 10px;
+}
+
 /* -------------------------------------- Media queries for screens 768px */
 @media (min-width: 768px) {
     .hero-section {
@@ -285,6 +299,10 @@ body {
 
     .form-content p {
         font-size: 1.2rem;
+    }
+
+    .empty-cart img {
+        max-width: 500px;
     }
 }
 
