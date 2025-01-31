@@ -4,23 +4,23 @@ from .models import UserProfile
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 
+        'user',
         'get_first_name',
-        'get_last_name', 
-        'get_email', 
-        'point_balance', 
+        'get_last_name',
+        'get_email',
+        'point_balance',
         'join_date'
     )
     fields = (
         'user', 
-        'point_balance', 
+        'point_balance',
         'join_date',
     )
     readonly_fields = ('join_date',)
     search_fields = (
-        'user__username', 
-        'user__email', 
-        'user__first_name', 
+        'user__username',
+        'user__email',
+        'user__first_name',
         'user__last_name'
     )
     list_filter = ('join_date',)
