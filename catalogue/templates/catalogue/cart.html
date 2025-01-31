@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <div class="cart-container my-5">
     {% if not messages and not cart_items %}
-    <h1 class="text-center">Your Cart in Empty</h1>
+        <div class="empty-cart">
+            <h1 class="text-center">Your Cart in Empty</h1>
+            <img src="{% static 'images/empty_cart.webp' %}" alt="Empty Cart" style="max-width: 300px">
+        </div>
     {% endif %}
 
     {% if cart_items %}
