@@ -26,6 +26,9 @@
             <form method="POST" action="{% url 'add_to_cart' selected_item.slug %}">
                 {% csrf_token %}
                 <button type="submit" class="redeemit-button yellow-button">Add to Cart</button>
+                <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">
+                    Continue Shopping!
+                </a>
             </form>
         </div>
     </div>
