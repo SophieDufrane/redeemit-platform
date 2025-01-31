@@ -7,11 +7,22 @@ class UserProfile(models.Model):
     """
     Extends the default User model with additional fields for user data.
     """
+
+    ROLE_CHOICES = [
+        ('admin', 'Admin'),
+        ('employee', 'Employee'),
+    ]
+
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         related_name='userprofile',
         help_text="The associated user account."
+        )
+    role = models.CharField(
+        max_length=10,
+        choices=ROLE_CHOICES,
+        default='employee'
         )
     point_balance = models.IntegerField(
         default=0,
