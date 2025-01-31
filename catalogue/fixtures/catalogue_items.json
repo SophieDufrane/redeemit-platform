@@ -1,74 +1,147 @@
 [
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Amazon",
-            "points_cost": 1500,
-            "description": "Use this gift card to shop from a vast selection of products, including electronics, books, fashion, and more. Valid for purchases on Amazon. No expiration date.",
-            "image": "reward_images/amazon-gift-card.webp",
-            "stock_quantity": 100,
-            "reward_value": 50.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 9,
+      "fields": {
+        "reward_name": "Amazon",
+        "slug": "amazon",
+        "points_cost": 1500,
+        "description": "Use this gift card to shop from a vast selection of products, including electronics, books, fashion, and more. Valid for purchases on Amazon. No expiration date.",
+        "image": "image/upload/v1736540589/yz09nmf8poarddpq2zwm.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 100,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nRedeemable for millions of products on AmazonÆs website. Restrictions may apply based on the region."
+      }
     },
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Arnotts",
-            "points_cost": 3000,
-            "description": "Treat yourself to luxury fashion, homeware, and beauty products at Arnotts, Ireland’s largest and longest-established department store. Valid in-store and online.",
-            "image": "reward_images/arnotts-gift-card.webp",
-            "stock_quantity": 80,
-            "reward_value": 100.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 10,
+      "fields": {
+        "reward_name": "Arnotts",
+        "slug": "arnotts",
+        "points_cost": 3000,
+        "description": "Treat yourself to luxury fashion, homeware, and beauty products at Arnotts, IrelandÆs largest and longest-established department store. Valid in-store and online.",
+        "image": "image/upload/v1736540573/vanlbcxqnhkzrz0vuemn.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 80,
+        "reward_value": "100.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nGift cards are valid in-store for luxury goods, homeware, and more. Cannot be used for restaurant purchases."
+      }
     },
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Gym+Coffee",
-            "points_cost": 1500,
-            "description": "Elevate your active lifestyle with high-quality athleisure wear from Gym+Coffee, the leading Irish brand for stylish gym and casual clothing. Redeemable online and in stores.",
-            "image": "reward_images/gimcoffee-gift-card.webp",
-            "stock_quantity": 90,
-            "reward_value": 50.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 11,
+      "fields": {
+        "reward_name": "Gym+Coffee",
+        "slug": "gymcoffee",
+        "points_cost": 1500,
+        "description": "Elevate your active lifestyle with high-quality athleisure wear from Gym+Coffee, the leading Irish brand for stylish gym and casual clothing. Redeemable online and in stores.",
+        "image": "image/upload/v1736540559/of1xuudschrjs0g0yvlj.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 90,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nRedeemable for fitness apparel and accessories. Valid online and in-store."
+      }
     },
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Zalando",
-            "points_cost": 1500,
-            "description": "Shop from Europe’s leading online fashion platform, Zalando. Enjoy a wide range of clothing, shoes, and accessories from top brands. Redeemable online with no expiry.",
-            "image": "reward_images/zalando-gift-card.webp",
-            "stock_quantity": 70,
-            "reward_value": 50.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 12,
+      "fields": {
+        "reward_name": "Zalando",
+        "slug": "zalando",
+        "points_cost": 1500,
+        "description": "Shop from EuropeÆs leading online fashion platform, Zalando. Enjoy a wide range of clothing, shoes, and accessories from top brands. Redeemable online with no expiry.",
+        "image": "image/upload/v1736540545/mujpn2f5czjqer67ho2g.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 70,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nValid for fashion and accessories. Redeemable online in participating regions."
+      }
     },
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Decathlon",
-            "points_cost": 1500,
-            "description": "Gear up for any sport with Decathlon, offering affordable and high-quality sports equipment and apparel. Valid in-store and online across all categories.",
-            "image": "reward_images/decathlon-gift-card.webp",
-            "stock_quantity": 75,
-            "reward_value": 50.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 13,
+      "fields": {
+        "reward_name": "Decathlon",
+        "slug": "decathlon",
+        "points_cost": 1500,
+        "description": "Gear up for any sport with Decathlon, offering affordable and high-quality sports equipment and apparel. Valid in-store and online across all categories.",
+        "image": "image/upload/v1736540530/j26vfdnxvlsodh9viq8m.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 75,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nCan be used for all sports gear and equipment purchases. Valid in-store and online."
+      }
     },
     {
-        "model": "catalogue.catalogueitem",
-        "pk": null,
-        "fields": {
-            "reward_name": "Tesco",
-            "points_cost": 1500,
-            "description": "Use the Tesco gift card to purchase groceries, household essentials, and more. Redeemable at Tesco stores across Ireland and online.",
-            "image": "reward_images/tesco-gift-card.webp",
-            "stock_quantity": 150,
-            "reward_value": 50.00
-        }
+      "model": "catalogue.catalogueitem",
+      "pk": 14,
+      "fields": {
+        "reward_name": "Tesco",
+        "slug": "tesco",
+        "points_cost": 1500,
+        "description": "Use the Tesco gift card to purchase groceries, household essentials, and more. Redeemable at Tesco stores across Ireland and online.",
+        "image": "image/upload/v1736540458/mm2s509cahjjcs1o9rmz.webp",
+        "image_description": "Image description not provided",
+        "stock_quantity": 150,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nValid for groceries and non-food items. Cannot be used for tobacco, lottery tickets, or fuel."
+      }
+    },
+    {
+      "model": "catalogue.catalogueitem",
+      "pk": 17,
+      "fields": {
+        "reward_name": "L'Occitane",
+        "slug": "loccitane",
+        "points_cost": 900,
+        "description": "Indulge in the finest skincare, body care, and fragrances inspired by the natural beauty of Provence. Discover luxurious gifts and sustainable products that are perfect for self-care or gifting.",
+        "image": "image/upload/v1736540433/qvrqz8nmi5kd1g7l7hy0.png",
+        "image_description": "Image description not provided",
+        "stock_quantity": 320,
+        "reward_value": "30.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nGift cards are valid in-store and online in participating regions."
+      }
+    },
+    {
+      "model": "catalogue.catalogueitem",
+      "pk": 18,
+      "fields": {
+        "reward_name": "Sephora",
+        "slug": "sephora",
+        "points_cost": 900,
+        "description": "Unleash your beauty potential with Sephora. Explore a wide range of premium cosmetics, skincare, and fragrances from top brands worldwide. Perfect for beauty enthusiasts and trendsetters.",
+        "image": "image/upload/v1736540405/akivyk9rbszu1ltuevgl.png",
+        "image_description": "Image description not provided",
+        "stock_quantity": 160,
+        "reward_value": "30.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nGift cards can be redeemed online and in-store but may not be valid in all countries."
+      }
+    },
+    {
+      "model": "catalogue.catalogueitem",
+      "pk": 19,
+      "fields": {
+        "reward_name": "Currys",
+        "slug": "currys",
+        "points_cost": 1500,
+        "description": "Upgrade your tech game with Currys. Find the latest in electronics, home appliances, and gadgets, all backed by expert advice and exceptional customer service.",
+        "image": "image/upload/v1736540392/wuax20mdb2ms5lk7qqej.png",
+        "image_description": "Image description not provided",
+        "stock_quantity": 90,
+        "reward_value": "50.00",
+        "reward_terms_and_conditions": "Gift cards are non-refundable and cannot be exchanged for cash.\r\nLost or stolen gift cards cannot be replaced.\r\nGift cards cannot be used to purchase other gift cards.\r\nThe balance on the card must be used before the expiration date (if applicable).\r\nValid for purchases in-store and online. Gift cards cannot be used for extended warranties or services."
+      }
+    },
+    {
+      "model": "catalogue.cart",
+      "pk": 1,
+      "fields": {
+        "created_on": "2025-01-12T17:58:51.724Z",
+        "updated_on": "2025-01-12T17:58:51.724Z",
+        "user": 1
+      }
     }
-]
+  ]
+  
