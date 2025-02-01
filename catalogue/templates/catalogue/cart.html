@@ -3,14 +3,24 @@
 {% block content %}
 
 <div class="cart-container my-5">
-    {% if not messages and not cart_items %}
-        <div class="empty-cart">
-            <h1 class="text-center">Your Cart in Empty</h1>
-            <img src="{% static 'images/empty_cart.webp' %}" alt="Empty Cart">
-            <a href="{% url 'catalogue_home' %}" class="redeemit-button yellow-button">
-                Start Shopping!
-            </a>
+    {% if not cart_items %}
+    <div class="empty-cart">
+        <h1 class="text-center">Your Cart in Empty</h1>
+        <img src="{% static 'images/empty_cart.webp' %}" alt="Empty Cart">
+        <a href="{% url 'catalogue_home' %}" class="redeemit-button yellow-button">
+            Start Shopping!
+        </a>
+        <!-- Displaying Django messages -->
+        {% if messages %}
+        <div class="custom-message-container">
+            {% for message in messages %}
+            <div class="custom-message alert text-center alert-{{ message.tags }}">
+                {{ message | safe }}
+            </div>
+            {% endfor %}
         </div>
+        {% endif %}
+    </div>
 
     {% endif %}
 

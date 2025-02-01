@@ -36,7 +36,7 @@
 <div class="custom-message-container">
     <div>
         {% for message in messages %}
-        <div>
+        <div class="custom-message alert text-center alert-{{ message.tags }}">
             {{ message | safe }}
         </div>
         {% endfor %}
