@@ -108,9 +108,12 @@ def add_to_cart(request, slug):
             cart=cart,
             item=item
             )
-        if not created:
+        if created:
+            messages.success(request, f"{item.reward_name} has been added to your cart!")
+        else:
             cart_item.quantity += 1
             cart_item.save()
+            messages.success(request, f"{item.reward_name} quantity updated in your cart!")
 
         return redirect('catalogue_detail', slug=item.slug)
 

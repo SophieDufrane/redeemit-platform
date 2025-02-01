@@ -260,7 +260,6 @@ The **MOSCOW method** was used to categorise features into **Must Have, Should H
 |  | Delete Reward (Admin) |
 |  | Manage User’s Points Balance (Admin) |
 | **Could Have (8%)** | Site User View and Manage Profile Details |
-|
 
 ## 3. Platform Features
 
