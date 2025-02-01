@@ -1,77 +1,135 @@
 # RedeemIt - Your Employee Recognition Platform
 
-## Introduction
+## 1. **Introduction**
 
-The [RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) platform is a mock website inspired by the real-life platform used by employees at [Workhuman](https://www.workhuman.com). The platform allows employees to view their points balance, browse the gift card catalogue, and redeem their points.
-In this project, admin functionality includes managing the catalogue and updating employees' points balances.
-This project is a simplified version of the actual system, designed for learning and portfolio purposes, showcasing full-stack development skills using Django framework.
+[RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) is a mock employee recognition platform inspired by the solutions offered by [Workhuman](https://www.workhuman.com). It allows employees to view their points balance, browse a catalogue of gift cards, and redeem rewards. Administrators can manage the catalogue and update employee point balances, ensuring a structured and efficient rewards process.  
+
+Built using the **Django framework**, this project serves as a learning and portfolio exercise, demonstrating full-stack development skills in designing a functional and user-friendly web application.  
+
+## **Table of Contents**
+
+1. [Introduction](#introduction)  
+2. [User Experience - UX](#2-user-experience---ux)  
+    2.1. [Scope and Structure](#21-scope-and-structure)  
+    2.2. [User Stories](#22-user-stories)  
+    2.3. [Interface and Wireframes](#23-interface-and-wireframes)  
+    2.4. [Visual Design](#24-visual-design)  
+    2.5. [Project Planning and Agile Approach](#25-project-planning-and-agile-approach)  
+3. [Platform Features](#3-platform-features)  
+    3.1. [User Interactions](#31-user-interactions)  
+    3.2. [Admin & Employee Functionalities](#32-admin--employee-functionalities)  
+    3.3. [Database & CRUD Functionality](#33-database--crud-functionality)  
+    3.4. [Future Enhancements](#34-future-enhancements)  
+4. [Technology](#4-technology)  
+    4.1. [Languages](#41-languages)  
+    4.2. [Frameworks & Librairies](#42-frameworks--librairies)  
+    4.3. [Development & Deployment Tools](#43-development--deployment-tools)  
+    4.4. [Testing & Optimisation Tools](#44-testing--optimisation-tools)  
+5. [Testing](#5-testing)  
+    5.1. [Manual Testing](#51-manual-testing)  
+    5.2. [Fixed Bugs](#52-fixed-bugs)  
+    5.3. [Automated Testing](#53-automated-testing)  
+6. [Deployment](#6-deployment)  
+    6.1. [Heroku](#61-heroku)  
+    6.2. [Database Migration](#62-database-migration)  
+    6.3. [Forking and Cloning](#63-forking-and-cloning)  
+7. [Credits](#7-credit)
+
+## 2. **User Experience - UX**
+
+### **2.1. Scope and Structure**
+
+### Scope  
+
+This project focuses on two main user roles:  
+
+- **Employees** – Can view their **points balance**, browse the **gift card catalogue**, and **redeem rewards**.  
+- **Administrators** – Can **manage the gift card catalogue** and **update employee point balances** through the admin panel.  
+
+The platform is designed to provide a **clear redemption flow** and an **efficient management system** while ensuring an **intuitive user experience**.  
+
+### Structure
+
+The project is structured around three key areas:  
+
+- **User Flow** – A simple and logical process for browsing, selecting, and redeeming gift cards.  
+- **Admin Management** – A straightforward interface for adding, updating, and removing rewards.  
+- **Clean & Responsive Design** – A structured layout that ensures clarity, accessibility, and ease of use across all devices.
+
+### **2.2. User Stories**  
+
+The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as employee interactions, reward redemption, and administrative management.  
+
+
+#### EPIC - Catalogue Management
+1. **Add New Reward** *(must have)*  
+   Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
+
+2. **Edit Existing Reward** *(should have)*  
+   Admins can modify details of existing gift card, such as updating the item name, description, or point value.
+
+3. **Delete Reward** *(should have)*  
+   Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
 
 ---
 
-## Table of Contents
+#### EPIC - Admin Access
 
-- [Introduction](#introduction)
-- [Key Features](#key-features)
-- [User Experience](#user-experience)
-  - [Wireframes](#wireframes)
-  - [Typography & Colours](#typography--colours)
-- [Project Planning](#project-planning)
-  - [User Stories](#user-stories)
-  - [Flowchart](#flowchart)
-  - [Agile Planning](#agile-planning)
-  - [Features in Detail](#features-in-detail)
-- [Database Design](#database-design)
-- [Technology](#technology)
-  - [Tools Used](#tools-used)
-- [Testing](#testing)
-  - [Known Issues and Limitations](#known-issues-and-limitations)
-  - [Fixed Bugs](#fixed-bugs)
-- [Deployment](#deployment)
-- [Forking and Cloning](#forking-and-cloning)
-- [Credits](#credits)
+1. **Manage User's Points Balance** *(should have)*  
+   Admins can view and update the points balance for individual employees, ensuring accurate tracking of rewards.
 
+---
 
-## Key Features
+#### EPIC - Employee Access
+1. **Employee Login** *(must have)*  
+   Provides secure login functionality for employees to access the redemption platform.
 
-### Admin Access
-Admins have full control over the catalogue and user points balances via the admin panel. Features include:
+2. **Employee Logout** *(must have)*  
+   Allows employees to securely log out of their session once they are done using the platform.
 
-- **Manage Catalogue:**
-  - Add new gift card with details such as name, points required, stock quantity, and T&Cs.
-  - Edit existing gift cards to update descriptions, points required, or stock.
-  - Delete gift cards no longer available.
+3. **Site User View Profile Details** *(could have)*  
+   Employees can view their profile details, including their current reward points balance and basic personal information.
 
-- **Manage User Points:**
-  - Update employees' point balances through the admin panel.
+---
 
-### Employee Access (users)
-Employees have an intuitive interface to manage their redemptions. Features include:
+#### EPIC - Redemption Process
+1. **Browse Available Gift Card** *(must have)*  
+   Employees can view the full list of available gift card.
 
-- **Security Features: Login & Logout:**
-  - Secure authentication via **Django Allauth** for accessing the platform.
+2. **Access Detailed Page** *(should have)*  
+   Employees can view detailed information about a specific gift card, including its description and points required.
 
-- **Browse Rewards:**
-  - View available gift cards in the catalogue.
-  - Access detailed information for each gift card.
+3. **Add Gift Card to Cart** *(must have)*  
+    Employees can add gift card to their cart before proceeding to redeem.
 
-- **Redemption Process:**
-  - Add items to a cart, creating new cart records in the database.
-  - Modify cart items, including updating quantities and removing items.
-  - Redeem items, deducting points and clearing the cart.
+4. **View Cart** *(must have)*  
+    Employees can review the list of gift card added to their cart, including the total points required.
 
-- **Responsive Feedback:**
-  - Employees receive immediate success or error messages for actions such as redemption or insufficient balance.
+5. **Modify Cart** *(should have)*  
+    Employees can update the quantity or delete gift card from their cart before finalising the redemption.
 
+6. **Redeem Items** *(must have)*  
+    Employees can finalise the redemption process, confirming their selected gift cards and updating their points balance.
 
-## User Experience
+### **2.3. Interface and Wireframes**
 
-The user experience focuses on creating a seamless, intuitive interface for both employees and administrators. The platform aims to simplify navigation and ensure tasks are completed efficiently.
+#### Flowchart
 
-### Mobile-First Design
-The platform was developed using a **mobile-first design methodology**, ensuring optimal usability on smaller screens before scaling up to larger devices. This approach guarantees a responsive and accessible experience for employees, regardless of their device.
+The following flowchart illustrates the **employee (user) journey** within the platform. It maps out the key actions an employee can perform, such as logging in, browsing the catalogue, adding items to the cart, and redeeming rewards.  
+It was created using [Lucidchart](https://www.lucidchart.com/pages/) to provide a clear visual representation of the redemption process.
 
-### Wireframes
-Wireframes were designed to outline the layout and functionality of each page and to help visualise the user flow. This ensures the platform’s structure is logical, responsive, and user-friendly.</br>
+<details>
+  <summary>Click to view Flowchart</summary>
+
+  ![Flowchart](images-documentation/readme_images/redemption_platform_flowchart.png)
+
+</details>
+
+---
+
+#### Wireframes
+
+Wireframes were designed to outline the layout and functionality of each page and to help visualise the user flow. This ensures the platform’s structure is logical, responsive, and user-friendly.  
 [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNlJTamA65VQDctZEK7owZeyEq-JZFKrhXC3gEYcO3MafEUiVCTYcwBoCwXQQAvD_BwE) was utilised to craft the detailed wireframes. These initial sketches served as the foundation for the app’s final structure and layout.
 
 #### Login Page
@@ -106,9 +164,24 @@ Wireframes were designed to outline the layout and functionality of each page an
 
 </details>
 
-### Typography & Colours
-For this project, I aimed to offer a fresh and distinct version of the existing platform while keeping the functionalities simple and user-friendly. To maintain a connection to the company’s identity, I incorporated branding colours from the Workhuman website to reflect the style and spirit of the company.</br>
-The colour palette also draws inspiration from the tech industry and current design trends, creating a clean, professional, and modern aesthetic. The chosen typography ensures readability and enhances the overall user experience, while the colour scheme provides a visually appealing and accessible interface.
+---
+
+### **2.4. Visual Design**
+
+#### UI Design Approach 
+
+The platform follows a **modern, clean design** with an emphasis on usability and accessibility.  
+
+- **Mobile-First Approach** – Optimized for all screen sizes.  
+- **Workhuman-Inspired Colour Palette** – Uses corporate colours for branding consistency.  
+- **Typography Choices** – Ensures readability and modern aesthetics.
+
+---
+
+#### Typography & Colours
+For this project, I aimed to offer a **fresh and distinct** version of the existing platform while keeping the functionalities simple and user-friendly. To maintain a connection to the company’s identity, I incorporated branding colours from the **Workhuman** website to reflect the style and spirit of the company.  
+The colour palette also draws inspiration from the tech industry and current design trends, creating a clean, professional, and modern aesthetic.  
+The chosen typography ensures **readability** and enhances the overall user experience, while the colour scheme provides a visually appealing and accessible interface.
 
 
 #### Colour Scheme
@@ -146,186 +219,189 @@ The chosen colour palette draws inspiration from **Workhuman**'s branding and al
 #### Typography
 To ensure readability and maintain a clean, modern look, the following fonts were chosen:
 
-- **Primary Font**: *Montserrat*
-  - Used for headings and branding elements.
-- **Secondary Font**: *Poppins*
-  - Applied to body text for improved readability.
-- **Accent Font**: *Quicksand*
-  - Used for decorative or smaller UI elements, providing a modern, clean finish.
+- **Primary Font**: *Poppins*  
+  - Applied to the **main body text** for a clean and professional look.  
 
+- **Accent Font**: *Quicksand*  
+  - Used for **decorative elements** and **highlighted text**, adding a modern touch.  
 
-## Project Planning
-
-### User Stories
-The project is built around a series of user stories to address the needs of both employees and admin.
-These stories define the core functionality, ensuring the platform meets user expectations while offering a clear workflow.
-
-#### EPIC - Admin Access
-1. **Add New Reward** *(must have)*
-   Admins can add new items to the reward catalogue, including details like name, description, points required, etc...
-
-2. **Edit Existing Reward** *(should have)*
-   Admins can modify details of existing gift card, such as updating the item name, description, or point value.
-
-3. **Delete Reward** *(should have)*
-   Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
-
-4. **Manage User's Points Balance** *(should have)*
-   Admins can view and update the points balance for individual employees, ensuring accurate tracking of rewards.
+- **Footer Font**: *Montserrat*  
+  - Applied to **footer text**, maintaining a subtle yet structured style. 
 
 ---
 
-#### EPIC - Employee Access
-1. **Employee Login** *(must have)*
-   Provides secure login functionality for employees to access the redemption platform.
+### **2.5. Project Planning and Agile Approach**
 
-2. **Employee Logout** *(must have)*
-   Allows employees to securely log out of their session once they are done using the platform.
+The development of **RedeemIt** followed an **Agile methodology**, allowing for incremental improvements, flexibility, and structured task management. 
+By breaking the project into smaller **user stories**, it ensured a smooth workflow while staying aligned with user needs.  
 
-3. **Site User View Profile Details** *(could have)*
-   Employees can view their profile details, including their current reward points balance and basic personal information.
+#### Development Tools & Planning
+
+To maintain an organised and efficient development process, the following tools and techniques were used:  
+
+- **GitHub Projects** – Tracked tasks and iterations, ensuring a structured development cycle.  
+- **Lucidchart** – Used to map out the user flow and database schema.  
+- **MOSCOW Prioritization** – Applied to prioritise features, ensuring that essential functionalities were developed first.  
+
+The **MOSCOW method** was used to categorise features into **Must Have, Should Have, and Could Have**:
+
+| **Priority** | **Feature** |
+|-------------|------------|
+| **Must Have (54%)** | Employee Login |
+|  | Employee Logout |
+|  | Browse Available Gift Cards |
+|  | Add Gift Card to Cart |
+|  | View Cart |
+|  | Redeem Items |
+|  | Add New Reward (Admin) |
+| **Should Have (38%)** | Access Detailed Page for Gift Card |
+|  | Modify Cart (Update Quantity or Remove Item) |
+|  | Edit Existing Reward (Admin) |
+|  | Delete Reward (Admin) |
+|  | Manage User’s Points Balance (Admin) |
+| **Could Have (8%)** | Site User View and Manage Profile Details |
+|
+
+## 3. Platform Features
+
+### **3.1. User Interactions**
+
+Employees interact with the platform through an intuitive and structured redemption process:
+
+- **Secure Authentication**  
+  - Employees log in and out securely using **Django Allauth**.  
+
+- **Browsing Rewards**  
+  - Employees can view available gift cards, with access to detailed descriptions, stock and required points.  
+
+- **Redemption Process**  
+  - Employees can add items to their cart, modify quantities, and remove selections.  
+  - The system ensures only users with sufficient points can redeem rewards.  
+  - Upon redemption, points are deducted, and the cart is cleared.  
+
+- **Responsive Feedback & Validation**  
+  - Employees receive **instant feedback** when redeeming rewards or encountering errors (e.g., insufficient balance).
 
 ---
 
-#### EPIC - Redemption Process
-1. **Browse Available Gift Card** *(must have)*
-   Employees can view the full list of available gift card.
+### **3.2. Admin & Employee Functionalities**
 
-2. **Access Detailed Page** *(should have)*
-   Employees can view detailed information about a specific gift card, including its description and points required.
+Admins have full control over the gift card catalogue and user point balances via the admin panel:
 
-3. **Add Gift Card to Cart** *(must have)*
-    Employees can add gift card to their cart before proceeding to redeem.
+- **Manage Catalogue**  
+  - Add new gift cards with details such as name, points required, stock quantity, and T&Cs.  
+  - Edit existing gift cards to update descriptions, point values, or stock.  
+  - Delete gift cards that are no longer available.  
 
-4. **View Cart** *(must have)*
-    Employees can review the list of gift card added to their cart, including the total points required.
+- **Manage Employee Points**  
+  - Admins can update employee points balances through the admin panel.
 
-5. **Modify Cart** *(should have)*
-    Employees can update or remove items from their cart before finalising the redemption.
+---
 
-6. **Redeem Items** *(must have)*
-    Employees can finalise the redemption process, confirming their selected gift cards and updating their points balance.
+### **3.3. Database & CRUD Functionality**
 
+The platform is structured around **CRUD (Create, Read, Update, Delete) principles**, ensuring efficient interaction between employees, admins, and stored data.  
 
-### Flowchart
-The following flowchart illustrates the user journey for both **employees** and **admin users**. It maps out the key actions they can perform, such as logging in, redeeming rewards, and managing the catalogue.</br>
-It was created using [Lucidchart](https://www.lucidchart.com/pages/).
+#### Database Design & Structure 
+
+| **Table**          | **Purpose** | **Key Fields** |  
+|-------------------|---------------------------------|---------------------------|  
+| **CatalogueItem** | Stores details of available rewards | `reward_name`, `points_cost`, `stock_quantity`, `image` |  
+| **UserProfile**   | Tracks employees' points balance | `user_id`, `point_balance` |  
+| **Cart & CartItem** | Manages user selections before redemption | `cart_id`, `user_id`, `reward_id`, `quantity` |  
+
+---
+
+#### CRUD in Action   
+
+| **Action** | **Admin Functionalities** | **Employee Functionalities** |  
+|------------|------------------|------------------|  
+| **Create** | Add new gift cards to the catalogue | Add items to cart for redemption |  
+| **Read**   | View and manage all gift cards | View available rewards and cart items |  
+| **Update** | Modify gift card details | Adjust quantities in cart before redemption |  
+| **Delete** | Remove gift cards from the system | Remove items from cart |  
+
+---
+
+#### MVC architecture
+
+The **MVC architecture** (Model-View-Controller) was followed to maintain a structured flow:  
+
+- **Model** – Handles database logic (e.g., `CatalogueItem`, `Cart`, `CartItem` models).  
+- **View** – Renders templates like `catalogue.html` or `cart.html`.  
+- **Controller** – Processes user input and manages data between models and templates.  
+
+The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact:  
 
 <details>
-  <summary>Click to view Flowchart</summary>
+  <summary>Click to view ERD Diagram</summary>
 
-  ![Flowchart](images-documentation/readme_images/redemption_platform_flowchart.png)
+  ![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
 
 </details>
 
+### **3.4. Future Enhancements**
 
-### Agile Planning
+The current version of **RedeemIt** focuses on core functionality, but there is room for expansion and optimisation. Some potential enhancements include:
 
-The development process followed an agile methodology, breaking the project into smaller user stories and tasks. This iterative approach allowed for incremental progress, flexibility, and better alignment with user needs.
+- **Redemption History**  
+  - Employees can track past redemptions.  
 
-#### Prioritisation with MOSCOW Methodology
+- **Automated Email Notifications**  
+  - Employees and admins receive confirmation emails for transactions.  
 
-The **MOSCOW** methodology was applied to prioritise features into **Must Have**, **Should Have**, and **Could Have** categories, ensuring focus on important functionality. Below is the breakdown of priorities:
+- **Admin Analytics Dashboard**  
+  - A data-driven insights panel for tracking redemptions, employee engagement, and points distribution.  
 
-- **Must Have (54%)**: Core features essential for the platform to function, including:
-  - Employee login/logout
-  - Browsing rewards
-  - Managing the cart
-  - Redeeming items
-  - Admin functionality to add new rewards to the catalogue
+These improvements would enhance the platform’s **efficiency and usability**, offering a more complete **employee recognition experience**.  
 
-- **Should Have (38%)**: Important but not critical features, such as:
-  - Modifying the cart
-  - Accessing detailed pages for individual items
-  - Administrative tools for editing and deleting rewards, as well as managing user points
+## 4. Technology
 
-- **Could Have (8%)**: Features that are desirable but not essential:
-  - Allowing employees to view their profile details
+### **4.1. Languages**
 
-This prioritisation ensured a balanced approach to development, focusing on delivering a functional and user-centric product.
-
-
-### Features in Detail
-The platform offers a variety of features based on user stories, providing functionalities such as secure login, reward catalogue management, and a streamlined redemption process.
+- **Python** – Used for backend logic and database interactions.  
+- **HTML** – Provides the structure and content of the web pages.  
+- **CSS** – Handles the styling and layout.  
+- **JavaScript** – Enables interactive elements. 
 
 ---
 
-### Database Design
-
-The database was designed to provide full **CRUD functionality** for both **employees** and **admin users** through user-friendly interfaces.
-
-#### Data Overview
-- **CatalogueItem Table:** Stores details of all available rewards, including:
-  - `reward_name`: The name of the reward.
-  - `points_cost`: The points required to redeem the reward.
-  - `stock_quantity`: The current stock level for each reward.
-  - `image`: The image associated with the reward.
-- **UserProfile Table:** Extends the default `User` model to include:
-  - `point_balance`: Tracks the user’s remaining reward points.
-- **Cart and CartItem Tables:** Used to manage user selections before redemption:
-  - `Cart`: Represents a user’s cart session, linked to their profile.
-  - `CartItem`: Tracks individual items and their quantities in the cart.
+### **4.2. Frameworks & Librairies**
+ 
+- **Django** – The main web framework used for handling authentication, database management, and routing.  
+- **Bootstrap 5** – Used for responsive design and styling components.  
+- **Django Allauth** – Handles user authentication, login, logout, and account management.  
+- **PostgreSQL** – The database storing all user profiles, rewards, and transactions.  
+- **dj-database-url** – Simplifies PostgreSQL database configuration via environment variables.  
+- **psycopg2** – A PostgreSQL adapter allowing Django to interact with the database.  
+- **Cloudinary** – Used for storing and managing media files.  
+- **Whitenoise** – Enables serving static files in production.  
+- **Gunicorn** – A WSGI HTTP server for running the Django application in production.
 
 ---
 
-#### **Redemptions Process** (Employees)
-From the front end, employees (users) can interact with rewards in the catalogue and cart, enabling the following CRUD actions:
+### **4.3. Development & Deployment Tools***
 
-- **View**: Browse the available rewards in the catalogue, with detailed information about each item (reward name, description, and required points).
-- **Create**: Add items to their cart using the "Add to Cart" button. This action creates a new `CartItem` record in the database if it doesn't already exist.
-- **Update**: Adjust the quantity of items in their cart directly from the cart page, modifying the corresponding `CartItem` record.
-- **Delete**: Remove items from their cart by setting the quantity to 0, which deletes the associated `CartItem` record in the database.
-
----
-
-#### **Catalogue Management** (Admins)
-Admins have full CRUD capabilities to manage the reward catalogue directly from the admin panel:
-
-- **View**: Access a complete list of rewards stored in the `Catalogue` table.
-- **Create**: Add new rewards to the catalogue, specifying details such as reward name, description, and required points.
-- **Update**: Modify existing rewards, updating any of the provided details.
-- **Delete**: Remove rewards from the catalogue, permanently deleting the associated record from the `Catalogue` table.
+- **GitHub** – Version control system for storing the repository and managing project tasks.  
+- **GitPod** – Cloud-based development environment used for initial coding.  
+- **VSCode** – Local development environment used after switching from GitPod.  
+- **Heroku** – Platform for **deploying and hosting the application** in a live environment.  
 
 ---
 
-### MVC Architecture
-- **Model:** Handles the database logic (e.g., CatalogueItem, Cart, and CartItem models).
-- **View:** Renders templates like `catalogue.html` or `cart.html`.
-- **Controller:** Processes user's input and manages data between models and templates, through views.
+### **4.4. Testing & Optimisation Tools**
 
----
+- **HTML Validator** – Checked for syntax errors in HTML files.  
+- **W3C CSS Validator** – Ensured the CSS followed best practices and had no errors.  
+- **JSHint** – Analysed JavaScript code to detect potential issues.  
+- **Squoosh** – Optimised images by converting them to **WebP format**, improving loading speed.
+- **ChatGPT & GitHub Copilot** – Assisted with debugging, code suggestions, and documentation refinements.
 
-#### Entity Relationship Diagram
+## 5. Testing
 
-The **ERD** (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/) to visualise the database structure and relationships between tables.
+### **5.1. Manual Testing**
 
-![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
-
----
-
-## Technology
-
-### Tools Used
-
-The following tools and technologies were used to build this project:
-
-- **Django**: Web framework used for building the application.
-- **Python**: Primary programming language for backend logic.
-- **PostgreSQL**: Database used to store all application data, including user profiles, reward catalogue and cart items.
-- **Cloudinary**: Service used for managing and hosting media files (e.g., images of rewards).
-- **HTML/CSS**: For the front-end structure and styling.
-- **Bootstrap**: Front-end framework for responsive design and styling components.
-- **Whitenoise**: Library for serving static files in production.
-- **Gunicorn**: WSGI HTTP server used to run the application in production.
-- **Django Allauth**: Library for user authentication and account management.
-- **dj-database-url**: Library for configuring the database via environment variables.
-- **psycopg2**: PostgreSQL adapter for Python, allowing Django to interact with the database.
-
----
-
-## Testing
-
-### ADMIN - Catalogue Management
+#### ADMIN - Catalogue Management
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
 |:---:|:---:|:---:|
@@ -334,7 +410,7 @@ The following tools and technologies were used to build this project:
 | Edit an existing item | Changes are saved and reflected on the admin dashboard & the platform | PASS |
 | Delete an item | Item is removed from both the admin dashboard & the platform | PASS |
 
-### EMPLOYEE (User) - Add to Cart
+#### EMPLOYEE (User) - Add to Cart
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
 |:---:|:---:|:---:|
@@ -343,7 +419,7 @@ The following tools and technologies were used to build this project:
 | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
 | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
 
-### EMPLOYEE (User) - Cart Management
+#### EMPLOYEE (User) - Cart Management
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
 |:---:|:---:|:---:|
@@ -351,7 +427,7 @@ The following tools and technologies were used to build this project:
 | Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
 
 
-### EMPLOYEE (User) - Redemption Logic
+#### EMPLOYEE (User) - Redemption Logic
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
 |:---:|:---:|:---:|
@@ -360,12 +436,19 @@ The following tools and technologies were used to build this project:
 | Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
 | Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
 
+---
 
-### Fixed Bugs
+### **5.2. Fixed Bugs**
 
 ---
 
-## Deployment
+### **5.3. Automated Testing**
+
+---
+
+## 6. Deployment
+
+### **6.1. Heroku**
 
 The site was deployed successfully to [Heroku](https://redemption-website-ec86c7604627.herokuapp.com/) following the steps below:
 
@@ -392,7 +475,94 @@ The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604
 
 ---
 
-## Forking and Cloning
+### **6.2. Database Migration**
+
+During development, I realised that I had mistakenly been using a database already associated with another project, which created unintended dependencies. To ensure a clean setup, I decided to migrate to a new database. While following an online guide, I encountered several challenges that required troubleshooting and manual intervention.   
+This section outlines the steps taken, the issues faced, and how they were resolved with the valuable guidance and patience of a **Code Institute Tutor**.
+
+#### **Steps Followed for Database Migration**  
+
+1. **Backup Existing Data**  
+  - Exported all catalogue items into a JSON file to prevent data loss:  
+    ```powershell
+    python manage.py dumpdata catalogue --indent 2 > catalogue/fixtures/catalogue_items.json
+    ```  
+
+2. **Create a New Database**  
+  - Set up a **new PostgreSQL database** and updated the `DATABASE_URL` in both **Heroku** and the local `.env.py` file.  
+
+3. **Reset Migrations & Apply to New Database**  
+Since the new database is empty and Django does not recognize previous migrations, we had to reset migrations:  
+
+  - **Fake-initialise migrations:**  
+    ```powershell
+    python manage.py migrate --fake
+    ```  
+    - This marks all migrations as applied without actually executing them.  
+    - It prevents Django from trying to reapply migrations that were already used in the previous database.  
+    - This step ensures Django recognises models without making any unwanted changes.  
+
+  - **Delete existing migration files (except `__init__.py`) to reset migration history:**  
+    ```powershell
+    Get-ChildItem -Path .\* -Include "migrations" -Recurse | Remove-Item -Recurse -Force
+    ```  
+    - This removes all migration files across all apps, forcing Django to recreate migrations based on the current models.    
+
+  - **Recreate migrations and apply them to the new database:**  
+    ```powershell
+    python manage.py makemigrations
+    python manage.py migrate
+    ```  
+
+At this point, **everything started to break**, leading to migration failures.
+
+---
+
+#### **Issue Encountered & How We Fixed It**  
+
+**Error Message:**  
+
+    ```
+    django.db.utils.ProgrammingError: relation "django_site" does not exist 
+    LINE 1: SELECT 1 AS "a" FROM "django_site" LIMIT 1
+    ```  
+
+1. **Recreate Missing Migration Files**  
+  - Manually recreated the `migrations` folders and added `__init__.py` inside each app:
+    ```
+    catalogue/migrations/__init__.py
+    home/migrations/__init__.py
+    ```  
+
+2. **Fake-Migrate All Apps**  
+  - Each app was individually fake-migrated to allow Django to recognize existing models, like with these examples below:
+    ```
+    python manage.py migrate home --fake
+    python manage.py migrate admin --fake
+    python manage.py migrate catalogue --fake
+    ```  
+
+3. **Verify Migration Status**  
+  - After applying the migrations, checked the current migration status with:
+    ```
+    python manage.py showmigrations
+    ```  
+
+4. **Final Migration Execution**  
+  - Once all migrations were properly listed, executed the final migration command:
+    ```
+    python manage.py migrate
+    ```  
+
+5. **Create a Superuser**  
+  - Since this is a fresh database, the admin account must be recreated:  
+    ```powershell
+    python manage.py createsuperuser
+    ```  
+
+---
+
+### **6.3. Forking and Cloning**
 
 Forking the repository creates a copy of this project, allowing modifications without affecting the original code. Once the repository is forked, it can be cloned to a local machine for development.</br>
 Follow these steps to fork, clone, and work on the project:
@@ -411,6 +581,4 @@ Follow these steps to fork, clone, and work on the project:
   - Press `Enter`.
   - Navigate to the newly cloned repository directory: `cd` and the repository name.
 
----
-
-## Credits
+## 7. Credit
