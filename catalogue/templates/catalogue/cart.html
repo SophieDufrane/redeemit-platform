@@ -2,6 +2,17 @@
 {% load static %}
 {% block content %}
 
+<!-- Displaying Django messages -->
+{% if messages %}
+<div class="custom-message-container">
+    {% for message in messages %}
+    <div class="custom-message alert text-center alert-{{ message.tags }}">
+        {{ message | safe }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <div class="cart-container my-5">
     {% if not cart_items %}
     <div class="empty-cart">
@@ -10,18 +21,7 @@
         <a href="{% url 'catalogue_home' %}" class="redeemit-button yellow-button">
             Start Shopping!
         </a>
-        <!-- Displaying Django messages -->
-        {% if messages %}
-        <div class="custom-message-container">
-            {% for message in messages %}
-            <div class="custom-message alert text-center alert-{{ message.tags }}">
-                {{ message | safe }}
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
     </div>
-
     {% endif %}
 
     {% if cart_items %}

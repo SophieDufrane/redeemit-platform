@@ -50,14 +50,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+
                         <!-- Authenticated Links -->
                         {% if user.is_authenticated %}
+                        <!-- Show "Admin Panel" for admins -->
+                        {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
+                        </li>
+                        {% endif %}
                         <!-- Catalogue Home -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/catalogue/' %}active{% endif %}"
                                 href="{% url 'catalogue_home' %}">Catalogue</a>
                         </li>
-                        <!-- Cart icon -->
+                        <!-- Cart -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/cart/' %}active{% endif %}"
                                 href="{% url 'cart_page' %}">
@@ -70,11 +77,13 @@
                                 {{ user.userprofile.point_balance }} points
                             </span>
                         </li>
+
                         <!-- Logout Option -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
+
                         <!-- None Authenticated Links -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
