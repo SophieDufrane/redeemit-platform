@@ -118,3 +118,24 @@ class CartItem(models.Model):
 
     def __str__(self):
         return f"{self.item.reward_name} (x{self.quantity})"
+
+
+class Redemption(models.Model):
+    """
+    Stores redemptions made by users.
+    """
+    user = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE,
+        help_text="User who made the redemption."
+        )
+    redeemed_on = models.DateTimeField(
+        auto_now_add=True,
+        help_text="The date and time of redemption."
+        )
+    total_points_spent = models.PositiveIntegerField(
+        help_text="Total points used for this redemption."
+        )
+    
+    def __str__(self):
+        return f"Redemption {self.id} by {self.user.username} on {self.redeemed_on:%Y-%m-%d}"
