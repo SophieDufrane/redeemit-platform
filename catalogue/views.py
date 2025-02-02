@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import CatalogueItem, Cart, CartItem, Redemption
+from .models import CatalogueItem, Cart, CartItem, Redemption, RedemptionItem
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -206,7 +206,9 @@ def redeem_cart(request):
     - Retrieves the user's cart and associated items.
     - Validates the user's point balance to ensure sufficient points.
     - Deducts points from the user's balance upon successful redemption.
-    - Clears all items from the cart.
+    - Creates a Redemption record.
+    - Stores each CartItems as a RedemptionItem before clearing the cart.
+    - Clears the cart.
     - Adds success or error messages using Django's messages.
     - Redirects to the cart page.
 
@@ -216,6 +218,12 @@ def redeem_cart(request):
     if request.method == 'POST':
         # Always select the latest cart for the user instead of creating a new one 
         cart = Cart.objects.filter(user=request.user).order_by('-created_on').first()
+
+        # If no cart exists, prevent redemption
+        if not cart:
+            messages.error(request, "Your cart is empty. Add items before redeeming.")
+            return redirect('cart_page')
+        
         cart_items = cart.cartitem_set.all()
         total_points_cost = sum(item.total_points() for item in cart_items)
 
@@ -229,7 +237,6 @@ def redeem_cart(request):
         user_profile.point_balance = (
             user_profile.point_balance - total_points_cost
             )
-        
         user_profile.save()
 
         # Save the redemption record in the database before deleting the cart
@@ -237,6 +244,14 @@ def redeem_cart(request):
             user=request.user,
             total_points_spent=total_points_cost
         )
+
+        # Save each redeemed item as a RedemptionItem
+        for cart_item in cart_items:
+            RedemptionItem.objects.create(
+                redemption=redemption,
+                item=cart_item.item,
+                quantity=cart_item.quantity
+            )
 
         # Delete the entire Cart (cascade deletes items)
         cart.delete()
