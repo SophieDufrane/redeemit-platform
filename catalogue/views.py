@@ -103,7 +103,11 @@ def add_to_cart(request, slug):
     """
     if request.method == "POST":
         item = get_object_or_404(CatalogueItem, slug=slug)
-        cart, _ = Cart.objects.get_or_create(user=request.user)
+        # Find the latest cart instead of creating a new one to prevent duplicates
+        cart = Cart.objects.filter(user=request.user).order_by('-created_on').first()
+        if not cart:
+            cart = Cart.objects.create(user=request.user)
+
         cart_item, created = CartItem.objects.get_or_create(
             cart=cart,
             item=item
@@ -210,17 +214,14 @@ def redeem_cart(request):
     - catalogue/cart.html
     """
     if request.method == 'POST':
-        # Get or create the user's cart
-        cart, _ = Cart.objects.get_or_create(user=request.user)
-        # Fetch cart items
+        # Always select the latest cart for the user instead of creating a new one 
+        cart = Cart.objects.filter(user=request.user).order_by('-created_on').first()
         cart_items = cart.cartitem_set.all()
-        # Calculate total points cost
         total_points_cost = sum(item.total_points() for item in cart_items)
 
         # Validate the user's balance
         user_profile = request.user.userprofile
         if user_profile.point_balance < total_points_cost:
-            # Add error message
             messages.error(request, "You don't have enough points to redeem.")
             return redirect('cart_page')
         
@@ -228,17 +229,17 @@ def redeem_cart(request):
         user_profile.point_balance = (
             user_profile.point_balance - total_points_cost
             )
+        
         user_profile.save()
-        # Clear cart
-        cart.cartitem_set.all().delete()
 
-        # Add success message
+        # Delete the entire Cart (cascade deletes items)
+        cart.delete()
+
         messages.success(
             request, 
             "Redemption successful! Your cart has been cleared."
             )
         
-        # Redirect after successful redemption
         return redirect('cart_page')
     
     return redirect('cart_page')
