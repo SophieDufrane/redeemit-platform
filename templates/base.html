@@ -53,18 +53,22 @@
 
                         <!-- Authenticated Links -->
                         {% if user.is_authenticated %}
-                        <!-- Show "Admin Panel" for admins -->
-                        {% if user.is_staff %}
+
+                        <!-- Admin: Show "Admin Panel" -->
+                        {% if user.userprofile.role == "admin" %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
                         </li>
                         {% endif %}
 
-                        <!-- Catalogue Home -->
+                        <!-- Catalogue Visible for Both Admins & Employees -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/catalogue/' %}active{% endif %}"
                                 href="{% url 'catalogue_home' %}">Catalogue</a>
                         </li>
+
+                        <!-- Employees: Show "Cart" & "Points Balance" -->
+                        {% if user.userprofile.role == "employee" %}
                         <!-- Cart -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/cart/' %}active{% endif %}"
@@ -78,8 +82,9 @@
                                 {{ user.userprofile.point_balance }} points
                             </span>
                         </li>
+                        {% endif %}
 
-                        <!-- Logout Option -->
+                        <!-- Both Admins & Employees See Logout -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
