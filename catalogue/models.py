@@ -148,6 +148,7 @@ class RedemptionItem(models.Model):
     redemption = models.ForeignKey(
         Redemption,
         on_delete=models.CASCADE,
+        related_name="items",
         help_text="The redemption transaction this item is part of."
         )
     item = models.ForeignKey(
