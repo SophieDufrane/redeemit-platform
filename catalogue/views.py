@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import CatalogueItem, Cart, CartItem
+from .models import CatalogueItem, Cart, CartItem, Redemption
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -231,6 +231,12 @@ def redeem_cart(request):
             )
         
         user_profile.save()
+
+        # Save the redemption record in the database before deleting the cart
+        redemption = Redemption.objects.create(
+            user=request.user,
+            total_points_spent=total_points_cost
+        )
 
         # Delete the entire Cart (cascade deletes items)
         cart.delete()
