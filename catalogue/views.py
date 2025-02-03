@@ -205,12 +205,10 @@ def redeem_cart(request):
     **Flow:**
     - Retrieves the user's cart and associated items.
     - Validates the user's point balance to ensure sufficient points.
-    - Deducts points from the user's balance upon successful redemption.
-    - Creates a Redemption record.
-    - Stores each CartItems as a RedemptionItem before clearing the cart.
-    - Clears the cart.
-    - Adds success or error messages using Django's messages.
-    - Redirects to the cart page.
+    - Deducts points from the user's balance.
+    - Deducts stock for each redeemed items.
+    - Creates a Redemption record and associated items.
+    - Clears the cart after successful redemption.
 
     **Redirect:**
     - catalogue/cart.html
@@ -233,20 +231,31 @@ def redeem_cart(request):
             messages.error(request, "You don't have enough points to redeem.")
             return redirect('cart_page')
         
+        # Validate the stock for all items
+        for cart_item in cart_items:
+            if cart_item.item.stock_quantity < cart_item.quantity:
+                messages.error(request, f"Not enough stock for {cart_item.item.reward_name}.")
+                return redirect('cart_page')
+        
         # Deduct points from the user's balance
         user_profile.point_balance = (
             user_profile.point_balance - total_points_cost
             )
         user_profile.save()
 
-        # Save the redemption record in the database before deleting the cart
+        # Create a redemption record
         redemption = Redemption.objects.create(
             user=request.user,
             total_points_spent=total_points_cost
         )
 
-        # Save each redeemed item as a RedemptionItem
+        # Deduct stock and store redeemed items
         for cart_item in cart_items:
+            cart_item.item.stock_quantity = (
+                cart_item.item.stock_quantity - cart_item.quantity
+            )
+            cart_item.item.save()
+
             RedemptionItem.objects.create(
                 redemption=redemption,
                 item=cart_item.item,
