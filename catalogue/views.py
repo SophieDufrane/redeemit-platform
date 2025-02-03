@@ -197,16 +197,18 @@ def redeem_cart(request):
     Handles the redemption process for the user's cart.
 
     **Context:**
-    - `cart`: The user's Cart instance, retrieved or created.
+    - `cart`: The user's cart instance, retrieved or created.
     - `cart_items`: The list of CartItem instances in the user's cart.
     - `total_points_cost`: The total points required for all items in the cart.
     - `user_profile`: The user's UserProfile instance for managing point balance.
+    - `redemption`: The transaction recorded after successful redemption
 
     **Flow:**
     - Retrieves the user's cart and associated items.
     - Validates the user's point balance to ensure sufficient points.
+    - Validates stock availability for each item before processing.
     - Deducts points from the user's balance.
-    - Deducts stock for each redeemed items.
+    - Deducts stock for each redeemed item.
     - Creates a Redemption record and associated items.
     - Clears the cart after successful redemption.
 
@@ -267,7 +269,7 @@ def redeem_cart(request):
 
         messages.success(
             request, 
-            "Redemption successful! Your cart has been cleared."
+            f"Redemption Successful! Order ID #{redemption.id}"
             )
         
         return redirect('cart_page')
