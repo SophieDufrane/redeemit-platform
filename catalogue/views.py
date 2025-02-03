@@ -7,7 +7,7 @@ from django.contrib import messages
 @login_required
 def catalogue_home(request):
     """
-    Displays all items available in the catalogue.
+    Displays all items available in the catalogue with optional search functionality.
 
     **Template:**
     - catalogue/catalogue.html
