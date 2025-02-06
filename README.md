@@ -2,7 +2,7 @@
 
 ## 1. **Introduction**
 
-[RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) is a mock employee recognition platform inspired by the solutions offered by [Workhuman](https://www.workhuman.com). It allows employees to view their points balance, browse a catalogue of gift cards, and redeem rewards. Administrators can manage the catalogue and update employee point balances, ensuring a structured and efficient rewards process.  
+[RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) is a mock employee recognition platform inspired by the solutions offered by [Workhuman](https://www.workhuman.com). It allows employees to view their points balance, browse a catalogue of gift cards, and redeem rewards. Administrators can manage the catalogue and access to employee profile (personal information, point balances…), ensuring a structured and efficient rewards process.  
 
 Built using the **Django framework**, this project serves as a learning and portfolio exercise, demonstrating full-stack development skills in designing a functional and user-friendly web application.  
 
@@ -16,9 +16,9 @@ Built using the **Django framework**, this project serves as a learning and port
     2.4. [Visual Design](#24-visual-design)  
     2.5. [Project Planning and Agile Approach](#25-project-planning-and-agile-approach)  
 3. [Platform Features](#3-platform-features)  
-    3.1. [User Interactions](#31-user-interactions)  
-    3.2. [Admin & Employee Functionalities](#32-admin--employee-functionalities)  
-    3.3. [Database & CRUD Functionality](#33-database--crud-functionality)  
+    3.1. [User Interactions & Admin Functionalities](#31-user-interactions--admin-functionalities)  
+    3.2. [Entity Relationship Diagram (ERD)](#32-entity-relationship-diagram-erd)  
+    3.3. [CRUD Functionality](#33-crud-functionality)  
     3.4. [Future Enhancements](#34-future-enhancements)  
 4. [Technology](#4-technology)  
     4.1. [Languages](#41-languages)  
@@ -61,7 +61,7 @@ The project is structured around three key areas:
 The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as employee interactions, reward redemption, and administrative management.  
 
 
-#### EPIC - Catalogue Management
+#### EPIC - Admin Management
 1. **Add New Reward** *(must have)*  
    Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
 
@@ -71,12 +71,8 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 3. **Delete Reward** *(should have)*  
    Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
 
----
-
-#### EPIC - Admin Access
-
-1. **Manage User's Points Balance** *(should have)*  
-   Admins can view and update the points balance for individual employees, ensuring accurate tracking of rewards.
+4. **Access to Full Catalogue** *(must have)*  
+   Admins can view the full catalogue from the platform, including items with zero stock, so they can manage inventory effectively.
 
 ---
 
@@ -247,23 +243,23 @@ The **MOSCOW method** was used to categorise features into **Must Have, Should H
 
 | **Priority** | **Feature** |
 |-------------|------------|
-| **Must Have (54%)** | Employee Login |
+| **Must Have (50%)** | Employee Login |
 |  | Employee Logout |
 |  | Browse Available Gift Cards |
 |  | Add Gift Card to Cart |
 |  | View Cart |
 |  | Redeem Items |
 |  | Add New Reward (Admin) |
-| **Should Have (38%)** | Access Detailed Page for Gift Card |
+| **Should Have (43%)** | Access Detailed Page for Gift Card |
 |  | Modify Cart (Update Quantity or Remove Item) |
 |  | Edit Existing Reward (Admin) |
 |  | Delete Reward (Admin) |
 |  | Manage User’s Points Balance (Admin) |
-| **Could Have (8%)** | Site User View and Manage Profile Details |
+| **Could Have (7%)** | Site User View and Manage Profile Details |
 
 ## 3. Platform Features
 
-### **3.1. User Interactions**
+### **3.1. User Interactions & Admin Functionalities**
 
 Employees interact with the platform through an intuitive and structured redemption process:
 
@@ -279,29 +275,48 @@ Employees interact with the platform through an intuitive and structured redempt
   - Upon redemption, points are deducted, and the cart is cleared.  
 
 - **Responsive Feedback & Validation**  
-  - Employees receive **instant feedback** when redeeming rewards or encountering errors (e.g., insufficient balance).
+  - Employees receive **instant feedback** when redeeming rewards or encountering errors.
 
 ---
 
-### **3.2. Admin & Employee Functionalities**
+Admins have full control over the gift card catalogue and user profiles via the admin panel:
 
-Admins have full control over the gift card catalogue and user point balances via the admin panel:
+- **Manage Catalogue**
+  - Add new gift cards with details such as name, points required, stock quantity, and T&Cs.
+  - Edit existing gift cards to update descriptions, point values, or stock.
+  - Delete gift cards that are no longer available.
 
-- **Manage Catalogue**  
-  - Add new gift cards with details such as name, points required, stock quantity, and T&Cs.  
-  - Edit existing gift cards to update descriptions, point values, or stock.  
-  - Delete gift cards that are no longer available.  
+- **Manage Employee Profiles**
+  - Admins can update employee profiles, including first and last names, and points balances.
+  - Admins can view redemption records to see who ordered what items, in which quantity.
 
-- **Manage Employee Points**  
-  - Admins can update employee points balances through the admin panel.
+Admins also have access to the platform (similar to employees) with the following differences:
+- Admins can see the full catalogue, including items with zero stock.
+- Items with zero stock are highlighted to help manage the catalogue.
 
 ---
 
-### **3.3. Database & CRUD Functionality**
+### **3.2. Entity Relationship Diagram (ERD)**
+
+The platform follows the MVC architecture (Model-View-Controller) to maintain a structured flow: 
+
+- **Model** – Handles database logic (e.g., `CatalogueItem`, `Cart`, `CartItem` models).  
+- **View** – Renders templates like `catalogue.html` or `cart.html`.  
+- **Controller** – Processes user input and manages data between models and templates.  
+
+The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact. It provides a visual representation of the database schema, showing the relationships between tables and the key fields in each table. 
+
+<details>
+  <summary>Click to view ERD Diagram</summary>
+
+  ![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
+
+</details>
+
+
+### **3.3. CRUD Functionality** 
 
 The platform is structured around **CRUD (Create, Read, Update, Delete) principles**, ensuring efficient interaction between employees, admins, and stored data.  
-
-#### Database Design & Structure 
 
 | **Table**          | **Purpose** | **Key Fields** |  
 |-------------------|---------------------------------|---------------------------|  
@@ -322,29 +337,13 @@ The platform is structured around **CRUD (Create, Read, Update, Delete) principl
 
 ---
 
-#### MVC architecture
-
-The **MVC architecture** (Model-View-Controller) was followed to maintain a structured flow:  
-
-- **Model** – Handles database logic (e.g., `CatalogueItem`, `Cart`, `CartItem` models).  
-- **View** – Renders templates like `catalogue.html` or `cart.html`.  
-- **Controller** – Processes user input and manages data between models and templates.  
-
-The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact:  
-
-<details>
-  <summary>Click to view ERD Diagram</summary>
-
-  ![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
-
-</details>
-
 ### **3.4. Future Enhancements**
 
 The current version of **RedeemIt** focuses on core functionality, but there is room for expansion and optimisation. Some potential enhancements include:
 
-- **Redemption History**  
-  - Employees can track past redemptions.  
+- **Employee Profile**  
+  - Employees can update their personal information (e.g., first and last name).
+  - Employees can check records of past redemptions.  
 
 - **Automated Email Notifications**  
   - Employees and admins receive confirmation emails for transactions.  
@@ -425,7 +424,6 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
 | Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
 
-
 #### EMPLOYEE (User) - Redemption Logic
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL |
@@ -434,6 +432,20 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
 | Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
 | Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
+
+#### EMPLOYEE (User) - Redemption Record
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| Redemption recorded in database | Redemption are correctly recorded in the admin panel with details including user, items, and quantities | PASS |
+| Display redemption record | Redemption record is displayed correctly in the admin panel with all details | PASS |
+
+#### EMPLOYEE (User) - Stock Update
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL |
+|:---:|:---:|:---:|
+| Update stock in database | Stock is updated in the database after redemption | PASS |
+| Reflect new stock in platform | New stock is reflected in both the platform catalogue and the admin panel for employees and admins | PASS |
 
 ---
 
