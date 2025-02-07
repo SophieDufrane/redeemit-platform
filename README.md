@@ -44,7 +44,7 @@ Built using the **Django framework**, this project serves as a learning and port
 This project focuses on two main user roles:  
 
 - **Employees** – Can view their **points balance**, browse the **gift card catalogue**, and **redeem rewards**.  
-- **Administrators** – Can **manage the gift card catalogue** and **update employee point balances** through the admin panel.  
+- **Administrators** – Can **manage the gift card catalogue** and **update employee profiles and point balances** through the admin panel.  
 
 The platform is designed to provide a **clear redemption flow** and an **efficient management system** while ensuring an **intuitive user experience**.  
 
@@ -58,8 +58,25 @@ The project is structured around three key areas:
 
 ### **2.2. User Stories**  
 
-The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as employee interactions, reward redemption, and administrative management.  
+The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as redemption process, administrative management, and employee access.  
 
+#### EPIC - User Access
+1. **Employee Register** *(must have)*  
+   Allows an unregistered employee to create an account with a user name, email, and password to access the redemption platform.
+
+2. **Employee Login** *(must have)*  
+   Provides secure login functionality for employees to access the redemption platform.
+
+3. **Employee Logout** *(must have)*  
+   Allows employees to securely log out of their session once they are done using the platform.
+
+4. **Admin Superuser Access to Panel** *(must have)*
+   Enables the admin superuser to log in and access the redemption platform and admin panel, for managing catalogue and employees profile.
+
+5. **Site User View Profile Details** *(could have)*  
+   Employees can view their profile details, including their current reward points balance and basic personal information.
+
+---
 
 #### EPIC - Admin Management
 1. **Add New Reward** *(must have)*  
@@ -71,20 +88,14 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 3. **Delete Reward** *(should have)*  
    Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
 
-4. **Access to Full Catalogue** *(must have)*  
+4. **Access to Full Catalogue** *(should have)*  
    Admins can view the full catalogue from the platform, including items with zero stock, so they can manage inventory effectively.
 
----
+5. **Manage User's Points Balance** *(should have)*  
+   Admin can view, add, or deduct points from an employee’s balance for reward redemption.
 
-#### EPIC - Employee Access
-1. **Employee Login** *(must have)*  
-   Provides secure login functionality for employees to access the redemption platform.
-
-2. **Employee Logout** *(must have)*  
-   Allows employees to securely log out of their session once they are done using the platform.
-
-3. **Site User View Profile Details** *(could have)*  
-   Employees can view their profile details, including their current reward points balance and basic personal information.
+6. **Manage Redemption Records** *(should have)*  
+   Admin can view, search, modify, or cancel redemption records to ensure accurate transaction history and points balance adjustments.
 
 ---
 
@@ -111,7 +122,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 
 #### Flowchart
 
-The following flowchart illustrates the **employee (user) journey** within the platform. It maps out the key actions an employee can perform, such as logging in, browsing the catalogue, adding items to the cart, and redeeming rewards.  
+The following flowchart illustrates the **employee journey** within the platform. It maps out the key actions an employee can perform, such as logging in, browsing the catalogue, adding items to the cart, and redeeming rewards.  
 It was created using [Lucidchart](https://www.lucidchart.com/pages/) to provide a clear visual representation of the redemption process.
 
 <details>
@@ -237,25 +248,28 @@ To maintain an organised and efficient development process, the following tools 
 
 - **GitHub Projects** – Tracked tasks and iterations, ensuring a structured development cycle.  
 - **Lucidchart** – Used to map out the user flow and database schema.  
-- **MOSCOW Prioritization** – Applied to prioritise features, ensuring that essential functionalities were developed first.  
-
-The **MOSCOW method** was used to categorise features into **Must Have, Should Have, and Could Have**:
+- **MOSCOW Prioritization** – Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
 
 | **Priority** | **Feature** |
 |-------------|------------|
-| **Must Have (50%)** | Employee Login |
+| **Must Have (53%)** | Employee Register |
+|  | Employee Login |
 |  | Employee Logout |
+|  | Admin Superuser Access to Panel |
 |  | Browse Available Gift Cards |
 |  | Add Gift Card to Cart |
 |  | View Cart |
 |  | Redeem Items |
 |  | Add New Reward (Admin) |
-| **Should Have (43%)** | Access Detailed Page for Gift Card |
+| **Should Have (41%)** | Access Detailed Page for Gift Card |
 |  | Modify Cart (Update Quantity or Remove Item) |
 |  | Edit Existing Reward (Admin) |
 |  | Delete Reward (Admin) |
+|  | Access to Full Catalogue (Admin) |
 |  | Manage User’s Points Balance (Admin) |
-| **Could Have (7%)** | Site User View and Manage Profile Details |
+|  | Manage Redemption Records (Admin) |
+| **Could Have (6%)** | Site User View Profile Details |
+
 
 ## 3. Platform Features
 
@@ -290,9 +304,9 @@ Admins have full control over the gift card catalogue and user profiles via the 
   - Admins can update employee profiles, including first and last names, and points balances.
   - Admins can view redemption records to see who ordered what items, in which quantity.
 
-Admins also have access to the platform (similar to employees) with the following differences:
-- Admins can see the full catalogue, including items with zero stock.
-- Items with zero stock are highlighted to help manage the catalogue.
+- **Access to the Platform**  
+  - View the full catalogue, including items with zero stock.  
+  - See items with zero stock highlighted to assist in catalogue management. 
 
 ---
 
@@ -397,59 +411,55 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 
 ## 5. Testing
 
-### **5.1. Manual Testing**
+## **5.1. Manual Testing**  
 
-#### ADMIN - Catalogue Management
+The following table summarises the **manual testing** conducted at each steps, to ensure functionalities work as expected.  
+Tests cover **admin functionalities** and **employee interactions**.  
 
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| Create a new item | Item is successfully created with all required fields and displayed on the platform | PASS |
-| View list of existing items | All items are listed on the admin dashboard & the platform | PASS |
-| Edit an existing item | Changes are saved and reflected on the admin dashboard & the platform | PASS |
-| Delete an item | Item is removed from both the admin dashboard & the platform | PASS |
 
-#### EMPLOYEE (User) - Add to Cart
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| View detailed page of an item | Detailed information about the item is displayed | PASS |
-| Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
-| Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
-| View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
-
-#### EMPLOYEE (User) - Cart Management
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
-| Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
-
-#### EMPLOYEE (User) - Redemption Logic
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| Redeem with sufficient balance | Balance is reduced, cart is cleared, and changes show in the admin dashboard | PASS |
-| Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
-| Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
-| Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
-
-#### EMPLOYEE (User) - Redemption Record
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| Redemption recorded in database | Redemption are correctly recorded in the admin panel with details including user, items, and quantities | PASS |
-| Display redemption record | Redemption record is displayed correctly in the admin panel with all details | PASS |
-
-#### EMPLOYEE (User) - Stock Update
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL |
-|:---:|:---:|:---:|
-| Update stock in database | Stock is updated in the database after redemption | PASS |
-| Reflect new stock in platform | New stock is reflected in both the platform catalogue and the admin panel for employees and admins | PASS |
+| **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
+|------------------|---------|----------------------|-------------|
+| **ADMIN - Catalogue Management** | Create a new item | Item is successfully created with all required fields and displayed on the platform | PASS |
+|  | View list of existing items | All items are listed on the admin dashboard & the platform | PASS |
+|  | Edit an existing item | Changes are saved and reflected on the admin dashboard & the platform | PASS |
+|  | Delete an item | Item is removed from both the admin dashboard & the platform | PASS |
+| **EMPLOYEE - Add to Cart** | View detailed page of an item | Detailed information about the item is displayed | PASS |
+|  | Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
+|  | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
+|  | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
+| **EMPLOYEE - Cart Management** | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
+|  | Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
+| **EMPLOYEE - Redemption Logic** | Redeem with sufficient balance | Balance is reduced, cart is cleared, and changes show in the admin dashboard | PASS |
+|  | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
+|  | Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
+|  | Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
+| **EMPLOYEE - Redemption Record** | Redemption recorded in database | Redemptions are correctly recorded in the admin panel with details including user, items, and quantities | PASS |
+|  | Display redemption record | Redemption record is displayed correctly in the admin panel with all details | PASS |
+| **EMPLOYEE - Stock Update** | Update stock in database | Stock is updated in the database after redemption | PASS |
+|  | Reflect new stock in platform | New stock is reflected in both the platform catalogue and the admin panel for employees and admins | PASS |
 
 ---
 
 ### **5.2. Fixed Bugs**
+
+## **5.2 Fixed Bugs**
+
+### **Development Challenges & Debugging Process**
+
+During the development process, I encountered various bugs, unexpected behaviors, and technical challenges that required debugging and fixing. These issues ranged from role-based access control problems, UI inconsistencies, and database handling errors to deployment and authentication issues.  
+Each bug presented an opportunity to **understand Django better, refine my implementation, and improve code structure**.  
+
+#### Summary of Fixed Bugs & Solutions
+
+| **Bug** | **Issue** | **Fix** |
+|---------|----------|---------|
+| Clicking Gift Cards Did Nothing | Missing clickable link in template | Added `href="{% url 'catalogue_detail' slug=item.slug %}"` directly into the template |
+| Cloudinary Images Not Uploading | Wrong API key | Fixed credentials in `.env` and `settings.py` |
+| Employees Saw Admin Menu | No role check in UI | Fixed menu condition to check `user.userprofile.role` before rendering admin links |
+| Login Not Redirecting | Incorrect app structure & URL configuration | Restructured app URLs and ensured correct `redirect()` usage in views |
+| RedeemIt Button Didn’t Disable | No validation in template | Used Django template logic to disable the button when user points were insufficient |
+| Flash Messages Not Disappearing | No timeout for alerts | Added JavaScript fade-out effect after 3 seconds |
+| Users Could Add Same Gift Card Twice | No distinction between new vs. updated items | Updated message to display either "Added to cart" or "Quantity updated" instead of showing the same confirmation each time |
 
 ---
 
