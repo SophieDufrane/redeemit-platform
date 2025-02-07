@@ -127,9 +127,7 @@ It was created using [Lucidchart](https://www.lucidchart.com/pages/) to provide 
 
 <details>
   <summary>Click to view Flowchart</summary>
-
-  ![Flowchart](images-documentation/readme_images/redemption_platform_flowchart.png)
-
+  <img src="images-documentation/readme_images/redemption_platform_flowchart.png">
 </details>
 
 ---
@@ -142,33 +140,25 @@ Wireframes were designed to outline the layout and functionality of each page an
 #### Login Page
 <details>
   <summary>Click to view the Login Page wireframe</summary>
-
-  ![Login Page Wireframe](images-documentation/wireframes/log-in_page.png)
-
+  <img src="images-documentation/wireframes/log-in_page.png">
 </details>
 
 #### Redemption Platform (Catalogue Home page)
 <details>
   <summary>Click to view the Redemption Platform wireframe</summary>
-
-  ![Redemption Platform Wireframe](images-documentation/wireframes/plateform_landing_page.png)
-
+  <img src="images-documentation/wireframes/plateform_landing_page.png">
 </details>
 
 #### Gift Card Details Page
 <details>
   <summary>Click to view the Gift Card Details Page wireframe</summary>
-
-  ![Gift Card Details Page Wireframe](images-documentation/wireframes/plateform_product_details_page.png)
-
+  <img src="images-documentation/wireframes/plateform_product_details_page.png">
 </details>
 
 #### Cart Page
 <details>
   <summary>Click to view the Cart Page wireframe</summary>
-
-  ![Cart Page Wireframe](images-documentation/wireframes/cart_page.png)
-
+  <img src="images-documentation/wireframes/cart_page.png">
 </details>
 
 ---
@@ -209,16 +199,12 @@ The chosen colour palette draws inspiration from **Workhuman**'s branding and al
 
 <details>
   <summary>Click to view inspiration from Workhuman website</summary>
-
-  ![Colour Inspiration](images-documentation/readme_images/colours_inspiration_from_workhuman.png)
-
+  <img src="images-documentation/readme_images/colours_inspiration_from_workhuman.png">
 </details>
 
 <details>
   <summary>Click to view inspiration from Unlocking Colour Communication</summary>
-
-  ![Colour Inspiration](images-documentation/readme_images/trends.webp)
-
+  <img src="images-documentation/readme_images/trends.webp">
 </details>
 
 ---
@@ -279,6 +265,11 @@ Employees interact with the platform through an intuitive and structured redempt
 
 - **Secure Authentication**  
   - Employees log in and out securely using **Django Allauth**.  
+
+    <details>
+      <summary>Register</summary>
+      <img src="images-documentation/features/register.png">
+    </details> 
 
 - **Browsing Rewards**  
   - Employees can view available gift cards, with access to detailed descriptions, stock and required points.  
@@ -411,38 +402,45 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 
 ## 5. Testing
 
-## **5.1. Manual Testing**  
+### **5.1. Manual Testing**  
 
-The following table summarises the **manual testing** conducted at each steps, to ensure functionalities work as expected.  
-Tests cover **admin functionalities** and **employee interactions**.  
+The following table summarises the key **manual testings** conducted along the development to ensure functionalities work as expected.  
+Tests cover **admin functionalities**, **employee interactions** and **database updates**.  
 
 
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
 |------------------|---------|----------------------|-------------|
-| **ADMIN - Catalogue Management** | Create a new item | Item is successfully created with all required fields and displayed on the platform | PASS |
-|  | View list of existing items | All items are listed on the admin dashboard & the platform | PASS |
-|  | Edit an existing item | Changes are saved and reflected on the admin dashboard & the platform | PASS |
-|  | Delete an item | Item is removed from both the admin dashboard & the platform | PASS |
-| **EMPLOYEE - Add to Cart** | View detailed page of an item | Detailed information about the item is displayed | PASS |
+| **ADMIN - Catalogue & Employees Profile Management** | Create a new item | Item is successfully created from the panel with all required fields and displayed on the platform catalogue | PASS |
+|  | View list of existing items | All items are listed on the admin panel & the redemption platform | PASS |
+|  | Edit an existing item | Changes are saved and reflected on the admin panel & the platform | PASS |
+|  | Delete an item | Item is removed from both the admin panel & the platform | PASS |
+|  | Update Employee Points Balance | When admin updates an employee's points balance from the panel, the new balance is correctly displayed to the employee | PASS |
+|  | Stock Management | Items that are out of stock are hidden from employees but remain visible to admins with a highlight indicator | PASS |
+| **EMPLOYEE - Redemption Process** | Access to Reward Catalogue | Only in-stock items are displayed, showing key details such as name, points cost, and availability | PASS |
+|  | View detailed page of an item | Users can click on an item from the home page to access a detailed view displaying full information | PASS |
 |  | Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
-|  | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
+|  | Add the same item again | The quantity of the item in the cart increases by 1. The first time, a message confirms *"Added to cart"*, while subsequent additions display *"Quantity updated"*. | PASS |
 |  | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
-| **EMPLOYEE - Cart Management** | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
+|  | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
 |  | Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
-| **EMPLOYEE - Redemption Logic** | Redeem with sufficient balance | Balance is reduced, cart is cleared, and changes show in the admin dashboard | PASS |
+|  | Redeem with sufficient balance | Employee's balance is updated in the navigation bar, the cart is cleared, and the *"Continue Shopping"* button is displayed. | PASS |
 |  | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
-|  | Check cart after redemption | Cart shows "Your cart is empty," no items remain in admin dashboard | PASS |
-|  | Check balance in admin dashboard | Updated balance shows correctly after redemption | PASS |
-| **EMPLOYEE - Redemption Record** | Redemption recorded in database | Redemptions are correctly recorded in the admin panel with details including user, items, and quantities | PASS |
-|  | Display redemption record | Redemption record is displayed correctly in the admin panel with all details | PASS |
-| **EMPLOYEE - Stock Update** | Update stock in database | Stock is updated in the database after redemption | PASS |
+| **Register, Login, Logout** | User Registration | A new user fills out the registration form and submits it | PASS |
+|  | Login with Valid Credentials | A registered user enters the correct username and password and gains access to the redemption platform | PASS |
+|  | Login with Invalid Credentials | A user enters an incorrect username or password and receives an error message | PASS |
+|  | Logout Functionality | A logged-in user clicks the logout button, confirms logout, and is redirected to the landing page | PASS |
+|  | Restricted Access After Logout | A logged-out user cannot access protected pages and is redirected to the login page | PASS |
+| **Redemption Logic & Database Update** | Redemption recorded in database | Redemptions are correctly recorded in the admin panel with details including user, items, and quantities | PASS |
+|  | Check balance in database | Updated balance shows correctly after redemption | PASS |
+|  | Update stock in database | Stock is updated in the database after redemption | PASS |
 |  | Reflect new stock in platform | New stock is reflected in both the platform catalogue and the admin panel for employees and admins | PASS |
-
+| **Role-based Accessibility** | Admin - View Full Catalogue | Admin can see all items, including out-of-stock items, which are highlighted | PASS |
+|  | Employee - View Available items | Employee sees only items that are in stock; out-of-stock items are hidden | PASS |
+|  | Admin - Access Admin Panel | Admin has access to the admin panel from the navigation bar | PASS |
+|  | Employee - Access Cart | Employee can view and manage their cart but does not have access to the admin panel | PASS |
 ---
 
 ### **5.2. Fixed Bugs**
-
-## **5.2 Fixed Bugs**
 
 ### **Development Challenges & Debugging Process**
 
@@ -453,13 +451,25 @@ Each bug presented an opportunity to **understand Django better, refine my imple
 
 | **Bug** | **Issue** | **Fix** |
 |---------|----------|---------|
-| Clicking Gift Cards Did Nothing | Missing clickable link in template | Added `href="{% url 'catalogue_detail' slug=item.slug %}"` directly into the template |
-| Cloudinary Images Not Uploading | Wrong API key | Fixed credentials in `.env` and `settings.py` |
-| Employees Saw Admin Menu | No role check in UI | Fixed menu condition to check `user.userprofile.role` before rendering admin links |
-| Login Not Redirecting | Incorrect app structure & URL configuration | Restructured app URLs and ensured correct `redirect()` usage in views |
+| Issues with URLs Path logic | View existed but no URL mapping | Added missing URL pattern in `urls.py` |
+| Model Not Found Error | Forgot to import model in `views.py` | Added `from .models import ModelName` at the top of `views.py` |
+| Static Files Not Loading | Missing `collectstatic` after deployment | Ran `python manage.py collectstatic` |
+| Cloudinary Images Not Uploading | Incorrect API key, causing upload failures | Fixed credentials in `.env` |
+| UserProfile Not Automatically Created | UserProfile was missing for new users, causing errors | Added Django **signals** (`post_save` for User) to auto-create profiles |
+| Form Not Submitting | CSRF token missing, causing security error | Added `{% csrf_token %}` inside the form |
+| Form Validation Not Triggering | Missing `required=True` in form field | Added `required=True` to form fields |
+| Login Not Redirecting | Incorrect app structure & URL configuration prevented redirects | Restructured app URLs and ensured correct `redirect()` usage in views |
+| Unrestricted Access to Catalogue | Users could access `/catalogue/` without logging in | Added `@login_required` to catalogue view |
+| Cart URL Conflicting with Slug Pattern | The `/cart/` path conflicted with the catalogue slug URLs | Adjusted `urlpatterns` order in `urls.py` to avoid conflicts |
+| Users Could Add Same Gift Card Twice | No distinction between new vs. updated items | Updated message to display either *"Added to cart"* or *"Quantity updated"* |
 | RedeemIt Button Didn’t Disable | No validation in template | Used Django template logic to disable the button when user points were insufficient |
+| RedeemIt Button Didn’t Submit Form | Redeeming an item required a `POST` request but lacked a form | Wrapped RedeemIt button inside a `<form>` element for proper submission |
+| Employees Saw Admin Menu | No role check in UI allowed all users to see admin options | Fixed menu condition to check `user.userprofile.role` before rendering admin links |
 | Flash Messages Not Disappearing | No timeout for alerts | Added JavaScript fade-out effect after 3 seconds |
-| Users Could Add Same Gift Card Twice | No distinction between new vs. updated items | Updated message to display either "Added to cart" or "Quantity updated" instead of showing the same confirmation each time |
+| Admin Panel User Details Missing | Couldn’t retrieve user details (first name, last name, email) in admin view | Added `get_first_name`, `get_last_name`, and `get_email` methods to UserProfile |
+| Redeeming Points Shows Incorrect Balance | Points deducted but not saved properly, or redemption processed incorrectly | Ensured `user_profile.point_balance` was updated and saved `user_profile.save()` |
+| Users Could Have Multiple Active Carts | Users were allowed to create multiple active carts creating conflicts | Modified `add_to_cart` and `redeem_cart` logic to ensure only **one** active cart per user |
+| Redemption Items Not Saving Correctly | Redemption process failed to save selected items | Fixed by properly handling `RedemptionItem` model in `redeem_cart` view |
 
 ---
 
