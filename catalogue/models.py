@@ -52,11 +52,17 @@ class CatalogueItem(models.Model):
         """
         Returns the resized image URL with a specified width.
         Defaults to a width of 400 pixels.
+        Ensures HTTPS is always used.
         """
-        return self.image.url.replace(
-            '/upload/', 
-            f'/upload/w_{width},q_auto/'
-            )
+        if self.image:
+            return self.image.url.replace(
+                'http://',
+                'https://'
+                ).replace(
+                    '/upload/',
+                    f'/upload/w_{width},q_auto/'
+                    )
+        return ""
 
     def __str__(self):
         return self.reward_name

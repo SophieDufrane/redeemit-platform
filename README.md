@@ -264,23 +264,81 @@ To maintain an organised and efficient development process, the following tools 
 Employees interact with the platform through an intuitive and structured redemption process:
 
 - **Secure Authentication**  
-  - Employees log in and out securely using **Django Allauth**.  
+  - Employees register, sign in and out securely using **Django Allauth**.  
 
     <details>
+      <summary>Landing Page</summary>
+      <img src="images-documentation/readme_images/features/landing_page.png">
+    </details>
+    
+    <details>
       <summary>Register</summary>
-      <img src="images-documentation/features/register.png">
+      <img src="images-documentation/readme_images/features/register.png">
     </details> 
+
+    <details>
+      <summary>Sign In</summary>
+      <img src="images-documentation/readme_images/features/sign_in.png">
+    </details> 
+
+    <details>
+      <summary>Sign out</summary>
+      <img src="images-documentation/readme_images/features/sign_out.png">
+    </details>
+
+    <details>
+      <summary>Already Sign In</summary>
+      <img src="images-documentation/readme_images/features/landing_page_logged_in.png">
+    </details>
 
 - **Browsing Rewards**  
   - Employees can view available gift cards, with access to detailed descriptions, stock and required points.  
+
+    <details>
+      <summary>Catalogue Page Employee View 1</summary>
+      <img src="images-documentation/readme_images/features/catalogue_page_employee.png">
+    </details>
+
+    <details>
+      <summary>Catalogue Page Employee View 2</summary>
+      <img src="images-documentation/readme_images/features/catalogue_page_employee2.png">
+    </details>
+
+    <details>
+      <summary>Detailed Page Employee View</summary>
+      <img src="images-documentation/readme_images/features/detailed_page_employee.png">
+    </details>
 
 - **Redemption Process**  
   - Employees can add items to their cart, modify quantities, and remove selections.  
   - The system ensures only users with sufficient points can redeem rewards.  
   - Upon redemption, points are deducted, and the cart is cleared.  
+    <details>
+      <summary>Cart with Insufficient balance</summary>
+      <img src="images-documentation/readme_images/features/cart_insufficient_balance.png">
+    </details>
+
+    <details>
+      <summary>Cart with Sufficient balance</summary>
+      <img src="images-documentation/readme_images/features/cart_sufficient_balance.png">
+    </details>
 
 - **Responsive Feedback & Validation**  
-  - Employees receive **instant feedback** when redeeming rewards or encountering errors.
+  - Employees receive **instant feedback** during the redemption process (e.g., add item, update quantity, redemption successful).
+    <details>
+      <summary>Message Item Added To Cart</summary>
+      <img src="images-documentation/readme_images/features/added_to_cart.png">
+    </details>
+
+    <details>
+      <summary>Message Updated Quantity</summary>
+      <img src="images-documentation/readme_images/features/updated_quantity.png">
+    </details>
+
+    <details>
+      <summary>Message Redemption Successful</summary>
+      <img src="images-documentation/readme_images/features/redemption_successful.png">
+    </details>
 
 ---
 
@@ -290,14 +348,51 @@ Admins have full control over the gift card catalogue and user profiles via the 
   - Add new gift cards with details such as name, points required, stock quantity, and T&Cs.
   - Edit existing gift cards to update descriptions, point values, or stock.
   - Delete gift cards that are no longer available.
+    <details>
+      <summary>Panel - Catalogue Items List</summary>
+      <img src="images-documentation/readme_images/features/admin_panel_catalogue_items_list.png">
+    </details>
+
+    <details>
+      <summary>Panel - Catalogue Items Detail</summary>
+      <img src="images-documentation/readme_images/features/admin_panel_catalogue_items_details.png">
+    </details>
 
 - **Manage Employee Profiles**
   - Admins can update employee profiles, including first and last names, and points balances.
   - Admins can view redemption records to see who ordered what items, in which quantity.
+    <details>
+      <summary>Panel - Employee Profile List</summary>
+      <img src="images-documentation/readme_images/features/admin_panel_users_list.png">
+    </details>
+
+    <details>
+      <summary>Panel - Redemption Records List</summary>
+      <img src="images-documentation/readme_images/features/admin_panel_redemption_list.png">
+    </details>
+
+    <details>
+      <summary>Panel - Redemption Records Detail</summary>
+      <img src="images-documentation/readme_images/features/admin_panel_redemption_details.png">
+    </details>
 
 - **Access to the Platform**  
   - View the full catalogue, including items with zero stock.  
   - See items with zero stock highlighted to assist in catalogue management. 
+    <details>
+      <summary>Catalogue Page Admin View 1</summary>
+      <img src="images-documentation/readme_images/features/catalogue_page_admin.png">
+    </details>
+
+    <details>
+      <summary>Catalogue Page Admin View 2</summary>
+      <img src="images-documentation/readme_images/features/catalogue_page_admin2.png">
+    </details>
+
+    <details>
+      <summary>Detailed Page Admin View</summary>
+      <img src="images-documentation/readme_images/features/detailed_page_admin.png">
+    </details>
 
 ---
 
