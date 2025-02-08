@@ -4,10 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
+# Catalogue-related views
 @login_required
 def catalogue_home(request):
     """
-    Displays all items available in the catalogue with optional search functionality.
+    Displays all items available in catalogue.
 
     **Template:**
     - catalogue/catalogue.html
@@ -32,7 +33,7 @@ def catalogue_detail(request, slug):
     - catalogue/catalogue_detail.html
     """
     selected_item = get_object_or_404(
-        CatalogueItem, 
+        CatalogueItem,
         slug=slug
         )
     return render(
@@ -46,7 +47,7 @@ def catalogue_detail(request, slug):
 @login_required
 def cart_page(request):
     """
-    Displays the user's cart, including details like image, name, 
+    Displays the user's cart, including details like image, name,
     quantity, and total points cost.
 
     **Context:**
@@ -85,7 +86,7 @@ def cart_page(request):
 @login_required
 def add_to_cart(request, slug):
     """
-    Adds a new CartItem to the cart for the current user (Create functionality).
+    Adds a new CartItem to the cart for the current user (CRUD > Create).
 
     **Context:**
     - `slug`: The slug of the CatalogueItem to be added to the cart.
@@ -103,8 +104,13 @@ def add_to_cart(request, slug):
     """
     if request.method == "POST":
         item = get_object_or_404(CatalogueItem, slug=slug)
-        # Find the latest cart instead of creating a new one to prevent duplicates
-        cart = Cart.objects.filter(user=request.user).order_by('-created_on').first()
+        # Find the latest cart instead of creating one to prevent duplicates.
+        cart = (
+            Cart.objects
+            .filter(user=request.user)
+            .order_by('-created_on')
+            .first()
+        )
         if not cart:
             cart = Cart.objects.create(user=request.user)
 
@@ -113,11 +119,17 @@ def add_to_cart(request, slug):
             item=item
             )
         if created:
-            messages.success(request, f"{item.reward_name} has been added to your cart!")
+            messages.success(
+                request,
+                f"{item.reward_name} has been added to your cart!"
+            )
         else:
             cart_item.quantity += 1
             cart_item.save()
-            messages.success(request, f"{item.reward_name} quantity updated in your cart!")
+            messages.success(
+                request,
+                f"{item.reward_name} quantity updated in your cart!"
+            )
 
         return redirect('catalogue_detail', slug=item.slug)
 
@@ -142,21 +154,21 @@ def update_cart_quantity(request, slug):
     - catalogue/cart.html
     """
     if request.method == 'POST':
-            # Get the item and cart_item for the current user
-            item = get_object_or_404(CatalogueItem, slug=slug)
-            cart_item = get_object_or_404(
-                CartItem,
-                cart__user=request.user,
-                item=item
-                )
+        # Get the item and cart_item for the current user
+        item = get_object_or_404(CatalogueItem, slug=slug)
+        cart_item = get_object_or_404(
+            CartItem,
+            cart__user=request.user,
+            item=item
+            )
 
-            # Parse and validate the new quantity
-            new_quantity = int(request.POST.get('quantity', 1))
-            if new_quantity < 1:
-                cart_item.delete()
-            else:
-                cart_item.quantity = new_quantity
-                cart_item.save()
+        # Parse and validate the new quantity
+        new_quantity = int(request.POST.get('quantity', 1))
+        if new_quantity < 1:
+            cart_item.delete()
+        else:
+            cart_item.quantity = new_quantity
+            cart_item.save()
 
     return redirect('cart_page')
 
@@ -200,7 +212,7 @@ def redeem_cart(request):
     - `cart`: The user's cart instance, retrieved or created.
     - `cart_items`: The list of CartItem instances in the user's cart.
     - `total_points_cost`: The total points required for all items in the cart.
-    - `user_profile`: The user's UserProfile instance for managing point balance.
+    - `user_profile`: The user's UserProfile instance for managing point.
     - `redemption`: The transaction recorded after successful redemption
 
     **Flow:**
@@ -216,14 +228,22 @@ def redeem_cart(request):
     - catalogue/cart.html
     """
     if request.method == 'POST':
-        # Always select the latest cart for the user instead of creating a new one 
-        cart = Cart.objects.filter(user=request.user).order_by('-created_on').first()
+        # Always select the latest cart
+        cart = (
+            Cart.objects
+            .filter(user=request.user)
+            .order_by('-created_on')
+            .first()
+        )
 
         # If no cart exists, prevent redemption
         if not cart:
-            messages.error(request, "Your cart is empty. Add items before redeeming.")
+            messages.error(
+                request,
+                "Your cart is empty. Add items before redeeming."
+            )
             return redirect('cart_page')
-        
+
         cart_items = cart.cartitem_set.all()
         total_points_cost = sum(item.total_points() for item in cart_items)
 
@@ -232,13 +252,16 @@ def redeem_cart(request):
         if user_profile.point_balance < total_points_cost:
             messages.error(request, "You don't have enough points to redeem.")
             return redirect('cart_page')
-        
+
         # Validate the stock for all items
         for cart_item in cart_items:
             if cart_item.item.stock_quantity < cart_item.quantity:
-                messages.error(request, f"Not enough stock for {cart_item.item.reward_name}.")
+                messages.error(
+                    request,
+                    f"Not enough stock for {cart_item.item.reward_name}."
+                )
                 return redirect('cart_page')
-        
+
         # Deduct points from the user's balance
         user_profile.point_balance = (
             user_profile.point_balance - total_points_cost
@@ -268,10 +291,10 @@ def redeem_cart(request):
         cart.delete()
 
         messages.success(
-            request, 
+            request,
             f"Redemption Successful! Order ID #{redemption.id}"
             )
-        
+
         return redirect('cart_page')
-    
+
     return redirect('cart_page')

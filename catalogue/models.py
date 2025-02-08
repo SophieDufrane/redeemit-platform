@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 class CatalogueItem(models.Model):
     """
     Represents an item available for redemption in the catalogue.
@@ -12,7 +13,7 @@ class CatalogueItem(models.Model):
         help_text="The name of the reward must be unique."
         )
     slug = models.SlugField(
-        max_length=200, 
+        max_length=200,
         unique=True,
         blank=True
         )
@@ -81,9 +82,9 @@ class Cart(models.Model):
         help_text="The date and time when the cart was updated."
         )
     user = models.ForeignKey(
-        User, 
-        on_delete=models.CASCADE, 
-        null=True, 
+        User,
+        on_delete=models.CASCADE,
+        null=True,
         blank=True,
         help_text="The user associated with this cart."
         )
@@ -97,12 +98,12 @@ class CartItem(models.Model):
     Represents an item added to a shopping cart.
     """
     cart = models.ForeignKey(
-        Cart, 
+        Cart,
         on_delete=models.CASCADE,
         help_text="The cart that this item belongs to."
         )
     item = models.ForeignKey(
-        CatalogueItem, 
+        CatalogueItem,
         on_delete=models.CASCADE,
         help_text="The item that was added to the cart."
         )
@@ -131,7 +132,7 @@ class Redemption(models.Model):
     Stores redemptions made by users.
     """
     user = models.ForeignKey(
-        User, 
+        User,
         on_delete=models.CASCADE,
         help_text="User who made the redemption."
         )
@@ -142,9 +143,12 @@ class Redemption(models.Model):
     total_points_spent = models.PositiveIntegerField(
         help_text="Total points used for this redemption."
         )
-    
+
     def __str__(self):
-        return f"Redemption {self.id} by {self.user.username} on {self.redeemed_on:%Y-%m-%d}"
+        return (
+            f"Redemption {self.id} by {self.user.username} "
+            f"on {self.redeemed_on:%Y-%m-%d}"
+        )
 
 
 class RedemptionItem(models.Model):

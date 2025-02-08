@@ -10,8 +10,7 @@ urlpatterns = [
 
     # Admin: Django's default admin interface
     path('admin/', admin.site.urls),
-    
+
     # Catalogue: Handles routes related to catalogue
     path('catalogue/', include('catalogue.urls')),
 ]
-

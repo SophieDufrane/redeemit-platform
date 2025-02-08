@@ -23,15 +23,19 @@ urlpatterns = [
     path('<slug:slug>/add-to-cart/', add_to_cart, name='add_to_cart'),
 
     # Update quantity: Updates the quantity of an item in the cart
-    path('<slug:slug>/update-quantity/',
+    path(
+        '<slug:slug>/update-quantity/',
         update_cart_quantity,
-        name='update_cart_quantity'),
+        name='update_cart_quantity'
+    ),
 
     # Delete from cart: Deletes a specific reward item from the cart
-    path('<slug:slug>/delete/',
+    path(
+        '<slug:slug>/delete/',
         delete_cart_item,
-        name='delete_cart_item'),
-        
+        name='delete_cart_item'
+    ),
+
     # Redeem cart: Processes the cart redemption
     path('cart/redeem/', redeem_cart, name='redeem-cart'),
 ]
