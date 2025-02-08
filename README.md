@@ -28,11 +28,11 @@ Built using the **Django framework**, this project serves as a learning and port
 5. [Testing](#5-testing)  
     5.1. [Manual Testing](#51-manual-testing)  
     5.2. [Fixed Bugs](#52-fixed-bugs)  
-    5.3. [Automated Testing](#53-automated-testing)  
+    5.3. [Database Migration](#53-database-migration)
+    5.4. [Automated Testing](#54-automated-testing)  
 6. [Deployment](#6-deployment)  
     6.1. [Heroku](#61-heroku)  
-    6.2. [Database Migration](#62-database-migration)  
-    6.3. [Forking and Cloning](#63-forking-and-cloning)  
+    6.2. [Forking and Cloning](#62-forking-and-cloning)  
 7. [Credits](#7-credit)
 
 ## 2. **User Experience - UX**
@@ -377,6 +377,7 @@ Admins have full control over the gift card catalogue and user profiles via the 
     </details>
 
 - **Access to the Platform**  
+  - Admins can access the panel directly from the platform navigation bar.
   - View the full catalogue, including items with zero stock.  
   - See items with zero stock highlighted to assist in catalogue management. 
     <details>
@@ -568,40 +569,7 @@ Each bug presented an opportunity to **understand Django better, refine my imple
 
 ---
 
-### **5.3. Automated Testing**
-
----
-
-## 6. Deployment
-
-### **6.1. Heroku**
-
-The site was deployed successfully to [Heroku](https://redemption-website-ec86c7604627.herokuapp.com/) following the steps below:
-
-1. In *Gitpod*, create a list of dependencies in `requirements.txt` file:
-    - Run `pip3 freeze > requirements.txt` in the terminal.
-2. In *Heroku* account, create the new App:
-    - Select `New` and `Create a new app`.
-    - Name the App and choose a region: `Europe` 
-    - Click `Create App`.
-3. In the new App page, access to the `Settings` section.
-4. In `Config Var` add :
-    - `DATABASE_URL` and its value.
-    - `SECRET_KEY` and its value.
-    - `CLOUDINARY_URL` and its value.
-    - Click `Add`.
-5. Access to the `Deploy` section.
-6. Select the deployment method:
-    - Select `GitHub`
-    - Search for the repository by taping the name in the search barre.
-    - Click on `Connect`
-7. Once App deployed, the message *Your app was successfully deployed.*
-
-The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/)
-
----
-
-### **6.2. Database Migration**
+### **5.3. Database Migration**
 
 During development, I realised that I had mistakenly been using a database already associated with another project, which created unintended dependencies. To ensure a clean setup, I decided to migrate to a new database. While following an online guide, I encountered several challenges that required troubleshooting and manual intervention.   
 This section outlines the steps taken, the issues faced, and how they were resolved with the valuable guidance and patience of a **Code Institute Tutor**.
@@ -688,7 +656,40 @@ At this point, **everything started to break**, leading to migration failures.
 
 ---
 
-### **6.3. Forking and Cloning**
+### **5.4. Automated Testing**
+
+---
+
+## 6. Deployment
+
+### **6.1. Heroku**
+
+The site was deployed successfully to [Heroku](https://redemption-website-ec86c7604627.herokuapp.com/) following the steps below:
+
+1. In *Gitpod*, create a list of dependencies in `requirements.txt` file:
+    - Run `pip3 freeze > requirements.txt` in the terminal.
+2. In *Heroku* account, create the new App:
+    - Select `New` and `Create a new app`.
+    - Name the App and choose a region: `Europe` 
+    - Click `Create App`.
+3. In the new App page, access to the `Settings` section.
+4. In `Config Var` add :
+    - `DATABASE_URL` and its value.
+    - `SECRET_KEY` and its value.
+    - `CLOUDINARY_URL` and its value.
+    - Click `Add`.
+5. Access to the `Deploy` section.
+6. Select the deployment method:
+    - Select `GitHub`
+    - Search for the repository by taping the name in the search barre.
+    - Click on `Connect`
+7. Once App deployed, the message *Your app was successfully deployed.*
+
+The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/)
+
+---
+
+### **6.2. Forking and Cloning**
 
 Forking the repository creates a copy of this project, allowing modifications without affecting the original code. Once the repository is forked, it can be cloned to a local machine for development.</br>
 Follow these steps to fork, clone, and work on the project:
