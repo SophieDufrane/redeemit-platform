@@ -11,6 +11,13 @@
 <head>
     <title>Redemption Platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Meta Tags -->
+    <meta name="description" content="Redeem your points for gift cards in the Redemption Platform.">
+    <meta name="keywords" content="rewards, redemption, insentive, gift cards, employee">
+    <meta name="author" content="Sophie Dufrane">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.webp' %}">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +27,6 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -123,7 +129,10 @@
     <footer class="footer mt-auto py-3">
         <p class="m-0 text-center">
             {% block copyright %}
-            © RedeemIt - Your Employee Recognition Platform 2025
+            © RedeemIt - Employee Recognition 2025
+            <a href="https://github.com/SophieDufrane" target="_blank" rel="noopener noreferrer">
+                Created by Sophie Dufrane
+            </a>
             {% endblock %}
         </p>
     </footer>
