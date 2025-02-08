@@ -4,12 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Loop through messages and set a timer to remove them
     messages.forEach((message) => {
+        // Add fade-in class after a slight delay
         setTimeout(() => {
-            message.style.transition = "opacity 0.5s ease-out";
-            message.style.opacity = "0";
+            message.classList.add("fade-in");
+        }, 100);
+
+        // Remove message after 3 seconds
+        setTimeout(() => {
+            message.classList.remove("fade-in");
+            message.classList.add("fade-out");
+
             setTimeout(() => {
                 message.remove();
-            }, 500);
-        }, 3000); // Messages disappear after 3 seconds
+            }, 500)
+        }, 3000);
     });
 });

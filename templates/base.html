@@ -106,6 +106,14 @@
 
     <!-- Dynamic Content Section -->
     <main class="flex-shrink-0">
+
+        <!-- Displaying Django messages -->
+        {% for message in messages %}
+        <div class="custom-message {{ message.tags }}">
+            {{ message | safe }}
+        </div>
+        {% endfor %}
+
         {% block content %}
         <!-- Page-specific content goes here -->
         {% endblock %}

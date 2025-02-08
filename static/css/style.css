@@ -11,6 +11,30 @@ body {
     letter-spacing: 2px;
 }
 
+/* -------------------------------------- Django Messages */
+.custom-message {
+    padding: 20px;
+    text-align: center;
+    background-color: #decd62;
+    color: #300e82;
+    opacity: 0;
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    transform: translateY(-5px);
+}
+
+/* Smooth fade-in */
+.custom-message.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth fade-out */
+.custom-message.fade-out {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
 /* -------------------------------------- Navigation Bar */
 .navbar {
     background-color: #300e82;
