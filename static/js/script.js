@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(() => {
                 message.remove();
-            }, 500)
+            }, 500);
         }, 3000);
     });
 });

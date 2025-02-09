@@ -60,6 +60,12 @@ The project is structured around three key areas:
 
 The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as redemption process, administrative management, and employee access.  
 
+<details>
+  <summary>Click to view Kanban Board</summary>
+  <img src="images-documentation/readme_images/kanban.png">
+</details>
+
+
 #### EPIC - User Access
 1. **Employee Register** *(must have)*  
    Allows an unregistered employee to create an account with a user name, email, and password to access the redemption platform.
@@ -336,6 +342,11 @@ Employees interact with the platform through an intuitive and structured redempt
     </details>
 
     <details>
+      <summary>Message Confirmation Before Redemption</summary>
+      <img src="images-documentation/readme_images/features/redemption_confirmation.png">
+    </details>
+
+    <details>
       <summary>Message Redemption Successful</summary>
       <img src="images-documentation/readme_images/features/redemption_successful.png">
     </details>
@@ -395,6 +406,15 @@ Admins have full control over the gift card catalogue and user profiles via the 
       <img src="images-documentation/readme_images/features/detailed_page_admin.png">
     </details>
 
+- **Error Pages**  
+  - **404** - Page Not Found  
+  - **500** - Internal Server Error  
+    
+    <details>
+      <summary>Error Page Not found 404</summary>
+      <img src="images-documentation/readme_images/features/404_error.png">
+    </details>
+
 ---
 
 ### **3.2. Entity Relationship Diagram (ERD)**
@@ -407,12 +427,7 @@ The platform follows the MVC architecture (Model-View-Controller) to maintain a 
 
 The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact. It provides a visual representation of the database schema, showing the relationships between tables and the key fields in each table. 
 
-<details>
-  <summary>Click to view ERD Diagram</summary>
-
-  ![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
-
-</details>
+![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
 
 
 ### **3.3. CRUD Functionality** 
@@ -443,14 +458,25 @@ The platform is structured around **CRUD (Create, Read, Update, Delete) principl
 The current version of **RedeemIt** focuses on core functionality, but there is room for expansion and optimisation. Some potential enhancements include:
 
 - **Employee Profile**  
+  - Employees can access to a profile page and see their information.
   - Employees can update their personal information (e.g., first and last name).
   - Employees can check records of past redemptions.  
 
 - **Automated Email Notifications**  
+  - New registered employee receives a confirmation by email with his profile main details.
   - Employees and admins receive confirmation emails for transactions.  
 
 - **Admin Analytics Dashboard**  
   - A data-driven insights panel for tracking redemptions, employee engagement, and points distribution.  
+
+- **Cart Enhancements**  
+  - Display the number of items in the cart within the cart icon to provide a visual cue when items have been added.  
+
+- **Search Functionality for Catalogue**  
+  - Enable employees to search for specific gift cards in the catalogue home page, improving navigation and efficiency.  
+
+- **Pagination for Catalogue Home**  
+  - Implement pagination in the catalogue home page to enhance user experience when browsing a large selection of gift cards.  
 
 These improvements would enhance the platform’s **efficiency and usability**, offering a more complete **employee recognition experience**.  
 
@@ -517,7 +543,8 @@ Tests cover **admin functionalities**, **employee interactions** and **database 
 |  | Add the same item again | The quantity of the item in the cart increases by 1. The first time, a message confirms *"Added to cart"*, while subsequent additions display *"Quantity updated"*. | PASS |
 |  | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
 |  | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
-|  | Delete item by setting quantity to 0 | Item is removed from the cart, and total points cost updates | PASS |
+|  | Update Qty with non-accepted values (<0, letters) | An error message is displayed, preventing invalid values from being submitted | PASS |
+|  | Delete an item using the delete icon | Item is removed from the cart, and a confirmation message *"Item removed from cart."* is displayed | PASS |
 |  | Redeem with sufficient balance | Employee's balance is updated in the navigation bar, the cart is cleared, and the *"Continue Shopping"* button is displayed. | PASS |
 |  | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
 | **Register, Login, Logout** | User Registration | A new user fills out the registration form and submits it | PASS |
@@ -655,7 +682,14 @@ At this point, **everything started to break**, leading to migration failures.
 
 ---
 
-### **5.4. Automated Testing**
+### **5.4. Validators**
+
+#### **CSS - HTML - Javascript
+
+<details>
+  <summary>CSS Validator</summary>
+  <img src="images-documentation/readme_images/validators/css_validator.png">
+</details>
 
 ---
 
@@ -708,3 +742,5 @@ Follow these steps to fork, clone, and work on the project:
   - Navigate to the newly cloned repository directory: `cd` and the repository name.
 
 ## 7. Credit
+
+A special thanks to my mentors, **Sandeep Aggarwal** and **Julia Konovalova**, for their valuable insights and guidance throughout this project. Their feedback and expertise greatly contributed to refining the functionality and improving the overall structure of **RedeemIt**.  
