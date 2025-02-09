@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_title %}404 Error{% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-4">Oops! Page Not Found</h1>
+    <p class="lead mt-3">
+        It seems the page you're looking for doesn't exist or may have been moved.
+    </p>
+    <img src="{% static 'images/error_404.webp' %}" alt="404 error illustration" class="img-fluid my-4"
+        style="max-width: 50%;">
+    <a href="{% url 'home' %}" class="redeemit-button blue-button" aria-label="Go back to the home page">
+        Return Home
+    </a>
+</div>
+{% endblock %}

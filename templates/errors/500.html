@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_title %}500 Error{% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-4">Something Went Wrong</h1>
+    <p class="lead mt-3">
+        We're experiencing technical difficulties. Please try again later.
+    </p>
+    <img src="{% static 'images/error_500.webp' %}" alt="500 error illustration" class="img-fluid my-4"
+        style="max-width: 50%;">
+    <a href="{% url 'home' %}" class="redeemit-button blue-button" aria-label="Go back to the home page">
+        Return Home
+    </a>
+</div>
+{% endblock %}

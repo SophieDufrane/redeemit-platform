@@ -40,6 +40,12 @@ body {
     background-color: #300e82;
 }
 
+/* Flexbox Styling for Navbar Items */
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
 .navbar .navbar-brand {
     color: white;
 }
@@ -57,9 +63,8 @@ body {
     color: #decd62;
 }
 
-/* Active Link Styling */
-.nav-link.active {
-    text-decoration: underline;
+.points-balance span {
+    color: white;
 }
 
 /* -------------------------------------- Footer styling */
@@ -67,11 +72,18 @@ body {
     background-color: #300e82;
 }
 
-.footer p {
+.footer p,
+footer a {
     font-family: "Montserrat", serif;
     font-size: 0.6rem;
     text-transform: uppercase;
     color: white;
+    text-decoration: none;
+}
+
+/* Hover Link Styling */
+.footer a:hover {
+    color: #decd62;
 }
 
 /* -------------------------------------- Button generic styling */
@@ -122,6 +134,13 @@ body {
 .disabled-button {
     cursor: not-allowed;
     opacity: 0.9;
+}
+
+.trash-button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #504f4f;
 }
 
 /* -------------------------------------- Gradient generic styling */
@@ -185,7 +204,7 @@ body {
 
 #catalogue-header h5 {
     font-size: 1rem;
-    color: #333;
+    color: #300e82;
     margin: 0;
 }
 
