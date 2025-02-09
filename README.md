@@ -686,8 +686,21 @@ At this point, **everything started to break**, leading to migration failures.
 
 #### **CSS - HTML - Javascript
 
+I used the [W3C HTML Validator](https://validator.w3.org/) to check the website’s HTML for any errors.
+<details>
+  <summary>HTML Validator</summary>
+  <img src="images-documentation/readme_images/validators/html_validator.png">
+</details>
+
+The website’s CSS was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 <details>
   <summary>CSS Validator</summary>
+  <img src="images-documentation/readme_images/validators/css_validator.png">
+</details>
+
+I used [JSHint](https://jshint.com/) to check for potential errors and enforce best practices in my JavaScript code.
+<details>
+  <summary>JSHint</summary>
   <img src="images-documentation/readme_images/validators/css_validator.png">
 </details>
 
