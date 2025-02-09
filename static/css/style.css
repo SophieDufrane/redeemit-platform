@@ -124,6 +124,13 @@ body {
     opacity: 0.9;
 }
 
+.trash-button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #504f4f;
+}
+
 /* -------------------------------------- Gradient generic styling */
 .gradient {
     display: flex;

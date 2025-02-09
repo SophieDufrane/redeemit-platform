@@ -185,7 +185,7 @@ def delete_cart_item(request, slug):
     **Flow:**
     - Accepts a POST request to delete a specific cart item.
     - Retrieves the CartItem associated with the slug and the user's cart.
-    - Deletes the CartItem from the database.
+    - Deletes the CartItem from the database and display confirmation message.
     - Redirects back to the cart page.
 
     **Redirect:**
@@ -198,7 +198,13 @@ def delete_cart_item(request, slug):
             cart__user=request.user,
             item__slug=slug
             )
+        
+        # Store item name for the message before deleting
+        item_name = cart_item.item.reward_name
+        # Delete the item
         cart_item.delete()
+
+        messages.error(request, f"{item_name} has been removed from your cart!")
 
     return redirect('cart_page')
 

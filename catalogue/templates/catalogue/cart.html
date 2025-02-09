@@ -25,13 +25,23 @@
             <div>
                 <p class="m-0 card-title"><strong>{{ item.item.reward_name }}</strong></p>
                 <p class="m-0 text-secondary">Points Cost: {{ item.total_points }}</p>
+                <!-- Delete Form -->
+                <form method="POST" action="{% url 'delete_cart_item' item.item.slug %}">
+                    {% csrf_token %}
+                    <button type="submit" class="trash-button">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                </form>
             </div>
             <!-- Quantity Form -->
-            <form method="POST" action="{% url 'update_cart_quantity' item.item.slug %}">
-                {% csrf_token %}
-                <input type="number" name="quantity" value="{{ item.quantity }}" min="0" style="width: 50px;">
-                <button type="submit" class="blue-button">Update</button>
-            </form>
+            <div class="d-flex align-items-center justify-content-between">
+                <p class="m-0 text-secondary">Quantity:</p>
+                <form method="POST" action="{% url 'update_cart_quantity' item.item.slug %}">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="0" style="width: 50px;">
+                    <button type="submit" class="blue-button">Update</button>
+                </form>
+            </div>
         </li>
         {% endfor %}
     </ul>
