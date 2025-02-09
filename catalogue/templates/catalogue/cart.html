@@ -5,9 +5,9 @@
 <div class="cart-container my-5">
     {% if not cart_items %}
     <div class="empty-cart">
-        <h1 class="text-center">Your Cart in Empty</h1>
-        <img src="{% static 'images/empty_cart.webp' %}" alt="Empty Cart">
-        <a href="{% url 'catalogue_home' %}" class="redeemit-button yellow-button">
+        <h1 class="text-center">Your Cart is Empty</h1>
+        <img src="{% static 'images/empty_cart.webp' %}" alt="Illustration of an empty shopping cart">
+        <a href="{% url 'catalogue_home' %}" class="redeemit-button yellow-button" aria-label="Start Shopping">
             Start Shopping!
         </a>
     </div>
@@ -27,7 +27,8 @@
                 <!-- Delete Form -->
                 <form method="POST" action="{% url 'delete_cart_item' item.item.slug %}">
                     {% csrf_token %}
-                    <button type="submit" class="trash-button">
+                    <button type="submit" class="trash-button"
+                        aria-label="Remove {{ item.item.reward_name }} from cart">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </form>
@@ -50,7 +51,7 @@
         <!-- Modal Trigger -->
         {% if balance_sufficient %}
         <button type="button" class="redeemit-button yellow-button" data-bs-toggle="modal"
-            data-bs-target="#confirmRedeemModal">
+            data-bs-target="#confirmRedeemModal" aria-label="Redeem cart for {{ total_points_cost }} points">
             RedeemIt - {{ total_points_cost }} Points
         </button>
         {% else %}

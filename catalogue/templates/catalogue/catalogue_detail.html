@@ -7,7 +7,7 @@
         <!-- Image section -->
         <div class="col-12 col-md-4 text-center my-4">
             <img src="{{ selected_item.image.url }}" class="img-fluid img-thumbnail"
-                alt="{{ selected_item.reward_name }}">
+                alt="{{ selected_item.reward_name }} - {{ selected_item.reward_value }} Euro">
         </div>
 
         <!-- Details section -->
@@ -31,8 +31,10 @@
         <div class="col-12 mt-4 text-center">
             <form method="POST" action="{% url 'add_to_cart' selected_item.slug %}">
                 {% csrf_token %}
-                <button type="submit" class="redeemit-button yellow-button">Add to Cart</button>
-                <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">
+                <button type="submit" class="redeemit-button yellow-button"
+                    aria-label="Add {{ selected_item.reward_name }} to cart">Add to Cart</button>
+                <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button"
+                    aria-label="Continue shopping in the catalogue">
                     Continue Shopping!
                 </a>
             </form>
@@ -42,7 +44,8 @@
         <!-- Admin Actions: Back to Catalogue -->
         {% if user.userprofile.role == "admin" %}
         <div class="col-12 mt-4 text-center">
-            <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">
+            <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button"
+                aria-label="Return to catalogue home page">
                 Back To Catalogue
             </a>
         </div>

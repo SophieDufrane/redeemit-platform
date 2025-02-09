@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
 <!-- Hero section -->
@@ -16,7 +15,8 @@
             </div>
             <!-- Right Column -->
             <div class="gradient col-md-6 mb-4 text-center">
-                <img class="hero-image " src="{% static 'images/couple.webp' %}" alt="Happy couple in black and white">
+                <img class="hero-image" src="{% static 'images/couple.webp' %}"
+                    alt="Two people smiling with excitement about redeeming rewards">
             </div>
         </div>
     </div>
@@ -35,9 +35,10 @@
         {% for item in catalogue_items %}
         {% if user.userprofile.role == "admin" or item.stock_quantity > 0 %}
         <div class="col-6 col-md-4 col-lg-3 mt-3">
-            <a href="{% url 'catalogue_detail' slug=item.slug %}" class="text-decoration-none">
+            <a href="{% url 'catalogue_detail' slug=item.slug %}" class="text-decoration-none"
+                aria-label="View details about {{ item.reward_name }}">
                 <div class="card shadow-sm p-3 mb-5 bg-body rounded">
-                    <img src="{{ item.resized_image_url }}" alt="{{ item.reward_name }}">
+                    <img src="{{ item.resized_image_url }}" alt="{{ item.reward_name }} - {{ item.reward_value }} Euro">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ item.reward_name }}</h5>
                         <p class="card-text">{{ item.reward_value }} &euro;</p>

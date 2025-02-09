@@ -3,13 +3,15 @@
 
 {% block content %}
 <div class="home-background-image" style="background-image: linear-gradient(to bottom,
-rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
+rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');"
+    aria-label="Background image of a smiling woman looking down at her phone.">
     {% if user.is_authenticated %}
     <div class="gradient">
         <div class="form-container">
             <h3>Welcome Back {{ user.first_name|default:user.username }}</h3>
             <p>You are already logged in. Access your catalogue now.</p>
-            <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">GO!</a>
+            <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button"
+                aria-label="Go to the catalogue page">GO!</a>
         </div>
     </div>
     {% else %}
@@ -19,8 +21,10 @@ rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp
                 <h3>Welcome to RedeemIt!</h3>
                 <p>Your platform for employee recognition and rewards.</p>
                 <p>Log in or sign up to get started.</p>
-                <a href="{% url 'account_signup' %}" class="redeemit-button blue-button">Register</a>
-                <a href="{% url 'account_login' %}" class="redeemit-button blue-button">Log In</a>
+                <a href="{% url 'account_signup' %}" class="redeemit-button blue-button"
+                    aria-label="Register for a new account">Register</a>
+                <a href="{% url 'account_login' %}" class="redeemit-button blue-button"
+                    aria-label="Log in to your existing account">Log In</a>
             </div>
         </div>
     </div>
