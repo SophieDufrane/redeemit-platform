@@ -494,7 +494,6 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 - **W3C CSS Validator** – Ensured the CSS followed best practices and had no errors.  
 - **JSHint** – Analysed JavaScript code to detect potential issues.  
 - **Squoosh** – Optimised images by converting them to **WebP format**, improving loading speed.
-- **ChatGPT & GitHub Copilot** – Assisted with debugging, code suggestions, and documentation refinements.
 
 ## 5. Testing
 

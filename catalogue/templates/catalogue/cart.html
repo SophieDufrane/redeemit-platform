@@ -11,9 +11,8 @@
             Start Shopping!
         </a>
     </div>
-    {% endif %}
+    {% else %}
 
-    {% if cart_items %}
     <h1 class="text-center">Your Cart</h1>
     <ul>
         {% for item in cart_items %}
@@ -45,33 +44,49 @@
         </li>
         {% endfor %}
     </ul>
+
+    <!-- Redemption & Continue Shopping Buttons -->
     <div class="text-center">
-        <form action="{% url 'redeem-cart' %}" method="POST" style="display: inline;">
-            {% csrf_token %}
-            {% if balance_sufficient %}
-            <button type="submit" class="redeemit-button yellow-button">
-                RedeemIt - {{ total_points_cost }} Points
-            </button>
-            {% else %}
-            <button type="submit" class="redeemit-button disabled-button" disabled>
-                Oops, {{ missing_points }} points short!
-            </button>
-            {% endif %}
-        </form>
+        <!-- Modal Trigger -->
+        {% if balance_sufficient %}
+        <button type="button" class="redeemit-button yellow-button" data-bs-toggle="modal"
+            data-bs-target="#confirmRedeemModal">
+            RedeemIt - {{ total_points_cost }} Points
+        </button>
+        {% else %}
+        <button type="button" class="redeemit-button disabled-button" disabled>
+            Oops, {{ missing_points }} points short!
+        </button>
+        {% endif %}
+
         <a href="{% url 'catalogue_home' %}" class="redeemit-button blue-button">
             Continue Shopping!
         </a>
     </div>
-    <!-- Confirm and Cancel Buttons -->
-    <div class="text-center" style="display: none;">
-        <button id="confirm-redemption" class="redeemit-button blue-button">
-            Confirm
-        </button>
-        <button id="cancel-redemption" class="redeemit-button blue-button">
-            Cancel
-        </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmRedeemModal" tabindex="-1" aria-labelledby="confirmRedeemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmRedeemModalLabel">Confirm Redemption</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to redeem your cart for {{ total_points_cost }} points?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <!-- Form Submission Button -->
+                    <form action="{% url 'redeem-cart' %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     {% endif %}
 </div>
-
 {% endblock %}
