@@ -6,35 +6,6 @@
 
 Built using the **Django framework**, this project serves as a learning and portfolio exercise, demonstrating full-stack development skills in designing a functional and user-friendly web application.  
 
-## **Table of Contents**
-
-1. [Introduction](#introduction)  
-2. [User Experience - UX](#2-user-experience---ux)  
-    2.1. [Scope and Structure](#21-scope-and-structure)  
-    2.2. [User Stories](#22-user-stories)  
-    2.3. [Interface and Wireframes](#23-interface-and-wireframes)  
-    2.4. [Visual Design](#24-visual-design)  
-    2.5. [Project Planning and Agile Approach](#25-project-planning-and-agile-approach)  
-3. [Platform Features](#3-platform-features)  
-    3.1. [User Interactions & Admin Functionalities](#31-user-interactions--admin-functionalities)  
-    3.2. [Entity Relationship Diagram (ERD)](#32-entity-relationship-diagram-erd)  
-    3.3. [CRUD Functionality](#33-crud-functionality)  
-    3.4. [Future Enhancements](#34-future-enhancements)  
-4. [Technology](#4-technology)  
-    4.1. [Languages](#41-languages)  
-    4.2. [Frameworks & Librairies](#42-frameworks--librairies)  
-    4.3. [Development & Deployment Tools](#43-development--deployment-tools)  
-    4.4. [Testing & Optimisation Tools](#44-testing--optimisation-tools)  
-5. [Testing](#5-testing)  
-    5.1. [Manual Testing](#51-manual-testing)  
-    5.2. [Fixed Bugs](#52-fixed-bugs)  
-    5.3. [Database Migration](#53-database-migration)
-    5.4. [Automated Testing](#54-automated-testing)  
-6. [Deployment](#6-deployment)  
-    6.1. [Heroku](#61-heroku)  
-    6.2. [Forking and Cloning](#62-forking-and-cloning)  
-7. [Credits](#7-credit)
-
 ## 2. **User Experience - UX**
 
 ### **2.1. Scope and Structure**
@@ -60,116 +31,98 @@ The project is structured around three key areas:
 
 The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as redemption process, administrative management, and employee access.  
 
-<details>
-  <summary>Click to view Kanban Board</summary>
-  <img src="images-documentation/readme_images/kanban.png">
-</details>
-
-
 #### EPIC - User Access
 1. **Employee Register** *(must have)*  
-   Allows an unregistered employee to create an account with a user name, email, and password to access the redemption platform.
+  Allows an unregistered employee to create an account with a user name, email, and password to access the redemption platform.
 
 2. **Employee Login** *(must have)*  
-   Provides secure login functionality for employees to access the redemption platform.
+  Provides secure login functionality for employees to access the redemption platform.
 
 3. **Employee Logout** *(must have)*  
-   Allows employees to securely log out of their session once they are done using the platform.
+  Allows employees to securely log out of their session once they are done using the platform.
 
-4. **Admin Superuser Access to Panel** *(must have)*
-   Enables the admin superuser to log in and access the redemption platform and admin panel, for managing catalogue and employees profile.
+4. **Admin Superuser Access to Panel** *(must have)*  
+  Enables the admin superuser to log in and access the redemption platform and admin panel, for managing catalogue and employees profile.
 
 5. **Site User View Profile Details** *(could have)*  
-   Employees can view their profile details, including their current reward points balance and basic personal information.
+  Employees can view their profile page, including basic personal information, login details, redemption records and points balance.  
 
 ---
 
 #### EPIC - Admin Management
 1. **Add New Reward** *(must have)*  
-   Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
+  Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
 
 2. **Edit Existing Reward** *(should have)*  
-   Admins can modify details of existing gift card, such as updating the item name, description, or point value.
+   dmins can modify details of existing gift card, such as updating the item name, description, or point value.
 
 3. **Delete Reward** *(should have)*  
-   Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
+  Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
 
 4. **Access to Full Catalogue** *(should have)*  
-   Admins can view the full catalogue from the platform, including items with zero stock, so they can manage inventory effectively.
+  Admins can view the full catalogue from the platform, including items with zero stock, so they can manage inventory effectively.
 
 5. **Manage User's Points Balance** *(should have)*  
-   Admin can view, add, or deduct points from an employee’s balance for reward redemption.
+  Admin can view, add, or deduct points from an employee’s balance for reward redemption.
 
 6. **Manage Redemption Records** *(should have)*  
-   Admin can view, search, modify, or cancel redemption records to ensure accurate transaction history and points balance adjustments.
+  Admin can view, search, modify, or cancel redemption records to ensure accurate transaction history and points balance adjustments.
 
 ---
 
 #### EPIC - Redemption Process
 1. **Browse Available Gift Card** *(must have)*  
-   Employees can view the full list of available gift card.
+  Employees can view the full list of available gift card.
 
 2. **Access Detailed Page** *(should have)*  
-   Employees can view detailed information about a specific gift card, including its description and points required.
+  Employees can view detailed information about a specific gift card, including its description and points required.
 
 3. **Add Gift Card to Cart** *(must have)*  
-    Employees can add gift card to their cart before proceeding to redeem.
+  Employees can add gift card to their cart before proceeding to redeem.
 
 4. **View Cart** *(must have)*  
-    Employees can review the list of gift card added to their cart, including the total points required.
+  Employees can review the list of gift card added to their cart, including the total points required.
 
 5. **Modify Cart** *(should have)*  
-    Employees can update the quantity or delete gift card from their cart before finalising the redemption.
+  Employees can update the quantity or delete gift card from their cart before finalising the redemption.
 
 6. **Redeem Items** *(must have)*  
-    Employees can finalise the redemption process, confirming their selected gift cards and updating their points balance.
-
-### **2.3. Interface and Wireframes**
-
-#### Flowchart
-
-The following flowchart illustrates the **employee journey** within the platform. It maps out the key actions an employee can perform, such as logging in, browsing the catalogue, adding items to the cart, and redeeming rewards.  
-It was created using [Lucidchart](https://www.lucidchart.com/pages/) to provide a clear visual representation of the redemption process.
-
-<details>
-  <summary>Click to view Flowchart</summary>
-  <img src="images-documentation/readme_images/redemption_platform_flowchart.png">
-</details>
+  Employees can finalise the redemption process, confirming their selected gift cards and updating their points balance.  
 
 ---
+
+### **2.4. Visual Design**
 
 #### Wireframes
 
 Wireframes were designed to outline the layout and functionality of each page and to help visualise the user flow. This ensures the platform’s structure is logical, responsive, and user-friendly.  
 [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNlJTamA65VQDctZEK7owZeyEq-JZFKrhXC3gEYcO3MafEUiVCTYcwBoCwXQQAvD_BwE) was utilised to craft the detailed wireframes. These initial sketches served as the foundation for the app’s final structure and layout.
 
-#### Login Page
-<details>
-  <summary>Click to view the Login Page wireframe</summary>
-  <img src="images-documentation/wireframes/log-in_page.png">
-</details>
+  <details>
+    <summary>Click to view Login Page</summary>
+    <img src="images-documentation/wireframes/log-in_page.png">
+  </details>
 
-#### Redemption Platform (Catalogue Home page)
-<details>
-  <summary>Click to view the Redemption Platform wireframe</summary>
-  <img src="images-documentation/wireframes/plateform_landing_page.png">
-</details>
+</br>
 
-#### Gift Card Details Page
-<details>
-  <summary>Click to view the Gift Card Details Page wireframe</summary>
-  <img src="images-documentation/wireframes/plateform_product_details_page.png">
-</details>
+  <details>
+    <summary>Click to view Catalogue Home Page</summary>
+    <img src="images-documentation/wireframes/plateform_landing_page.png">
+  </details>
 
-#### Cart Page
-<details>
-  <summary>Click to view the Cart Page wireframe</summary>
-  <img src="images-documentation/wireframes/cart_page.png">
-</details>
+</br>
 
----
+  <details>
+    <summary>Click to view Gift Card Details Page</summary>
+    <img src="images-documentation/wireframes/plateform_product_details_page.png">
+  </details>
 
-### **2.4. Visual Design**
+</br>
+
+  <details>
+    <summary>Click to view Cart Page</summary>
+    <img src="images-documentation/wireframes/cart_page.png">
+  </details>
 
 #### UI Design Approach 
 
@@ -201,7 +154,6 @@ The chosen colour palette draws inspiration from **Workhuman**'s branding and al
 | #484848  | Davy's Grey          |
 
 </br>
-
 
 <details>
   <summary>Click to view inspiration from Workhuman website</summary>
@@ -239,7 +191,21 @@ By breaking the project into smaller **user stories**, it ensured a smooth workf
 To maintain an organised and efficient development process, the following tools and techniques were used:  
 
 - **GitHub Projects** – Tracked tasks and iterations, ensuring a structured development cycle.  
-- **Lucidchart** – Used to map out the user flow and database schema.  
+  <details>
+    <summary>Click to view Kanban Board</summary>
+    <img src="images-documentation/readme_images/kanban.png">
+  </details>  
+
+</br>
+
+- **Lucidchart** – Used to map out the user flow within the platform.  
+  <details>
+    <summary>Click to view Flowchart</summary>
+    <img src="images-documentation/readme_images/redemption_platform_flowchart.png">
+  </details>
+
+</br>
+
 - **MOSCOW Prioritization** – Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
 
 | **Priority** | **Feature** |
@@ -408,12 +374,14 @@ Admins have full control over the gift card catalogue and user profiles via the 
 
 - **Error Pages**  
   - **404** - Page Not Found  
-  - **500** - Internal Server Error  
-    
     <details>
       <summary>Error Page Not found 404</summary>
       <img src="images-documentation/readme_images/features/404_error.png">
     </details>
+
+</br>
+
+  - **500** - Internal Server Error  
 
 ---
 
@@ -432,23 +400,13 @@ The **Entity Relationship Diagram (ERD)** below illustrates how the database mod
 
 ### **3.3. CRUD Functionality** 
 
-The platform is structured around **CRUD (Create, Read, Update, Delete) principles**, ensuring efficient interaction between employees, admins, and stored data.  
-
-| **Table**          | **Purpose** | **Key Fields** |  
-|-------------------|---------------------------------|---------------------------|  
-| **CatalogueItem** | Stores details of available rewards | `reward_name`, `points_cost`, `stock_quantity`, `image` |  
-| **UserProfile**   | Tracks employees' points balance | `user_id`, `point_balance` |  
-| **Cart & CartItem** | Manages user selections before redemption | `cart_id`, `user_id`, `reward_id`, `quantity` |  
-
----
-
-#### CRUD in Action   
+The platform is structured around **CRUD (Create, Read, Update, Delete) principles**, ensuring efficient interaction between employees, admins, and stored data.    
 
 | **Action** | **Admin Functionalities** | **Employee Functionalities** |  
 |------------|------------------|------------------|  
-| **Create** | Add new gift cards to the catalogue | Add items to cart for redemption |  
-| **Read**   | View and manage all gift cards | View available rewards and cart items |  
-| **Update** | Modify gift card details | Adjust quantities in cart before redemption |  
+| **Create** | Add new gift cards to the catalogue | Create a new cart by adding items |  
+| **Read**   | View and manage all gift cards | View items in cart |  
+| **Update** | Modify gift card details | Adjust items quantity in cart |  
 | **Delete** | Remove gift cards from the system | Remove items from cart |  
 
 ---
@@ -457,7 +415,7 @@ The platform is structured around **CRUD (Create, Read, Update, Delete) principl
 
 The current version of **RedeemIt** focuses on core functionality, but there is room for expansion and optimisation. Some potential enhancements include:
 
-- **Employee Profile**  
+- **Create a Page for Employee Profile**  
   - Employees can access to a profile page and see their information.
   - Employees can update their personal information (e.g., first and last name).
   - Employees can check records of past redemptions.  
@@ -485,9 +443,9 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 ### **4.1. Languages**
 
 - **Python** – Used for backend logic and database interactions.  
-- **HTML** – Provides the structure and content of the web pages.  
+- **HTML** – PProvides the structure and content of the web pages, utilising a templating language.  
 - **CSS** – Handles the styling and layout.  
-- **JavaScript** – Enables interactive elements. 
+- **JavaScript** – Enables interactive elements, specifically for displaying Django messages. 
 
 ---
 
@@ -519,6 +477,7 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 - **HTML Validator** – Checked for syntax errors in HTML files.  
 - **W3C CSS Validator** – Ensured the CSS followed best practices and had no errors.  
 - **JSHint** – Analysed JavaScript code to detect potential issues.  
+- **Lighthouse** – Audited web pages for performance, accessibility, best practices, and SEO.  
 - **Squoosh** – Optimised images by converting them to **WebP format**, improving loading speed.
 
 ## 5. Testing
@@ -526,7 +485,7 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 ### **5.1. Manual Testing**  
 
 The following table summarises the key **manual testings** conducted along the development to ensure functionalities work as expected.  
-Tests cover **admin functionalities**, **employee interactions** and **database updates**.  
+Tests cover **admin functionalities**, **employee interactions**, **database updates** and followed the user stories.  
 
 
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
@@ -560,6 +519,9 @@ Tests cover **admin functionalities**, **employee interactions** and **database 
 |  | Employee - View Available items | Employee sees only items that are in stock; out-of-stock items are hidden | PASS |
 |  | Admin - Access Admin Panel | Admin has access to the admin panel from the navigation bar | PASS |
 |  | Employee - Access Cart | Employee can view and manage their cart but does not have access to the admin panel | PASS |
+| **Error Handling** | 404 Error Page | The 404 error page displays the correct visual and the comment "Oops! Page Not Found" | PASS |
+|  | 500 Error Page | The 500 error page displays the correct visual and the comment "Something Went Wrong" | PASS |
+
 ---
 
 ### **5.2. Fixed Bugs**
