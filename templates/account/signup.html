@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-{% load crispy_forms_tags %}  {# New line added #}
+{% load crispy_forms_tags %} {# New line added #}
 
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
 
 <div class="home-background-image" style="background-image: linear-gradient(to bottom,
-rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
+rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup_resized.webp" %}');">
   <div class="gradient">
     <div class="form-container signup-form">
       <h1>{% trans "Sign Up" %}</h1>

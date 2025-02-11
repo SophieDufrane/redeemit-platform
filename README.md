@@ -10,7 +10,7 @@ Built using the **Django framework**, this project serves as a learning and port
 
 ### **2.1. Scope and Structure**
 
-### Scope  
+#### **Scope**    
 
 This project focuses on two main user roles:  
 
@@ -19,7 +19,7 @@ This project focuses on two main user roles:
 
 The platform is designed to provide a **clear redemption flow** and an **efficient management system** while ensuring an **intuitive user experience**.  
 
-### Structure
+#### **Structure**  
 
 The project is structured around three key areas:  
 
@@ -31,7 +31,7 @@ The project is structured around three key areas:
 
 The project follows a user-centric approach, ensuring a smooth and intuitive experience for both employees and administrators. To structure the development process, **user stories are grouped into EPICs**, each focusing on a key aspect of the platform, such as redemption process, administrative management, and employee access.  
 
-#### EPIC - User Access
+#### **EPIC - User Access**  
 1. **Employee Register** *(must have)*  
   Allows an unregistered employee to create an account with a user name, email, and password to access the redemption platform.
 
@@ -49,7 +49,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 
 ---
 
-#### EPIC - Admin Management
+#### **EPIC - Admin Management**  
 1. **Add New Reward** *(must have)*  
   Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
 
@@ -70,7 +70,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 
 ---
 
-#### EPIC - Redemption Process
+#### **EPIC - Redemption Process**  
 1. **Browse Available Gift Card** *(must have)*  
   Employees can view the full list of available gift card.
 
@@ -93,7 +93,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 
 ### **2.4. Visual Design**
 
-#### Wireframes
+#### **Wireframes**  
 
 Wireframes were designed to outline the layout and functionality of each page and to help visualise the user flow. This ensures the platform’s structure is logical, responsive, and user-friendly.  
 [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNlJTamA65VQDctZEK7owZeyEq-JZFKrhXC3gEYcO3MafEUiVCTYcwBoCwXQQAvD_BwE) was utilised to craft the detailed wireframes. These initial sketches served as the foundation for the app’s final structure and layout.
@@ -124,7 +124,7 @@ Wireframes were designed to outline the layout and functionality of each page an
     <img src="images-documentation/wireframes/cart_page.png">
   </details>
 
-#### UI Design Approach 
+#### **UI Design Approach**  
 
 The platform follows a **modern, clean design** with an emphasis on usability and accessibility.  
 
@@ -134,13 +134,13 @@ The platform follows a **modern, clean design** with an emphasis on usability an
 
 ---
 
-#### Typography & Colours
+#### **Typography & Colours**
 For this project, I aimed to offer a **fresh and distinct** version of the existing platform while keeping the functionalities simple and user-friendly. To maintain a connection to the company’s identity, I incorporated branding colours from the **Workhuman** website to reflect the style and spirit of the company.  
 The colour palette also draws inspiration from the tech industry and current design trends, creating a clean, professional, and modern aesthetic.  
 The chosen typography ensures **readability** and enhances the overall user experience, while the colour scheme provides a visually appealing and accessible interface.
 
+---
 
-#### Colour Scheme
 The chosen colour palette draws inspiration from **Workhuman**'s branding and aligns with a modern, tech-inspired aesthetic.
 
 ![Colour Inspiration](images-documentation/readme_images/color_scheme.png)
@@ -167,7 +167,6 @@ The chosen colour palette draws inspiration from **Workhuman**'s branding and al
 
 ---
 
-#### Typography
 To ensure readability and maintain a clean, modern look, the following fonts were chosen:
 
 - **Primary Font**: *Poppins*  
@@ -186,11 +185,10 @@ To ensure readability and maintain a clean, modern look, the following fonts wer
 The development of **RedeemIt** followed an **Agile methodology**, allowing for incremental improvements, flexibility, and structured task management. 
 By breaking the project into smaller **user stories**, it ensured a smooth workflow while staying aligned with user needs.  
 
-#### Development Tools & Planning
 
 To maintain an organised and efficient development process, the following tools and techniques were used:  
 
-- **GitHub Projects** – Tracked tasks and iterations, ensuring a structured development cycle.  
+- **GitHub Projects** Tracked tasks and iterations, ensuring a structured development cycle.  
   <details>
     <summary>Click to view Kanban Board</summary>
     <img src="images-documentation/readme_images/kanban.png">
@@ -198,7 +196,7 @@ To maintain an organised and efficient development process, the following tools 
 
 </br>
 
-- **Lucidchart** – Used to map out the user flow within the platform.  
+- **Lucidchart** Used to map out the user flow within the platform.  
   <details>
     <summary>Click to view Flowchart</summary>
     <img src="images-documentation/readme_images/redemption_platform_flowchart.png">
@@ -206,7 +204,7 @@ To maintain an organised and efficient development process, the following tools 
 
 </br>
 
-- **MOSCOW Prioritization** – Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
+- **MOSCOW Prioritization** Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
 
 | **Priority** | **Feature** |
 |-------------|------------|
@@ -463,7 +461,7 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 
 ---
 
-### **4.3. Development & Deployment Tools***
+### **4.3. Development & Deployment Tools**
 
 - **GitHub** – Version control system for storing the repository and managing project tasks.  
 - **GitPod** – Cloud-based development environment used for initial coding.  
@@ -524,14 +522,12 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 
 ---
 
-### **5.2. Fixed Bugs**
-
-### **Development Challenges & Debugging Process**
+### **5.2. Development Challenges & Debugging Process**
 
 During the development process, I encountered various bugs, unexpected behaviors, and technical challenges that required debugging and fixing. These issues ranged from role-based access control problems, UI inconsistencies, and database handling errors to deployment and authentication issues.  
 Each bug presented an opportunity to **understand Django better, refine my implementation, and improve code structure**.  
 
-#### Summary of Fixed Bugs & Solutions
+Here a summary of Fixed Bugs & Solutions:
 
 | **Bug** | **Issue** | **Fix** |
 |---------|----------|---------|

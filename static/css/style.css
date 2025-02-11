@@ -225,17 +225,29 @@ footer a {
 /* -------------------------------------- Home page, forms for login, logout & Register */
 /* Full-screen background image */
 .home-background-image {
+    max-height: 100vh;
+    min-height: 87vh;
+    /* Ensures slight cropping if needed */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 89vh;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 .signup-form label {
     display: none;
+}
+
+.signup-form h1 {
+    font-size: 1.5rem;
+}
+
+.signup-form p {
+    font-size: 0.9rem;
+    list-style: none;
 }
 
 .signup-form li {
@@ -244,11 +256,6 @@ footer a {
     list-style-type: none;
     margin: 5px 0;
     padding: 0;
-}
-
-.signup-form p {
-    font-size: 1rem;
-    list-style: none;
 }
 
 /* -------------------------------------- Cart page */

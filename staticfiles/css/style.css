@@ -225,13 +225,18 @@ footer a {
 /* -------------------------------------- Home page, forms for login, logout & Register */
 /* Full-screen background image */
 .home-background-image {
+    height: 100vh;
+    /* Ensure full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 89vh;
     background-size: cover;
-    background-position: center;
+    /* Keeps proportions but ensures full coverage */
+    background-position: right center;
+    /* Pushes the portrait to the edge */
     background-repeat: no-repeat;
+    overflow: hidden;
+    /* Prevents extra scroll */
 }
 
 .signup-form label {
