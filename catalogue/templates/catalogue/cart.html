@@ -18,7 +18,7 @@
         {% for item in cart_items %}
         <li class="d-flex align-items-center justify-content-between mb-5">
             <!-- Item Image -->
-            <img class="img-thumbnail cart-image" src="{{ item.item.image.url }}"
+            <img class="img-thumbnail cart-image" src="{{ item.item.resized_image_url }}"
                 alt="{{ item.item.image_description }}">
             <!-- Item Details -->
             <div>

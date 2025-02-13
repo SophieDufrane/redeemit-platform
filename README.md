@@ -175,9 +175,6 @@ To ensure readability and maintain a clean, modern look, the following fonts wer
 - **Accent Font**: *Quicksand*  
   - Used for **decorative elements** and **highlighted text**, adding a modern touch.  
 
-- **Footer Font**: *Montserrat*  
-  - Applied to **footer text**, maintaining a subtle yet structured style. 
-
 ---
 
 ### **2.5. Project Planning and Agile Approach**
