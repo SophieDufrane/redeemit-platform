@@ -24,7 +24,7 @@ The platform is designed to provide a **clear redemption flow** and an **efficie
 The project is structured around three key areas:  
 
 - **User Flow** – A simple and logical process for browsing, selecting, and redeeming gift cards.  
-- **Admin Management** – A straightforward interface for adding, updating, and removing rewards.  
+- **Admin Management** – A straightforward interface for adding, updating, removing items, as well as accessing employee's profile and redemption records.  
 - **Clean & Responsive Design** – A structured layout that ensures clarity, accessibility, and ease of use across all devices.
 
 ### **2.2. User Stories**  
@@ -44,7 +44,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
 4. **Admin Superuser Access to Panel** *(must have)*  
   Enables the admin superuser to log in and access the redemption platform and admin panel, for managing catalogue and employees profile.
 
-5. **Site User View Profile Details** *(could have)*  
+5. **Employees View Profile Details** *(could have)*  
   Employees can view their profile page, including basic personal information, login details, redemption records and points balance.  
 
 ---
@@ -54,7 +54,7 @@ The project follows a user-centric approach, ensuring a smooth and intuitive exp
   Admins can add new items to the gift card catalogue, including details like name, description, points required, etc...
 
 2. **Edit Existing Reward** *(should have)*  
-   dmins can modify details of existing gift card, such as updating the item name, description, or point value.
+  Admins can modify details of existing gift card, such as updating the item name, description, or point value.
 
 3. **Delete Reward** *(should have)*  
   Admins can remove gift card from the catalogue to keep the list up-to-date and relevant.
@@ -99,28 +99,22 @@ Wireframes were designed to outline the layout and functionality of each page an
 [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNlJTamA65VQDctZEK7owZeyEq-JZFKrhXC3gEYcO3MafEUiVCTYcwBoCwXQQAvD_BwE) was utilised to craft the detailed wireframes. These initial sketches served as the foundation for the app’s final structure and layout.
 
   <details>
-    <summary>Click to view Login Page</summary>
+    <summary>Login Page Wireframe</summary>
     <img src="images-documentation/wireframes/log-in_page.png">
-  </details>
-
-</br>
+  </details>  
 
   <details>
-    <summary>Click to view Catalogue Home Page</summary>
+    <summary>Catalogue Home Page Wireframe</summary>
     <img src="images-documentation/wireframes/plateform_landing_page.png">
-  </details>
-
-</br>
+  </details>  
 
   <details>
-    <summary>Click to view Gift Card Details Page</summary>
+    <summary>Gift Card Details Page Wireframe</summary>
     <img src="images-documentation/wireframes/plateform_product_details_page.png">
-  </details>
-
-</br>
+  </details>  
 
   <details>
-    <summary>Click to view Cart Page</summary>
+    <summary>Cart Page Wireframe</summary>
     <img src="images-documentation/wireframes/cart_page.png">
   </details>
 
@@ -185,14 +179,6 @@ By breaking the project into smaller **user stories**, it ensured a smooth workf
 
 To maintain an organised and efficient development process, the following tools and techniques were used:  
 
-- **GitHub Projects** Tracked tasks and iterations, ensuring a structured development cycle.  
-  <details>
-    <summary>Click to view Kanban Board</summary>
-    <img src="images-documentation/readme_images/kanban.png">
-  </details>  
-
-</br>
-
 - **Lucidchart** Used to map out the user flow within the platform.  
   <details>
     <summary>Click to view Flowchart</summary>
@@ -201,9 +187,17 @@ To maintain an organised and efficient development process, the following tools 
 
 </br>
 
+- **GitHub Projects** Tracked tasks and iterations, ensuring a structured development cycle.  
+  <details>
+    <summary>Click to view Kanban Board</summary>
+    <img src="images-documentation/readme_images/kanban.png">
+  </details>  
+
+</br>
+
 - **MOSCOW Prioritization** Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
 
-| **Priority** | **Feature** |
+| **Priority** | **Feature - User Stories** |
 |-------------|------------|
 | **Must Have (53%)** | Employee Register |
 |  | Employee Login |
@@ -277,11 +271,11 @@ Employees interact with the platform through an intuitive and structured redempt
     </details>
 
 - **Redemption Process**  
-  - Employees can add items to their cart, modify quantities, and remove selections.  
-  - The system ensures only users with sufficient points can redeem rewards.  
-  - Upon redemption, points are deducted, and the cart is cleared.  
+  - Employees can add items to their cart, modify quantities, and remove items.  
+  - The system ensures only users with sufficient points can redeem items.  
+  - Upon redemption, points are deducted, transaction recorded in the database and cart is cleared.  
     <details>
-      <summary>Cart with Insufficient balance</summary>
+      <summary>Cart with Insufficient balance (button disabled)</summary>
       <img src="images-documentation/readme_images/features/cart_insufficient_balance.png">
     </details>
 
@@ -303,7 +297,7 @@ Employees interact with the platform through an intuitive and structured redempt
     </details>
 
     <details>
-      <summary>Message Confirmation Before Redemption</summary>
+      <summary>Message Confirm Redemption</summary>
       <img src="images-documentation/readme_images/features/redemption_confirmation.png">
     </details>
 
@@ -332,7 +326,7 @@ Admins have full control over the gift card catalogue and user profiles via the 
 
 - **Manage Employee Profiles**
   - Admins can update employee profiles, including first and last names, and points balances.
-  - Admins can view redemption records to see who ordered what items, in which quantity.
+  - Admins can view and modify redemption records to see who ordered what items, in which quantity.
     <details>
       <summary>Panel - Employee Profile List</summary>
       <img src="images-documentation/readme_images/features/admin_panel_users_list.png">
@@ -349,7 +343,7 @@ Admins have full control over the gift card catalogue and user profiles via the 
     </details>
 
 - **Access to the Platform**  
-  - Admins can access the panel directly from the platform navigation bar.
+  - Admins can access the panel directly from the website navigation bar.
   - View the full catalogue, including items with zero stock.  
   - See items with zero stock highlighted to assist in catalogue management. 
     <details>
@@ -368,17 +362,13 @@ Admins have full control over the gift card catalogue and user profiles via the 
     </details>
 
 - **Error Pages**  
-  - **404** - Page Not Found  
     <details>
       <summary>Error Page Not found 404</summary>
       <img src="images-documentation/readme_images/features/404_error.png">
-    </details>
+    </details>  
 
-</br>
-
-  - **500** - Internal Server Error  
     <details>
-      <summary>Error Page Not found 404</summary>
+      <summary>Internal Server Error 500</summary>
       <img src="images-documentation/readme_images/features/500_error.png">
     </details>
 
@@ -415,19 +405,16 @@ The platform is structured around **CRUD (Create, Read, Update, Delete) principl
 The current version of **RedeemIt** focuses on core functionality, but there is room for expansion and optimisation. Some potential enhancements include:
 
 - **Create a Page for Employee Profile**  
-  - Employees can access to a profile page and see their information.
+  - Employees can access to their profile page and see their information.
   - Employees can update their personal information (e.g., first and last name).
-  - Employees can check records of past redemptions.  
+  - Employees can view records of their past redemptions.  
 
 - **Automated Email Notifications**  
   - New registered employee receives a confirmation by email with his profile main details.
   - Employees and admins receive confirmation emails for transactions.  
 
-- **Admin Analytics Dashboard**  
-  - A data-driven insights panel for tracking redemptions, employee engagement, and points distribution.  
-
-- **Cart Enhancements**  
-  - Display the number of items in the cart within the cart icon to provide a visual cue when items have been added.  
+- **Cart Enhancement**  
+  - Display the number of items present in the cart within the navigation icon to provide a visual cue when items have been added.  
 
 - **Search Functionality for Catalogue**  
   - Enable employees to search for specific gift cards in the catalogue home page, improving navigation and efficiency.  
@@ -435,26 +422,27 @@ The current version of **RedeemIt** focuses on core functionality, but there is 
 - **Pagination for Catalogue Home**  
   - Implement pagination in the catalogue home page to enhance user experience when browsing a large selection of gift cards.  
 
-These improvements would enhance the platform’s **efficiency and usability**, offering a more complete **employee recognition experience**.  
+- **Admin Analytics Dashboard**  
+  - A data-driven insights panel for tracking redemptions, employee engagement, and points distribution.  
 
 ## 4. Technology
 
 ### **4.1. Languages**
 
-- **Python** – Used for backend logic and database interactions.  
-- **HTML** – PProvides the structure and content of the web pages, utilising a templating language.  
+- **Python** – For backend logic and database interactions.  
+- **HTML** – Provides the structure and content of the web pages, utilising a templating language.  
 - **CSS** – Handles the styling and layout.  
-- **JavaScript** – Enables interactive elements, specifically for displaying Django messages. 
+- **JavaScript** – Enables interactive elements, in this project specifically for displaying Django messages. 
 
 ---
 
 ### **4.2. Frameworks & Librairies**
  
-- **Django** – The main web framework used for handling authentication, database management, and routing.  
 - **Bootstrap 5** – Used for responsive design and styling components.  
+- **Django** – The main web framework used for handling authentication, database management, and routing.  
 - **Django Allauth** – Handles user authentication, login, logout, and account management.  
-- **PostgreSQL** – The database storing all user profiles, rewards, and transactions.  
 - **dj-database-url** – Simplifies PostgreSQL database configuration via environment variables.  
+- **PostgreSQL** – The database storing all user profiles, rewards, and transactions.  
 - **psycopg2** – A PostgreSQL adapter allowing Django to interact with the database.  
 - **Cloudinary** – Used for storing and managing media files.  
 - **Whitenoise** – Enables serving static files in production.  
@@ -467,15 +455,15 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 - **GitHub** – Version control system for storing the repository and managing project tasks.  
 - **GitPod** – Cloud-based development environment used for initial coding.  
 - **VSCode** – Local development environment used after switching from GitPod.  
-- **Heroku** – Platform for **deploying and hosting the application** in a live environment.  
+- **Heroku** – Platform for deploying and hosting the application in a live environment.  
 
 ---
 
 ### **4.4. Testing & Optimisation Tools**
 
 - **HTML Validator** – Checked for syntax errors in HTML files.  
-- **W3C CSS Validator** – Ensured the CSS followed best practices and had no errors.  
-- **JSHint** – Analysed JavaScript code to detect potential issues.  
+- **W3C CSS Validator** – Ensured the CSS followed best practices.  
+- **JSHint** – Analysed JavaScript code.  
 - **Lighthouse** – Audited web pages for performance, accessibility, best practices, and SEO.  
 - **Squoosh** – Optimised images by converting them to **WebP format**, improving loading speed.
 
@@ -483,7 +471,7 @@ These improvements would enhance the platform’s **efficiency and usability**, 
 
 ### **5.1. Manual Testing**  
 
-The following table summarises the key **manual testings** conducted along the development to ensure functionalities work as expected.  
+The following table summarises the key manual testings conducted along the development to ensure functionalities work as expected.  
 Tests cover **admin functionalities**, **employee interactions**, **database updates** and followed the user stories.  
 
 
@@ -497,12 +485,12 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 |  | Stock Management | Items that are out of stock are hidden from employees but remain visible to admins with a highlight indicator | PASS |
 | **EMPLOYEE - Redemption Process** | Access to Reward Catalogue | Only in-stock items are displayed, showing key details such as name, points cost, and availability | PASS |
 |  | View detailed page of an item | Users can click on an item from the home page to access a detailed view displaying full information | PASS |
-|  | Click "Add to Cart" button | The item is added to the cart, and the cart page reflects the item | PASS |
-|  | Add the same item again | The quantity of the item in the cart increases by 1. The first time, a message confirms *"Added to cart"*, while subsequent additions display *"Quantity updated"*. | PASS |
+|  | Click "Add to Cart" button | The item is added to the cart and the cart page reflects the item | PASS |
+|  | Add the same item again | The quantity of the item in the cart increases by 1 | PASS |
 |  | View the cart page | The cart displays all added items, their quantity, and total points cost | PASS |
 |  | Modify item quantity in cart | Quantity updates correctly, and total points cost is recalculated | PASS |
 |  | Update Qty with non-accepted values (<0, letters) | An error message is displayed, preventing invalid values from being submitted | PASS |
-|  | Delete an item using the delete icon | Item is removed from the cart, and a confirmation message *"Item removed from cart."* is displayed | PASS |
+|  | Delete an item using the delete icon | Item is removed from the cart | PASS |
 |  | Redeem with sufficient balance | Employee's balance is updated in the navigation bar, the cart is cleared, and the *"Continue Shopping"* button is displayed. | PASS |
 |  | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
 | **Register, Login, Logout** | User Registration | A new user fills out the registration form and submits it | PASS |
@@ -518,6 +506,12 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 |  | Employee - View Available items | Employee sees only items that are in stock; out-of-stock items are hidden | PASS |
 |  | Admin - Access Admin Panel | Admin has access to the admin panel from the navigation bar | PASS |
 |  | Employee - Access Cart | Employee can view and manage their cart but does not have access to the admin panel | PASS |
+| **Immediat Feedbacks** | Sign In | A message confirms *Successful sign in* | PASS |
+|  | Log Out | A message confirms *Successful log out* | PASS |
+|  | Add an item to cart | A message confirms *"Added to cart"* | PASS |
+|  | Add the same item again | A message confirms *"Quantity updated"* | PASS |
+|  | Remove an item from the cart | A message confirms *"Item removed from cart"* | PASS |
+|  | Redemption | A message confirms *"Redemption successful"* followed by the order ID | PASS |
 | **Error Handling** | 404 Error Page | The 404 error page displays the correct visual and the comment "Oops! Page Not Found" | PASS |
 |  | 500 Error Page | The 500 error page displays the correct visual and the comment "Something Went Wrong" | PASS |
 
@@ -645,7 +639,7 @@ At this point, **everything started to break**, leading to migration failures.
 
 #### **CSS - HTML**
 
-To ensure the website's **HTML and CSS** follow web standards and best practices, I tested the code using the **W3C validation tools**.  
+To ensure the website's **HTML** and **CSS** follow web standards and best practices, I tested the code using the **W3C validation tools**.  
 
 The [W3C HTML Validator](https://validator.w3.org/) was used to check for syntax errors and compliance with HTML5 standards. The validation returned **no errors**, ensuring that the HTML code is well-structured and correctly formatted.
 <details>
@@ -666,14 +660,7 @@ The website's stylesheet was tested using the [W3C CSS Validation Service](https
 #### **JavaScript Code Testing with JSHint**
 
 To ensure JavaScript code quality and compliance, I tested the file using [JSHint](https://jshint.com/).  
-Since I used **ES6 features** such as `const` and arrow functions (`=>`), I also updated the JSHint configuration to **support ES6** by adding `esversion: 6`.
-
-The following metrics were generated from JSHint:
-
-- **Functions Count:** 5 functions in this file.
-- **Function Parameters:** The largest function takes **1 argument**, while the median number of arguments is **0**.
-- **Statements per Function:** The largest function contains **3 statements**, while the median is **2**.
-- **Cyclomatic Complexity:** The most complex function has a **cyclomatic complexity of 1**, which is also the median.
+Since I used **ES6 features** such as `const` and arrow functions (`=>`), I also updated the JSHint configuration to **support ES6** by adding `esversion: 6`.  
 
 Results indicate that the JavaScript file maintains **low complexity and readability**, ensuring better maintainability and performance.
 
@@ -690,7 +677,7 @@ To ensure that all Python files follow best coding practices, I used **Flake8** 
 
 All identified issues—mostly related to **trailing spaces and minor formatting inconsistencies**—were fixed to ensure full compliance with PEP 8.
 
-To use flake8, I ran the command `flake8` followed by each pthon file, like with the example below:
+To use flake8, I ran the command `flake8` followed by each python file, example below:
 ```
 flake8 redemption_platform/urls.py
 ```
@@ -698,11 +685,17 @@ flake8 redemption_platform/urls.py
 
 #### **Lighthouse Performance & Best Practices Testing**
 
-To assess web performance, accessibility, and best practices, I used **Google Lighthouse**. Most pages achieved high scores, but pages containing images stored on **Cloudinary** received a **Best Practices score of 78%** due to the warning:
+To assess web performance, accessibility, and best practices, I used **Google Lighthouse**.  
+
+- **Performance** of home page background image initially scored below **80%**, but after optimizing compression and caching, performance improved.  
+- **Best Practices** score was below **60%** due to HTTP links, which I updated to HTTPS, significantly improving the score.
+- **Accessibility** improvements, such as adding ARIA labels and refining header hierarchy, helped achieve a **100%** accessibility score.  
+
+However, pages containing images stored on **Cloudinary** received a **Best Practices score of 78%** due to a a third-party cookie warning:
 
 > "Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies."
 
-Since this is related to Cloudinary's external content delivery, I could not find a way to fully mitigate this issue without affecting functionality. Despite this, all other performance aspects, including **loading speed and accessibility**, were optimised.
+Since this is related to Cloudinary's external content delivery, I could not find a way to fully mitigate this issue without affecting functionality. Despite this, all other performance aspects, including **accessibility and loading speed**, were optimised.
 
 <details>
   <summary>Lighthouse Home Page</summary>
@@ -780,7 +773,7 @@ Follow these steps to fork, clone, and work on the project:
 ## 7. Credit
 
 ### **Content & Resources**
-All written content in this project was created by me, with occasional adjustments using ChatGPT for clarity and flow—particularly for gift card descriptions, terms & conditions, and brand presentations.
+All written content in this project was created by me, with occasional adjustments using **ChatGPT** for clarity and flow—particularly for gift card descriptions, terms & conditions, and brand presentations.
 
 The gift card images were sourced from the respective brands' websites and are hosted via **Cloudinary** for optimised performance.
 
@@ -789,6 +782,6 @@ Additional images were obtained from **Freepik**.
 ### **Acknowledgements**
 A special thanks to my mentors, **Sandeep Aggarwal** and **Julia Konovalova**, for their valuable insights and guidance throughout this project. Their feedback and expertise greatly contributed to refining the functionality and improving the overall structure of **RedeemIt**.  
 
-A huge thanks to the **developer community**, particularly peers in **Slack** for their helpful troubleshooting assistance.  
+A huge thanks to the **developer community**, particularly peers in **Slack** for their helpful troubleshooting assistance, **Tutor from the Code Institute**  for their patience and help with my migration mess.  
 
 Finally, a heartfelt thank you to my **husband** for his encouragement and support throughout this project, as well as my **sister** for testing the app and redeeming a lot of points!
