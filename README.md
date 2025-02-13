@@ -377,6 +377,10 @@ Admins have full control over the gift card catalogue and user profiles via the 
 </br>
 
   - **500** - Internal Server Error  
+    <details>
+      <summary>Error Page Not found 404</summary>
+      <img src="images-documentation/readme_images/features/500_error.png">
+    </details>
 
 ---
 
@@ -639,7 +643,7 @@ At this point, **everything started to break**, leading to migration failures.
 
 ### **5.4. Validators**
 
-#### **CSS - HTML - Javascript
+#### **CSS - HTML - Javascript**
 
 I used the [W3C HTML Validator](https://validator.w3.org/) to check the website’s HTML for any errors.
 <details>
@@ -660,6 +664,50 @@ I used [JSHint](https://jshint.com/) to check for potential errors and enforce b
 </details>
 
 ---
+
+#### **Python Code Compliance Testing**
+
+To ensure that all Python files follow best coding practices, I used **Flake8** for linting. This tool checks for **PEP 8 compliance** like syntax errors or formatting inconsistencies across the project.  
+Running Flake8 helps maintain a **clean and readable codebase**.
+
+To test compliance, I ran the command `flake8` followed by each pthon file, like with the example below:
+```
+flake8 redemption_platform/urls.py
+```
+---
+
+#### **Lighthouse Performance & Best Practices Testing**
+
+To assess web performance, accessibility, and best practices, I used **Google Lighthouse**. Most pages achieved high scores, but pages containing images stored on **Cloudinary** received a **Best Practices score of 78%** due to the warning:
+
+> "Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies."
+
+Since this is related to Cloudinary's external content delivery, I could not find a way to fully mitigate this issue without affecting functionality. Despite this, all other performance aspects, including **loading speed and accessibility**, were optimized.
+
+<details>
+  <summary>Home Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse_home.png">
+</details>
+
+<details>
+  <summary>Catalogue Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse.png">
+</details>
+
+<details>
+  <summary>Catalogue Detail Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse_catalogue_detail.png">
+</details>
+
+<details>
+  <summary>Cart with items Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse_cart.png">
+</details>
+
+<details>
+  <summary>Empty Cart Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse_empty_cart.png">
+</details>
 
 ## 6. Deployment
 
