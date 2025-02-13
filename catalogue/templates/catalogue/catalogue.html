@@ -39,7 +39,8 @@
             <a href="{% url 'catalogue_detail' slug=item.slug %}" class="text-decoration-none"
                 aria-label="View details about {{ item.reward_name }}">
                 <div class="card shadow-sm p-3 mb-5 bg-body rounded">
-                    <img src="{{ item.resized_image_url }}" alt="{{ item.reward_name }} - {{ item.reward_value }} Euro">
+                    <img src="{{ item.resized_image_url }}" alt="{{ item.reward_name }} - {{ item.reward_value }} Euro"
+                        class="card-img-top img-fluid" width="400" height="300" loading="lazy">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ item.reward_name }}</h5>
                         <p class="card-text">{{ item.reward_value }} &euro;</p>

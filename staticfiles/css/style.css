@@ -181,7 +181,6 @@ footer a {
     list-style: none;
 }
 
-
 .form-content label {
     display: none;
 }
@@ -220,14 +219,13 @@ footer a {
 
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
 .hero-section {
-    margin: 0;
-    padding: 25px;
+    padding: 20px 30px;
     background-color: #300e82;
-    text-align: center;
 }
 
 .welcome-section {
     color: white;
+    text-align: start;
 }
 
 .welcome-section h1 {
@@ -236,7 +234,6 @@ footer a {
 
 .hero-image {
     width: 100%;
-    box-sizing: border-box;
 }
 
 #catalogue-header {
@@ -293,10 +290,13 @@ footer a {
 /* -------------------------------------- Media queries for screens 768px */
 @media (min-width: 768px) {
     .home-background-image {
-        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)), url("../images/signup_tablet.webp");
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+            url("../images/signup_tablet.webp");
         background-size: cover;
         background-position: center;
-        background-position: center top;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
     }
 
     .hero-section {
@@ -312,15 +312,7 @@ footer a {
     }
 
     .form-container {
-        padding: 24px;
-    }
-
-    .form-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .form-content p {
-        font-size: 1rem;
+        padding: 30px;
     }
 
     .redeemit-button {
@@ -340,12 +332,17 @@ footer a {
 /* media queries for screens 992px and larger */
 @media (min-width: 992px) {
     .home-background-image {
-        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)), url("../images/signup_laptop.webp");
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+            url("../images/signup_laptop.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
     }
 
-
     .hero-section {
-        padding: 25px 50px;
+        padding: 30px 45px;
     }
 
     .welcome-section h1 {
@@ -356,16 +353,9 @@ footer a {
         font-size: 2.5rem;
     }
 
-    .form-container {
-        padding: 30px;
-    }
-
-    .form-content h3 {
-        font-size: 2.2rem;
-    }
-
     .form-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding: 5px;
     }
 
     .empty-cart img {
@@ -376,11 +366,6 @@ footer a {
 /* media queries for screens 1200px and larger */
 @media (min-width: 1200px) {
     .hero-section {
-        padding: 25px 70px;
+        padding: 35px 80px;
     }
-
-    .form-container {
-        padding: 45px;
-    }
-
 }
