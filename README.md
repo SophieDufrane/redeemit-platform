@@ -401,7 +401,7 @@ The **Entity Relationship Diagram (ERD)** below illustrates how the database mod
 
 The platform is structured around **CRUD (Create, Read, Update, Delete) principles**, ensuring efficient interaction between employees, admins, and stored data.    
 
-| **Action** | **Admin Functionalities** | **Employee Functionalities** |  
+| **Action** | **Admin Functionalities - Admin Panel** | **Employee Functionalities - Front End** |  
 |------------|------------------|------------------|  
 | **Create** | Add new gift cards to the catalogue | Create a new cart by adding items |  
 | **Read**   | View and manage all gift cards | View items in cart |  
@@ -643,24 +643,43 @@ At this point, **everything started to break**, leading to migration failures.
 
 ### **5.4. Validators**
 
-#### **CSS - HTML - Javascript**
+#### **CSS - HTML**
 
-I used the [W3C HTML Validator](https://validator.w3.org/) to check the website’s HTML for any errors.
+To ensure the website's **HTML and CSS** follow web standards and best practices, I tested the code using the **W3C validation tools**.  
+
+The [W3C HTML Validator](https://validator.w3.org/) was used to check for syntax errors and compliance with HTML5 standards. The validation returned **no errors**, ensuring that the HTML code is well-structured and correctly formatted.
 <details>
-  <summary>HTML Validator</summary>
+  <summary>HTML Validator Results</summary>
   <img src="images-documentation/readme_images/validators/html_validator.png">
-</details>
+</details>  
 
-The website’s CSS was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+</br>
+
+The website's stylesheet was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to verify CSS compliance. The validation report confirmed **no issues**, indicating that the styles are correctly implemented and follow CSS best practices.
 <details>
-  <summary>CSS Validator</summary>
+  <summary>CSS Validator Results</summary>
   <img src="images-documentation/readme_images/validators/css_validator.png">
 </details>
 
-I used [JSHint](https://jshint.com/) to check for potential errors and enforce best practices in my JavaScript code.
+---
+
+#### **JavaScript Code Testing with JSHint**
+
+To ensure JavaScript code quality and compliance, I tested the file using [JSHint](https://jshint.com/).  
+Since I used **ES6 features** such as `const` and arrow functions (`=>`), I also updated the JSHint configuration to **support ES6** by adding `esversion: 6`.
+
+The following metrics were generated from JSHint:
+
+- **Functions Count:** 5 functions in this file.
+- **Function Parameters:** The largest function takes **1 argument**, while the median number of arguments is **0**.
+- **Statements per Function:** The largest function contains **3 statements**, while the median is **2**.
+- **Cyclomatic Complexity:** The most complex function has a **cyclomatic complexity of 1**, which is also the median.
+
+Results indicate that the JavaScript file maintains **low complexity and readability**, ensuring better maintainability and performance.
+
 <details>
   <summary>JSHint</summary>
-  <img src="images-documentation/readme_images/validators/css_validator.png">
+  <img src="images-documentation/readme_images/validators/jshint.png">
 </details>
 
 ---
@@ -668,9 +687,10 @@ I used [JSHint](https://jshint.com/) to check for potential errors and enforce b
 #### **Python Code Compliance Testing**
 
 To ensure that all Python files follow best coding practices, I used **Flake8** for linting. This tool checks for **PEP 8 compliance** like syntax errors or formatting inconsistencies across the project.  
-Running Flake8 helps maintain a **clean and readable codebase**.
 
-To test compliance, I ran the command `flake8` followed by each pthon file, like with the example below:
+All identified issues—mostly related to **trailing spaces and minor formatting inconsistencies**—were fixed to ensure full compliance with PEP 8.
+
+To use flake8, I ran the command `flake8` followed by each pthon file, like with the example below:
 ```
 flake8 redemption_platform/urls.py
 ```
@@ -682,30 +702,30 @@ To assess web performance, accessibility, and best practices, I used **Google Li
 
 > "Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies."
 
-Since this is related to Cloudinary's external content delivery, I could not find a way to fully mitigate this issue without affecting functionality. Despite this, all other performance aspects, including **loading speed and accessibility**, were optimized.
+Since this is related to Cloudinary's external content delivery, I could not find a way to fully mitigate this issue without affecting functionality. Despite this, all other performance aspects, including **loading speed and accessibility**, were optimised.
 
 <details>
-  <summary>Home Page</summary>
+  <summary>Lighthouse Home Page</summary>
   <img src="images-documentation/readme_images/validators/lighthouse_home.png">
 </details>
 
 <details>
-  <summary>Catalogue Page</summary>
-  <img src="images-documentation/readme_images/validators/lighthouse.png">
+  <summary>Lighthouse Catalogue Page</summary>
+  <img src="images-documentation/readme_images/validators/lighthouse_catalogue.png">
 </details>
 
 <details>
-  <summary>Catalogue Detail Page</summary>
+  <summary>Lighthouse Catalogue Detail Page</summary>
   <img src="images-documentation/readme_images/validators/lighthouse_catalogue_detail.png">
 </details>
 
 <details>
-  <summary>Cart with items Page</summary>
+  <summary>Lighthouse Cart with items Page</summary>
   <img src="images-documentation/readme_images/validators/lighthouse_cart.png">
 </details>
 
 <details>
-  <summary>Empty Cart Page</summary>
+  <summary>Lighthouse Empty Cart Page</summary>
   <img src="images-documentation/readme_images/validators/lighthouse_empty_cart.png">
 </details>
 
@@ -759,4 +779,16 @@ Follow these steps to fork, clone, and work on the project:
 
 ## 7. Credit
 
+### **Content & Resources**
+All written content in this project was created by me, with occasional adjustments using ChatGPT for clarity and flow—particularly for gift card descriptions, terms & conditions, and brand presentations.
+
+The gift card images were sourced from the respective brands' websites and are hosted via **Cloudinary** for optimised performance.
+
+Additional images were obtained from **Freepik**.
+
+### **Acknowledgements**
 A special thanks to my mentors, **Sandeep Aggarwal** and **Julia Konovalova**, for their valuable insights and guidance throughout this project. Their feedback and expertise greatly contributed to refining the functionality and improving the overall structure of **RedeemIt**.  
+
+A huge thanks to the **developer community**, particularly peers in **Slack** for their helpful troubleshooting assistance.  
+
+Finally, a heartfelt thank you to my **husband** for his encouragement and support throughout this project, as well as my **sister** for testing the app and redeeming a lot of points!
