@@ -311,6 +311,10 @@ footer a {
         font-size: 2rem;
     }
 
+    .welcome-section h3 {
+        font-size: 1.2rem;
+    }
+
     .form-container {
         padding: 30px;
     }
@@ -351,6 +355,10 @@ footer a {
 
     .welcome-section h2 {
         font-size: 2.5rem;
+    }
+
+    .welcome-section h3 {
+        font-size: 1.5rem;
     }
 
     .form-content p {
