@@ -5,19 +5,20 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="home-background-image" style="background-image: linear-gradient(to bottom,
-rgba(48, 14, 130, 0.9),rgba(48, 14, 130, 0)), url('{% static "images/signup.webp" %}');">
+<div class="home-background home-background-image">
     <div class="gradient">
         <div class="form-container">
-            <h3>{% trans "Sign Out" %}</h3>
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
-            <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="redeemit-button blue-button" type="submit">{% trans 'Sign Out' %}</button>
-            </form>
+            <div class="form-content">
+                <h3>{% trans "Sign Out" %}</h3>
+                <p>{% trans 'Are you sure you want to sign out?' %}</p>
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="redeemit-button blue-button" type="submit">{% trans 'Sign Out' %}</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

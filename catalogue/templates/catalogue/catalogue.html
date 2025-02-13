@@ -4,19 +4,20 @@
 
 <!-- Hero section -->
 <div class="hero-section">
-    <!-- Welcome Section -->
     <div class="container mt-4">
-        <div class="row align-items-start">
-            <!-- Left Column -->
-            <div class="welcome-section col-md-6 text-start mb-4 ml-5">
+        <div class="row text-center text-md-start align-items-center">
+            <!-- Left Column: Welcome Text -->
+            <div class="welcome-section col-12 col-md-6 mb-4">
                 <h1>WELCOME, </h1>
                 <h2>{{ user.first_name|default:user.username }}</h2>
                 <h4 class="quicksand-font">Explore, Choose, Redeem.</h4>
             </div>
-            <!-- Right Column -->
-            <div class="gradient col-md-6 mb-4 text-center">
-                <img class="hero-image" src="{% static 'images/couple.webp' %}"
-                    alt="Two people smiling with excitement about redeeming rewards">
+            <!-- Right Column: Image -->
+            <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                <div class="gradient">
+                    <img class="hero-image" src="{% static 'images/couple.webp' %}"
+                        alt="Two people smiling with excitement about redeeming rewards">
+                </div>
             </div>
         </div>
     </div>

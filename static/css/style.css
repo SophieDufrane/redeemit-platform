@@ -11,6 +11,13 @@ body {
     letter-spacing: 2px;
 }
 
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 /* -------------------------------------- Django Messages */
 .custom-message {
     padding: 20px;
@@ -74,7 +81,6 @@ body {
 
 .footer p,
 footer a {
-    font-family: "Montserrat", serif;
     font-size: 0.6rem;
     text-transform: uppercase;
     color: white;
@@ -148,12 +154,10 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 380px;
     height: auto;
     padding: 15px;
-    margin: auto;
-    /* Center on smaller screens */
     background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
 }
 
@@ -163,7 +167,6 @@ footer a {
     width: 100%;
     padding: 20px;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .form-content h3 {
@@ -175,18 +178,54 @@ footer a {
 .form-content p {
     font-size: 0.8rem;
     margin: 10px 0;
+    list-style: none;
+}
+
+.form-content label {
+    display: none;
+}
+
+.form-content li {
+    font-size: 12px;
+    text-align: left;
+    list-style-type: none;
+}
+
+.form-content ul {
+    padding: 5px;
+}
+
+/* -------------------------------------- Home page, forms for login, logout & Register */
+/* Full-screen background image */
+.home-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Background Gradient + Image */
+.home-background-image {
+    background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+        url("../images/signup_mobile.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
 .hero-section {
-    margin: 0;
-    padding: 25px;
+    padding: 20px 30px;
     background-color: #300e82;
-    text-align: center;
 }
 
 .welcome-section {
     color: white;
+    text-align: start;
 }
 
 .welcome-section h1 {
@@ -195,7 +234,6 @@ footer a {
 
 .hero-image {
     width: 100%;
-    box-sizing: border-box;
 }
 
 #catalogue-header {
@@ -220,42 +258,6 @@ footer a {
 /* -------------------------------------- Catalogue detail */
 .card-detail.container {
     width: 90%;
-}
-
-/* -------------------------------------- Home page, forms for login, logout & Register */
-/* Full-screen background image */
-.home-background-image {
-    max-height: 100vh;
-    min-height: 87vh;
-    /* Ensures slight cropping if needed */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-}
-
-.signup-form label {
-    display: none;
-}
-
-.signup-form h1 {
-    font-size: 1.5rem;
-}
-
-.signup-form p {
-    font-size: 0.9rem;
-    list-style: none;
-}
-
-.signup-form li {
-    font-size: 0.6rem;
-    text-align: left;
-    list-style-type: none;
-    margin: 5px 0;
-    padding: 0;
 }
 
 /* -------------------------------------- Cart page */
@@ -287,6 +289,16 @@ footer a {
 
 /* -------------------------------------- Media queries for screens 768px */
 @media (min-width: 768px) {
+    .home-background-image {
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+            url("../images/signup_tablet.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+
     .hero-section {
         padding: 25px 40px;
     }
@@ -300,15 +312,7 @@ footer a {
     }
 
     .form-container {
-        padding: 24px;
-    }
-
-    .form-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .form-content p {
-        font-size: 1rem;
+        padding: 30px;
     }
 
     .redeemit-button {
@@ -327,8 +331,18 @@ footer a {
 
 /* media queries for screens 992px and larger */
 @media (min-width: 992px) {
+    .home-background-image {
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+            url("../images/signup_laptop.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+
     .hero-section {
-        padding: 25px 50px;
+        padding: 30px 45px;
     }
 
     .welcome-section h1 {
@@ -339,16 +353,9 @@ footer a {
         font-size: 2.5rem;
     }
 
-    .form-container {
-        padding: 30px;
-    }
-
-    .form-content h3 {
-        font-size: 2.2rem;
-    }
-
     .form-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding: 5px;
     }
 
     .empty-cart img {
@@ -359,11 +366,6 @@ footer a {
 /* media queries for screens 1200px and larger */
 @media (min-width: 1200px) {
     .hero-section {
-        padding: 25px 70px;
+        padding: 35px 80px;
     }
-
-    .form-container {
-        padding: 45px;
-    }
-
 }

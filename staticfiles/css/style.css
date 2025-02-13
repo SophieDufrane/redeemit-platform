@@ -11,6 +11,13 @@ body {
     letter-spacing: 2px;
 }
 
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 /* -------------------------------------- Django Messages */
 .custom-message {
     padding: 20px;
@@ -74,7 +81,6 @@ body {
 
 .footer p,
 footer a {
-    font-family: "Montserrat", serif;
     font-size: 0.6rem;
     text-transform: uppercase;
     color: white;
@@ -148,12 +154,10 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 380px;
     height: auto;
     padding: 15px;
-    margin: auto;
-    /* Center on smaller screens */
     background: linear-gradient(#300e82, #586bbe, #9b6b82, #decd62);
 }
 
@@ -163,7 +167,6 @@ footer a {
     width: 100%;
     padding: 20px;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .form-content h3 {
@@ -175,6 +178,44 @@ footer a {
 .form-content p {
     font-size: 0.8rem;
     margin: 10px 0;
+    list-style: none;
+}
+
+
+.form-content label {
+    display: none;
+}
+
+.form-content li {
+    font-size: 12px;
+    text-align: left;
+    list-style-type: none;
+}
+
+.form-content ul {
+    padding: 5px;
+}
+
+/* -------------------------------------- Home page, forms for login, logout & Register */
+/* Full-screen background image */
+.home-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Background Gradient + Image */
+.home-background-image {
+    background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)),
+        url("../images/signup_mobile.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
 /* -------------------------------------- Hero Section with Welcome message, Picture and Search bar */
@@ -222,40 +263,6 @@ footer a {
     width: 90%;
 }
 
-/* -------------------------------------- Home page, forms for login, logout & Register */
-/* Full-screen background image */
-.home-background-image {
-    height: 100vh;
-    /* Ensure full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    /* Keeps proportions but ensures full coverage */
-    background-position: right center;
-    /* Pushes the portrait to the edge */
-    background-repeat: no-repeat;
-    overflow: hidden;
-    /* Prevents extra scroll */
-}
-
-.signup-form label {
-    display: none;
-}
-
-.signup-form li {
-    font-size: 0.6rem;
-    text-align: left;
-    list-style-type: none;
-    margin: 5px 0;
-    padding: 0;
-}
-
-.signup-form p {
-    font-size: 1rem;
-    list-style: none;
-}
-
 /* -------------------------------------- Cart page */
 .cart-container {
     padding-left: 0;
@@ -285,6 +292,13 @@ footer a {
 
 /* -------------------------------------- Media queries for screens 768px */
 @media (min-width: 768px) {
+    .home-background-image {
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)), url("../images/signup_tablet.webp");
+        background-size: cover;
+        background-position: center;
+        background-position: center top;
+    }
+
     .hero-section {
         padding: 25px 40px;
     }
@@ -325,6 +339,11 @@ footer a {
 
 /* media queries for screens 992px and larger */
 @media (min-width: 992px) {
+    .home-background-image {
+        background: linear-gradient(rgba(48, 14, 130, 0.9), rgba(48, 14, 130, 0)), url("../images/signup_laptop.webp");
+    }
+
+
     .hero-section {
         padding: 25px 50px;
     }
