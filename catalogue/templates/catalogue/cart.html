@@ -38,7 +38,8 @@
                 <p class="m-0 text-secondary">Quantity:</p>
                 <form method="POST" action="{% url 'update_cart_quantity' item.item.slug %}">
                     {% csrf_token %}
-                    <input type="number" name="quantity" value="{{ item.quantity }}" min="0" style="width: 50px;">
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="0" style="width: 50px;"
+                        aria-label="Quantity">
                     <button type="submit" class="blue-button">Update</button>
                 </form>
             </div>
