@@ -35,3 +35,12 @@ class CatalogueTests(TestCase):
             response.status_code, 404,
             "Expected 404 Not Found for non-existent reward detail page, but got a different status code."
         )
+
+    def test_catalogue_detail_url_found(self):
+        """Test if non-existing reward detail page returns 404"""
+        self.client.login(username='testuser', password='testpassword')
+        response = self.client.get(reverse('catalogue_detail', args=[self.item.slug]))
+        self.assertEqual(
+            response.status_code, 200,
+            f"Expected reward detail page for {self.item.slug}, to load (200 OK) but got a different status code."
+        )
