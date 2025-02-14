@@ -465,7 +465,7 @@ The current version of **RedeemIt** focuses on core functionality, but there is 
 - **W3C CSS Validator** – Ensured the CSS followed best practices.  
 - **JSHint** – Analysed JavaScript code.  
 - **Lighthouse** – Audited web pages for performance, accessibility, best practices, and SEO.  
-- **Squoosh** – Optimised images by converting them to **WebP format**, improving loading speed.
+- **Squoosh** – Optimised images by converting them to WebP format, improving loading speed.
 
 ## 5. Testing
 
@@ -492,7 +492,7 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 |  | Update Qty with non-accepted values (<0, letters) | An error message is displayed, preventing invalid values from being submitted | PASS |
 |  | Delete an item using the delete icon | Item is removed from the cart | PASS |
 |  | Redeem with sufficient balance | Employee's balance is updated in the navigation bar, the cart is cleared, and the *"Continue Shopping"* button is displayed. | PASS |
-|  | Redeem with insufficient balance | Button is disabled, and "Oops, xxx points short!" message is shown | PASS |
+|  | Redeem with insufficient balance | Button is disabled, and *Oops, xxx points short!* message is shown | PASS |
 | **Register, Login, Logout** | User Registration | A new user fills out the registration form and submits it | PASS |
 |  | Login with Valid Credentials | A registered user enters the correct username and password and gains access to the redemption platform | PASS |
 |  | Login with Invalid Credentials | A user enters an incorrect username or password and receives an error message | PASS |
@@ -508,12 +508,12 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 |  | Employee - Access Cart | Employee can view and manage their cart but does not have access to the admin panel | PASS |
 | **Immediat Feedbacks** | Sign In | A message confirms *Successful sign in* | PASS |
 |  | Log Out | A message confirms *Successful log out* | PASS |
-|  | Add an item to cart | A message confirms *"Added to cart"* | PASS |
-|  | Add the same item again | A message confirms *"Quantity updated"* | PASS |
-|  | Remove an item from the cart | A message confirms *"Item removed from cart"* | PASS |
-|  | Redemption | A message confirms *"Redemption successful"* followed by the order ID | PASS |
-| **Error Handling** | 404 Error Page | The 404 error page displays the correct visual and the comment "Oops! Page Not Found" | PASS |
-|  | 500 Error Page | The 500 error page displays the correct visual and the comment "Something Went Wrong" | PASS |
+|  | Add an item to cart | A message confirms *Added to cart* | PASS |
+|  | Add the same item again | A message confirms *Quantity updated* | PASS |
+|  | Remove an item from the cart | A message confirms *Item removed from cart* | PASS |
+|  | Redemption | A message confirms *Redemption successful* followed by the order ID | PASS |
+| **Error Handling** | 404 Error Page | The 404 error page displays the correct visual and the comment *Oops! Page Not Found* | PASS |
+|  | 500 Error Page | The 500 error page displays the correct visual and the comment *Something Went Wrong* | PASS |
 
 ---
 
