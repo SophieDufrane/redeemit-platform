@@ -24,7 +24,7 @@ class CatalogueTests(TestCase):
         response = self.client.get(reverse('catalogue_home'))
         self.assertEqual(
             response.status_code, 200,
-            "Expected catalogue home page to load (200 OK)"
+            "Expected catalogue home page to load (200 OK) "
             "but got a different status code."
         )
 
@@ -37,7 +37,7 @@ class CatalogueTests(TestCase):
             ))
         self.assertEqual(
             response.status_code, 404,
-            "Expected 404 Not Found for non-existent reward detail page"
+            "Expected 404 Not Found for non-existent reward detail page "
             "but got a different status code."
         )
 
@@ -50,7 +50,7 @@ class CatalogueTests(TestCase):
             ))
         self.assertEqual(
             response.status_code, 200,
-            f"Expected reward detail page for {self.item.slug} to load"
+            f"Expected reward detail page for {self.item.slug} to load "
             "(200 OK) but got a different status code."
         )
 
@@ -59,7 +59,7 @@ class CatalogueTests(TestCase):
         response = self.client.get(reverse('catalogue_home'))
         self.assertEqual(
             response.status_code, 302,
-            "Expected catalogue home page to redirect (302)"
+            "Expected catalogue home page to redirect (302) "
             "for unauthenticated users but got a different status code."
         )
 
@@ -71,7 +71,7 @@ class CatalogueTests(TestCase):
         response = self.client.get(reverse('catalogue_home'))
         self.assertEqual(
             response.status_code, 200,
-            "Expected catalogue home page to load (200 OK)"
+            "Expected catalogue home page to load (200 OK) "
             "for logged-in users but got a different status code."
         )
 
@@ -80,7 +80,7 @@ class CatalogueTests(TestCase):
         response = self.client.get(reverse('cart_page'))
         self.assertEqual(
             response.status_code, 302,
-            "Expected cart page to redirect (302)"
+            "Expected cart page to redirect (302) "
             "for unauthenticated users but got a different status code."
         )
 
@@ -92,6 +92,6 @@ class CatalogueTests(TestCase):
         response = self.client.get(reverse('cart_page'))
         self.assertEqual(
             response.status_code, 200,
-            "Expected cart page to load (200 OK)"
+            "Expected cart page to load (200 OK) "
             "for logged-in users but got a different status code."
         )
