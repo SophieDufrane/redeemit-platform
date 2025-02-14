@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
+
 class HomeTests(TestCase):
     def test_homepage(self):
         """Test if home page loads successfully"""
