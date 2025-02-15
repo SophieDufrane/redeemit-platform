@@ -81,7 +81,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <!-- Form Submission Button -->
-                    <form action="{% url 'redeem-cart' %}" method="POST" style="display: inline;">
+                    <form action="{% url 'redeem_cart' %}" method="POST" style="display: inline;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Confirm</button>
                     </form>

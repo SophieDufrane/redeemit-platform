@@ -37,5 +37,5 @@ urlpatterns = [
     ),
 
     # Redeem cart: Processes the cart redemption
-    path('cart/redeem/', redeem_cart, name='redeem-cart'),
+    path('cart/redeem/', redeem_cart, name='redeem_cart'),
 ]
