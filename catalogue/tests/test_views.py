@@ -1,7 +1,13 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from catalogue.models import CatalogueItem, Cart, CartItem
+from catalogue.models import (
+    CatalogueItem,
+    Cart,
+    CartItem,
+    Redemption,
+    RedemptionItem
+)
 from home.models import UserProfile
 
 
@@ -237,4 +243,36 @@ class RedemptionProcessTests(TestCase):
         self.assertFalse(
             Cart.objects.filter(user=self.user).exists(),
             "Expected the cart to be deleted after redemption."
+        )
+
+    def test_redemption_is_recorded(self):
+        """Ensure a redemption is recorded."""
+        self.client.login(username='testuser', password='testpassword')
+        self.client.post(reverse('redeem_cart'))
+        redemption_exists = Redemption.objects.filter(user=self.user).exists()
+
+        self.assertTrue(
+            redemption_exists,
+            "Expected a redemption record to be created."
+        )
+        redemption = Redemption.objects.get(user=self.user)
+        self.assertEqual(
+            redemption.total_points_spent, 100,
+            "Expected redemption to record 100 points spent."
+        )
+        redemption_item_exists = RedemptionItem.objects.filter(
+            redemption=redemption,
+            item=self.item
+        ).exists()
+        self.assertTrue(
+            redemption_item_exists,
+            "Expected a RedemptionItem record to be created."
+        )
+        redemption_item = RedemptionItem.objects.get(
+            redemption=redemption,
+            item=self.item
+        )
+        self.assertEqual(
+            redemption_item.quantity, 1,
+            "Expected RedemptionItem to record the correct quantity."
         )
