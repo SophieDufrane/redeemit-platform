@@ -6,6 +6,8 @@
 
 Built using the **Django framework**, this project serves as a learning and portfolio exercise, demonstrating full-stack development skills in designing a functional and user-friendly web application.  
 
+![Mockup](images-documentation/readme_images/mockup_responsive.png)
+
 ## 2. **User Experience - UX**
 
 ### **2.1. Scope and Structure**
