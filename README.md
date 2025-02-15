@@ -520,6 +520,16 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 ### **5.2. Automated Testing**
 This project was tested using **Django's** library `unittest` to validate the key functionalities of the catalogue, cart, and redemption process.
 
+All **21 tests passed successfully**, confirming the correct implementation of:
+  - **Catalogue**: Listing and viewing rewards  
+  - **Cart**: Adding, updating, and removing items  
+  - **Redemption Process**: Deducting points, adjusting stock, and clearing the cart  
+
+    <details>
+      <summary>Unit Test Results</summary>
+      <img src="images-documentation/readme_images/validators/unittest.png">
+    </details>
+
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
 |------------------------|--------------------|----------------------|---------------------|
 | **Home Page (URLs)** | `test_homepage` | Confirms homepage loads successfully | PASS |
@@ -544,7 +554,21 @@ This project was tested using **Django's** library `unittest` to validate the ke
 |  | `test_cart_is_cleared_after_redemption` | Ensures cart is cleared after successful redemption | PASS |
 |  | `test_redemption_is_recorded` | Confirms a redemption record is created after successful checkout | PASS |
 
+#### Key Takeaways from Testing
+1. **User Authentication in Tests:**  
+   - A **test user** had to be logged in to pass most tests using:  
+     ```
+     self.client.login(username='testuser', password='testpassword')
+     ```
+   
+2. **Test-Driven Development (TDD) Reflection:**  
+   - Tests were written **after** features were built, rather than before, meaning it **wasn’t a strict TDD approach**.
+   - This allowed for verifying existing functionality rather than driving the development process.
 
+3. **Inconsistency Fixes During Testing:**  
+   - Found and corrected an inconsistency in the **URL naming** (`redeem-cart` → `redeem_cart`).
+   - This was discovered during testing and fixed across urls, views, and templates.  
+   
 ---
 
 ### **5.3. Development Challenges & Debugging Process**
