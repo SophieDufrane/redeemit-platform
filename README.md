@@ -476,7 +476,7 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 
 
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
-|------------------|---------|----------------------|-------------|
+|------------------------|--------------------|----------------------|---------------------|
 | **ADMIN - Catalogue & Employees Profile Management** | Create a new item | Item is successfully created from the panel with all required fields and displayed on the platform catalogue | PASS |
 |  | View list of existing items | All items are listed on the admin panel & the redemption platform | PASS |
 |  | Edit an existing item | Changes are saved and reflected on the admin panel & the platform | PASS |
@@ -517,7 +517,37 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 
 ---
 
-### **5.2. Development Challenges & Debugging Process**
+### **5.2. Automated Testing**
+This project was tested using **Django's** library `unittest` to validate the key functionalities of the catalogue, cart, and redemption process.
+
+| **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
+|------------------------|--------------------|----------------------|---------------------|
+| **Home Page (URLs)** | `test_homepage` | Confirms homepage loads successfully | PASS |
+| **Home Page Template** | `test_homepage_uses_correct_template` | Confirms homepage uses the correct template | PASS |
+| **Home Page Access** | `test_homepage_logged_in` | Confirms homepage displays correct access when logged in | PASS |
+|  | `test_homepage_logged_out` | Confirms homepage shows login/register buttons when logged out | PASS |
+| **Catalogue (URLs)** | `test_catalogue_detail_url_not_found` | Ensures non-existing reward detail page returns 404 | PASS |
+|  | `test_catalogue_detail_url_found` | Ensures catalogue detail page loads existing rewards | PASS |
+| **Catalogue Access** | `test_catalogue_home_requires_login` | Ensures catalogue home requires authentication | PASS |
+|  | `test_catalogue_home_logged_in`  | Confirms that the catalogue home page loads for logged-in users | PASS |
+| **Cart Page (URLs)** | `test_cart_page_requires_login` | Confirms that the cart page redirects to login if not logged in | PASS |
+|  | `test_cart_page_logged_in` | Ensures cart page loads successfully for logged-in users | PASS |
+| **Catalogue Template** | `test_catalogue_uses_correct_template` | Confirms catalogue home page uses the correct template | PASS |
+| **Catalogue Display** | `test_catalogue_displays_items` | Ensures catalogue home page displays available rewards | PASS |
+| **Cart Display** | `test_cart_displays_items` | Confirms cart page correctly displays added rewards | PASS |
+| **Cart Actions (Catalogue Detail Page)** | `test_add_new_item_from_catalogue_detail_page` | Tests adding a new item to the cart from the detail page | PASS |
+|  | `test_increase_quantity_from_catalogue_detail_page` | Confirms adding the same item increases its quantity | PASS |
+| **Cart Actions (Cart Page)** | `test_increase_quantity_from_cart_page` | Ensures updating quantity from the cart page works correctly | PASS |
+|  | `test_delete_item_from_cart_page` | Ensures deleting an item removes it from the cart | PASS |
+| **Redemption Process** | `test_redemption_deducts_points` | Ensures user points are deducted correctly after redemption | PASS |
+|  | `test_redemption_deducts_stock` | Ensures stock quantity is reduced after redemption | PASS |
+|  | `test_cart_is_cleared_after_redemption` | Ensures cart is cleared after successful redemption | PASS |
+|  | `test_redemption_is_recorded` | Confirms a redemption record is created after successful checkout | PASS |
+
+
+---
+
+### **5.3. Development Challenges & Debugging Process**
 
 During the development process, I encountered various bugs, unexpected behaviors, and technical challenges that required debugging and fixing. These issues ranged from role-based access control problems, UI inconsistencies, and database handling errors to deployment and authentication issues.  
 Each bug presented an opportunity to **understand Django better, refine my implementation, and improve code structure**.  
@@ -548,7 +578,7 @@ Here a summary of Fixed Bugs & Solutions:
 
 ---
 
-### **5.3. Database Migration**
+### **5.4. Database Migration**
 
 During development, I realised that I had mistakenly been using a database already associated with another project, which created unintended dependencies. To ensure a clean setup, I decided to migrate to a new database. While following an online guide, I encountered several challenges that required troubleshooting and manual intervention.   
 This section outlines the steps taken, the issues faced, and how they were resolved with the valuable guidance and patience of a **Code Institute Tutor**.
@@ -635,7 +665,7 @@ At this point, **everything started to break**, leading to migration failures.
 
 ---
 
-### **5.4. Validators**
+### **5.5. Validators**
 
 #### **CSS - HTML**
 

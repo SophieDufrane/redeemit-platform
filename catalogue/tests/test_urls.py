@@ -18,16 +18,6 @@ class CatalogueTests(TestCase):
             points_cost=100
         )
 
-    def test_catalogue_home_url_logged_in(self):
-        """Test if catalogue home loads successfully when logged in"""
-        self.client.login(username='testuser', password='testpassword')
-        response = self.client.get(reverse('catalogue_home'))
-        self.assertEqual(
-            response.status_code, 200,
-            "Expected catalogue home page to load (200 OK) "
-            "but got a different status code."
-        )
-
     def test_catalogue_detail_url_not_found(self):
         """Test if non-existing reward detail page returns 404"""
         self.client.login(username='testuser', password='testpassword')
