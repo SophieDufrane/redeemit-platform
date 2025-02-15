@@ -11,7 +11,6 @@ class CatalogueViewsTests(TestCase):
             username='testuser',
             password='testpassword'
         )
-
         self.item = CatalogueItem.objects.create(
             reward_name="Test Reward",
             slug="test-reward",
@@ -43,6 +42,7 @@ class CatalogueViewsTests(TestCase):
             "available rewards when it should."
         )
 
+
 class CartViewsTests(TestCase):
     def setUp(self):
         """Create a test user and a sample reward"""
@@ -50,7 +50,6 @@ class CartViewsTests(TestCase):
             username='testuser',
             password='testpassword'
         )
-
         self.item = CatalogueItem.objects.create(
             reward_name="Test Reward",
             slug="test-reward",
@@ -78,9 +77,112 @@ class CartViewsTests(TestCase):
             msg_prefix="Cart page does not display "
             "added rewards when it should."
         )
-
         self.assertContains(
             response,
             "2",
             msg_prefix="Cart page does not display correct quantity."
         )
+
+
+class CartActionsFromCatalogueTests(TestCase):
+    """
+    Tests related to adding and updating items from the catalogue detail page
+    """
+    def setUp(self):
+        """Create a test user, a sample reward and an empty cart"""
+        self.user = User.objects.create_user(
+            username='testuser',
+            password='testpassword'
+        )
+        self.item = CatalogueItem.objects.create(
+            reward_name="Test Reward",
+            slug="test-reward",
+            points_cost=100,
+            stock_quantity=5
+        )
+        self.cart = Cart.objects.create(user=self.user)
+
+    def test_add_new_item_from_catalogue_detail_page(self):
+        """
+        Test if adding an item from the detail page works correctly
+        """
+        self.client.login(username='testuser', password='testpassword')
+        self.assertFalse(
+            CartItem.objects.filter(cart=self.cart, item=self.item).exists()
+        )
+        response = self.client.post(
+            reverse('add_to_cart', args=[self.item.slug])
+        )
+
+        self.assertTrue(
+            CartItem.objects.filter(cart=self.cart, item=self.item).exists()
+        )
+        cart_item = CartItem.objects.get(cart=self.cart, item=self.item)
+        self.assertEqual(
+            cart_item.quantity, 1,
+            "Expected item to be added with quantity 1."
+        )
+        self.assertRedirects(
+            response, reverse('catalogue_detail', args=[self.item.slug])
+        )
+
+    def test_increase_quantity_from_catalogue_detail_page(self):
+        """Test if adding an existing item increases its quantity"""
+        self.client.login(username='testuser', password='testpassword')
+        self.client.post(reverse('add_to_cart', args=[self.item.slug]))
+        response = self.client.post(
+            reverse('add_to_cart',args=[self.item.slug])
+        )
+
+        cart_item = CartItem.objects.get(cart=self.cart, item=self.item)
+
+        self.assertEqual(
+            cart_item.quantity, 2,
+            "Expected item quantity to increase when added again."
+        )
+        self.assertRedirects(
+            response, reverse('catalogue_detail', args=[self.item.slug])
+        )
+
+
+class CartPageTests(TestCase):
+    """Tests related to actions on the cart page itself"""
+    def setUp(self):
+        """Create a test user, a sample reward and an empty cart"""
+        self.user = User.objects.create_user(
+            username='testuser',
+            password='testpassword'
+        )
+        self.item = CatalogueItem.objects.create(
+            reward_name="Test Reward",
+            slug="test-reward",
+            points_cost=100,
+            stock_quantity=5
+        )
+        self.cart = Cart.objects.create(user=self.user)
+
+    def test_increase_quantity_from_cart_page(self):
+        """Test if updating quantity from the cart page works correctly"""
+        self.client.login(username='testuser', password='testpassword')
+        self.client.post(reverse('add_to_cart', args=[self.item.slug]))
+        response = self.client.post(
+            reverse('update_cart_quantity', args=[self.item.slug]),
+            {'quantity': 2}
+        )
+
+        cart_item = CartItem.objects.get(cart=self.cart, item=self.item)
+        self.assertEqual(cart_item.quantity, 2)
+        self.assertRedirects(response, reverse('cart_page'))
+
+    def test_delete_item_from_cart_page(self):
+        """Test if deleting an item removes it from the cart"""
+        self.client.login(username='testuser', password='testpassword')
+        self.client.post(reverse('add_to_cart', args=[self.item.slug]))
+        response = self.client.post(
+            reverse('delete_cart_item', args=[self.item.slug])
+        )
+
+        self.assertFalse(
+            CartItem.objects.filter(cart=self.cart,item=self.item).exists()
+        )
+        self.assertRedirects(response, reverse('cart_page'))
