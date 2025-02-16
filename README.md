@@ -124,20 +124,17 @@ Wireframes were designed to outline the layout and functionality of each page an
 
 The platform follows a **modern, clean design** with an emphasis on usability and accessibility.  
 
-- **Mobile-First Approach** – Optimized for all screen sizes.  
+- **Mobile-First Approach** – Optimised for all screen sizes.  
 - **Workhuman-Inspired Colour Palette** – Uses corporate colours for branding consistency.  
 - **Typography Choices** – Ensures readability and modern aesthetics.
 
 ---
 
 #### **Typography & Colours**
-For this project, I aimed to offer a **fresh and distinct** version of the existing platform while keeping the functionalities simple and user-friendly. To maintain a connection to the company’s identity, I incorporated branding colours from the **Workhuman** website to reflect the style and spirit of the company.  
-The colour palette also draws inspiration from the tech industry and current design trends, creating a clean, professional, and modern aesthetic.  
+For this project, I aimed to offer a **fresh and distinct** version of the existing platform while keeping the functionalities simple and user-friendly.    
+The colour palette also draws inspiration from the tech industry and current **design trends**, creating a clean, professional, and modern aesthetic.  
 The chosen typography ensures **readability** and enhances the overall user experience, while the colour scheme provides a visually appealing and accessible interface.
 
----
-
-The chosen colour palette draws inspiration from **Workhuman**'s branding and aligns with a modern, tech-inspired aesthetic.
 
 ![Colour Inspiration](images-documentation/readme_images/color_scheme.png)
 
@@ -168,7 +165,7 @@ To ensure readability and maintain a clean, modern look, the following fonts wer
 - **Primary Font**: *Poppins*  
   - Applied to the **main body text** for a clean and professional look.  
 
-- **Accent Font**: *Quicksand*  
+- **Secondary Font**: *Quicksand*  
   - Used for **decorative elements** and **highlighted text**, adding a modern touch.  
 
 ---
@@ -179,9 +176,9 @@ The development of **RedeemIt** followed an **Agile methodology**, allowing for 
 By breaking the project into smaller **user stories**, it ensured a smooth workflow while staying aligned with user needs.  
 
 
-To maintain an organised and efficient development process, the following tools and techniques were used:  
+The following tools and techniques were used:  
 
-- **Lucidchart** Used to map out the user flow within the platform.  
+- **Lucidchart**: Used to map out the user flow within the platform.  
   <details>
     <summary>Click to view Flowchart</summary>
     <img src="images-documentation/readme_images/redemption_platform_flowchart.png">
@@ -189,15 +186,19 @@ To maintain an organised and efficient development process, the following tools 
 
 </br>
 
-- **GitHub Projects** Tracked tasks and iterations, ensuring a structured development cycle.  
+- **GitHub Projects**: Tracked tasks with acceptance criteria and iterations, ensuring a structured development cycle.  
   <details>
     <summary>Click to view Kanban Board</summary>
     <img src="images-documentation/readme_images/kanban.png">
   </details>  
+    <details>
+    <summary>Click to view User Story Detail: Task & Acceptance Criteria</summary>
+    <img src="images-documentation/readme_images/user_story.png">
+  </details> 
 
 </br>
 
-- **MOSCOW Prioritization** Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
+- **MOSCOW Prioritization**: Applied to categorise features into Must Have, Should Have, and Could Have, ensuring that essential functionalities were developed first.
 
 | **Priority** | **Feature - User Stories** |
 |-------------|------------|
@@ -287,7 +288,7 @@ Employees interact with the platform through an intuitive and structured redempt
     </details>
 
 - **Responsive Feedback & Validation**  
-  - Employees receive **instant feedback** during the redemption process (e.g., add item, update quantity, redemption successful).
+  - Employees receive **instant feedback** during the redemption process (e.g., add item, update quantity, redemption successful), using Django messaging.
     <details>
       <summary>Message Item Added To Cart</summary>
       <img src="images-documentation/readme_images/features/added_to_cart.png">
@@ -327,7 +328,7 @@ Admins have full control over the gift card catalogue and user profiles via the 
     </details>
 
 - **Manage Employee Profiles**
-  - Admins can update employee profiles, including first and last names, and points balances.
+  - Admins can update employee profiles, including points balances, first and last names.
   - Admins can view and modify redemption records to see who ordered what items, in which quantity.
     <details>
       <summary>Panel - Employee Profile List</summary>
@@ -363,6 +364,10 @@ Admins have full control over the gift card catalogue and user profiles via the 
       <img src="images-documentation/readme_images/features/detailed_page_admin.png">
     </details>
 
+---
+
+In cases where a requested page cannot be found or an unexpected error occurs, the platform provides clear error messages to guide users.  
+
 - **Error Pages**  
     <details>
       <summary>Error Page Not found 404</summary>
@@ -384,7 +389,7 @@ The platform follows the MVC architecture (Model-View-Controller) to maintain a 
 - **View** – Renders templates like `catalogue.html` or `cart.html`.  
 - **Controller** – Processes user input and manages data between models and templates.  
 
-The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact. It provides a visual representation of the database schema, showing the relationships between tables and the key fields in each table. 
+The **Entity Relationship Diagram (ERD)** below illustrates how the database models connect and interact. It provides a visual representation of the database schema, showing the **relationships between tables** and the key fields in each table. 
 
 ![ERD Diagram](images-documentation/readme_images/redemption_platform_ERD.png)
 
@@ -474,7 +479,7 @@ The current version of **RedeemIt** focuses on core functionality, but there is 
 ### **5.1. Manual Testing**  
 
 The following table summarises the key manual testings conducted along the development to ensure functionalities work as expected.  
-Tests cover **admin functionalities**, **employee interactions**, **database updates** and followed the user stories.  
+Tests cover **admin functionalities**, **employee interactions**, **database updates** and followed the user stories and **acceptance criteria**.  
 
 
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
@@ -520,7 +525,7 @@ Tests cover **admin functionalities**, **employee interactions**, **database upd
 ---
 
 ### **5.2. Automated Testing**
-This project was tested using **Django's** library `unittest` to validate the key functionalities of the catalogue, cart, and redemption process.
+This project was also tested using **Django's** library `unittest` to validate the key functionalities of the catalogue, cart, and redemption process.
 
 All **21 tests passed successfully**, confirming the correct implementation of:
   - **Catalogue**: Listing and viewing rewards  
@@ -533,7 +538,7 @@ All **21 tests passed successfully**, confirming the correct implementation of:
     </details>
 
 | **Test Category** | **Test** | **Expected Outcome** | **Pass/Fail** |
-|------------------------|--------------------|----------------------|---------------------|
+|------------------------|---------------|----------------------------------|-------|
 | **Home Page (URLs)** | `test_homepage` | Confirms homepage loads successfully | PASS |
 | **Home Page Template** | `test_homepage_uses_correct_template` | Confirms homepage uses the correct template | PASS |
 | **Home Page Access** | `test_homepage_logged_in` | Confirms homepage displays correct access when logged in | PASS |
@@ -561,7 +566,8 @@ All **21 tests passed successfully**, confirming the correct implementation of:
    - A **test user** had to be logged in to pass most tests using:  
      ```
      self.client.login(username='testuser', password='testpassword')
-     ```
+     ```  
+    Additionally, fake cart items and catalogue entries were created to simulate real interactions and ensure the tests covered expected behaviours.
    
 2. **Test-Driven Development (TDD) Reflection:**  
    - Tests were written **after** features were built, rather than before, meaning it **wasn’t a strict TDD approach**.
@@ -606,7 +612,8 @@ Here a summary of Fixed Bugs & Solutions:
 
 ### **5.4. Database Migration**
 
-During development, I realised that I had mistakenly been using a database already associated with another project, which created unintended dependencies. To ensure a clean setup, I decided to migrate to a new database. While following an online guide, I encountered several challenges that required troubleshooting and manual intervention.   
+During development, I realised that I had mistakenly been using a database already associated with another project, which created unintended dependencies. To ensure a clean setup, I decided to migrate to a new database. While following an online guide, I encountered several challenges that required troubleshooting.   
+
 This section outlines the steps taken, the issues faced, and how they were resolved with the valuable guidance and patience of a **Code Institute Tutor**.
 
 #### **Steps Followed for Database Migration**  
@@ -713,7 +720,7 @@ The website's stylesheet was tested using the [W3C CSS Validation Service](https
 
 ---
 
-#### **JavaScript Code Testing with JSHint**
+#### **JavaScript**
 
 To ensure JavaScript code quality and compliance, I tested the file using [JSHint](https://jshint.com/).  
 Since I used **ES6 features** such as `const` and arrow functions (`=>`), I also updated the JSHint configuration to **support ES6** by adding `esversion: 6`.  
@@ -727,7 +734,7 @@ Results indicate that the JavaScript file maintains **low complexity and readabi
 
 ---
 
-#### **Python Code Compliance Testing**
+#### **Python**
 
 To ensure that all Python files follow best coding practices, I used **Flake8** for linting. This tool checks for **PEP 8 compliance** like syntax errors or formatting inconsistencies across the project.  
 
