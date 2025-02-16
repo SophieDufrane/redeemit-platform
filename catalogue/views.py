@@ -198,13 +198,16 @@ def delete_cart_item(request, slug):
             cart__user=request.user,
             item__slug=slug
             )
-        
+
         # Store item name for the message before deleting
         item_name = cart_item.item.reward_name
         # Delete the item
         cart_item.delete()
 
-        messages.error(request, f"{item_name} has been removed from your cart!")
+        messages.error(
+            request,
+            f"{item_name} has been removed from your cart!"
+        )
 
     return redirect('cart_page')
 
