@@ -1,0 +1,184 @@
+* [33m178751a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Fix minor Flake8 formatting issues
+* [33m0ea0022[m Update README file
+* [33m71ed4fb[m Update README file
+* [33m3d56f9c[m Update README file
+* [33md0b8229[m Update README file
+* [33m83c6e27[m Fix test: remove duplicate test
+* [33m3a0ea3d[m Test: Add test to ensure that redemptions are recorded
+* [33m5d0f811[m Test: Add tests for redemption process
+* [33m94337ab[m Test: Add views tests for cart actions from detail page and cart page
+* [33mdf27e33[m Test: Add views tests for cart displays added rewards
+* [33md35d7ea[m Test: Add views tests for catalogue page (template and siplay validation)
+* [33m5d2e37f[m Test: Ensure Catalogue home page and cart page require login and load for authenticated users
+* [33m3534855[m Test: Add URL test for catalogue detail page found
+* [33m1aaca80[m Test: Add URL test for catalogue detail page not found
+* [33m0ae98ef[m Test: Add URL test for catalogue page
+* [33me2cd732[m Test: Add views tests for home page (logged-in and logged-out users)
+* [33m1dc0ed4[m Test: Add URL test for home page
+* [33m7e4c7d5[m Update README file
+* [33mf305526[m Udpate README file
+* [33m39af95e[m Set up for production deployment
+* [33m4e9b829[m Update README file
+* [33medbc171[m Fix: Adjust heading order for accessibility compliance
+* [33maf9ce87[m Fix: Improve accessibility by adding aria-label to quantity input field
+* [33mdab6e1b[m Fix: Add explicit width & height to images to improve CLS score
+* [33mfcc103e[m Fix: Enforce HTTPS by using 'resized_image_url' in catalogue detail and cart to avoid insecure URL warning in Lighthouse
+* [33m7eab289[m Refactor home page css to improve responsivness and performances
+* [33md3ad93f[m Fix styling issue on Register page
+* [33md637615[m Update README file
+* [33m2da405b[m Update README file
+* [33m30b6d63[m Update README file
+* [33m71d3f8d[m Add custom templates, views, and URL handlers for 404 and 500 error pages
+* [33m0caa16c[m Add aria-label attributes for improved accessibility across the platform
+* [33m9c4b56f[m Add Bootstrap Modal for redemption confirmation and fix minor style issues
+* [33m69a16bc[m Refined delete_cart_item view and added a trash icon for item deletion
+* [33m80f9225[m Add meta tags, favicon and author link to base.html
+* [33m14932e2[m Apply PEP 8 formatting and fix linting issues
+* [33m67b1378[m Add a 'Continue Shopping' button to the cart page
+* [33m96cd9f7[m Udpate README file
+* [33m59ec328[m Move message display to base.html for uniformity and update CSS/JS for smoother Django message transition
+* [33m51c467c[m Fix: Enforce HTTPS for Cloudinary images to improve Lighthouse Best Practices score
+* [33m7b7a8c7[m Update README file
+* [33m2092b52[m Update README file
+* [33m6328495[m Update README file
+* [33m7fab7e4[m Updated user name display to show first name if available, otherwise fallback to username
+* [33m19404bb[m Highlighted out-of-stock items in catalogue and catalogue details for admin
+* [33m3401868[m Set up fadout timer for django messages
+* [33m75b7c0b[m Added successful redemption process and order confirmation message
+* [33ma1ef036[m Update redeem_cart view to deduct stock quantity upon redemption
+* [33m63f8b11[m Fixed missing account_emailaddress table issue
+* [33m7c5a15a[m Update navbar for role-based access
+* [33m8aa71aa[m Update catalogue detail template for role-based access
+* [33m83a1d56[m Add direct access to Admin Panel from the navbar for staff users
+* [33mee78ad9[m Fix redemption process to correctly save RedemptionItems
+* [33mf117116[m Add inline model to RedemptionAdmin to display a list of items under each redemption
+* [33m2db11e3[m Create RedemptionItem model to track items for each redemption
+* [33m4009f78[m Record redemption before emptying cart to keep track in admin panel
+* [33md8442ae[m Modify add_to_cart and redeem_cart to ensure user only have one active cart
+* [33mcd038d2[m Register Redemption model in admin.py
+* [33mc980f9a[m Create Redemption model to track user redemptions
+* [33mbf1fc9c[m Add message block to cart.html to display redemption messages
+* [33m093d13b[m Relocate messages display to catalogue_detail and update views for cart actions
+* [33m4bd702f[m Update README file
+* [33m84ad6fe[m Style empty cart image for bigger screen. Add 'Start Shopping' button when empty cart
+* [33m65842b2[m Add empty cart image
+* [33m84efc9e[m Improve UX: add 'Continue Shopping' button to detailed page that redirects to catalogue home page
+* [33m8ccc158[m Filter catalogue in template: show full list to admin, only in-stock items to employees
+* [33m0b8a8fd[m Add role-based access and refactor UserProfileAdmin to use methods for related fields
+* [33mde56262[m Show stock quantity in detailed view and hide out-of-stock items in catalogue
+* [33mb44265e[m Added crispy forms to requirements
+* [33mf3c44f4[m Prepare for Heroku deployment
+* [33m79ae66e[m Fake migrations applied and catalogue repopulated with json backup file
+* [33ma7da19b[m Deleted old migrations for clean database reset
+* [33mf8f48ac[m Backup catalogue items before database migration
+* [33mc8ba1f4[m Update signup.html to post to signup_view
+* [33ma506f9c[m Add signup_view route to home/urls.py
+* [33m77bcb40[m Add signup_view for user registration with CustomSignupForm
+* [33m49c3504[m Create forms.py and add CustomSignupForm to replace username with first and last name
+* [33mfe5e04b[m Apply Crispy Forms to login and signup templates
+* [33m93181a7[m Install Django Crispy Forms and configure Bootstrap 5 in settings.py
+* [33md33dbf7[m Reorganise navbar and display user_first_letter next to RedeemIt brand
+* [33m66324bf[m Set up for migration to VSCode. Create a user_first_letter property in models
+* [33mdf77f21[m Update README file
+* [33meff1b3d[m Update README file
+* [33m9d47bbb[m Refactor home and catalogue views for PEP8 compliance, add and refine docstrings
+* [33m8b4686b[m Add help_text to home models and refactor to conform PEP8
+* [33m9a1bf28[m Add help_text to models and refactor to conform PEP8
+* [33med7065a[m Refactor urls files to improve readability and follow PEP8 guidance
+* [33m84f70a7[m Fix cart.html to hide empty cart message when Django messages are displayed
+* [33mf61c518[m Add block to base.html for displaying Django messages
+* [33m42ec57e[m Add success message in redeem_cart view, include error message for insufficient balance as safeguard
+* [33mc335c83[m Style disabled redeem button for insufficient balance with distinct appearance
+* [33m593cea8[m Fix typo in redeem_cart view name and cart.html template
+* [33m511ce08[m Update user's balance and clear cart in redeem_cart view after redemption
+* [33m0a37b07[m Add total points calculation and user's balance validation to redeem_cart view
+* [33m20eb8b0[m Create redeem_cart view with basic structure and cart retrieval logic
+* [33m8642b90[m Add form to RedeemIt button for POST requests to redeem-cart
+* [33m24a92e2[m Register and import a new redeem_cart view to handle redemption process
+* [33m81b867e[m Refactor CSS for cart page better responsiveness
+* [33macde446[m Refactor CSS for better responsiveness and readability by reducing redundancy
+* [33m387770a[m Refine style.css, create generic gradient and form styling for login, logout, signin
+* [33m3b57a58[m Refine style.css, create generic style for button
+* [33m3ee2358[m Style Log In page
+* [33mb38cfe1[m Fix userprofile reference in post-save signal receiver to resolve 'AttributeError at /accounts/login/' bug
+* [33mf85cb41[m Style home page with form container, sticky footer
+* [33m02def55[m Add Cobuttons to confirm or cancel the redemption process
+* [33m30856d0[m Update views for user balance check and template logic for insufficient points
+* [33m225f23b[m Display user points balance in navbar for authenticated users
+* [33m059ffd3[m Display username in Welcome message on catalogue page
+* [33m3101013[m Improve UX for logged in users on the home page: access to catalogue
+* [33m3e60e64[m Fix admin configuration. Add 'get' methods to retrieve default User parameters
+* [33m8cdc52e[m Add UserProfile admin configuration for user and points balance management
+* [33md1ad44c[m Add signals for automatic UserProfile creation and saving
+* [33md42dbee[m Create Userprofile model extending Django default user model
+* [33m8df8b99[m Update README file
+* [33m2c71adc[m Refine cart page style. Simplify cart_page view using total_points method
+* [33mf77cabb[m Add delete_cart_item functionality to enable item removal from cart
+* [33m7b2a3c3[m Add update_cart_quantity functionality. and refine CartItem model to include total_points calculation
+* [33m54d9971[m Restrict access to catalogue and refine user flow for login/logout scenarios
+* [33m01e7e0a[m Add content to home page with login / signup links
+* [33m2a9a681[m Add image_description field to CatalogueItem model, update admin.py
+* [33m8b7fde1[m Fix cart URL to avoid conflict with slug pattern
+* [33ma32ec8f[m Add catalogue/urls.py to organise URLs for catalogue app. Fix issue with home view
+* [33m31b2348[m Add home page and set up homepage view, template and URL
+* [33mefd18dc[m Updated login/logout redirection and templates
+* [33m90bfa8e[m Update README file
+* [33m667baff[m Added authentication
+* [33m6c80643[m Update settings.py to use DEBUG environment variable
+* [33mef059a2[m Prepare for deployment
+* [33m92b4ee1[m Update README file
+* [33mfa977f4[m Add POST handling to add_to_cart view. Update templates for cart display
+* [33m8efcc86[m Update URLs with add_to_cart path, refine view to use slug instead of item_id
+* [33m56bbf39[m Add cart management views and refine logic to display cart
+* [33m23543d4[m Add Cart and CartItem models for add to cart functionality
+* [33m2ebcc6a[m Update CSS styles
+* [33m9129517[m Prepare for deployment
+* [33m252843b[m Link cart icon in navbar to cart_page. Add placeholder in view for rendering the cart_page
+* [33mc2f0b27[m Add URL pattern for cart_page view
+* [33m8b3f043[m Add basic cart_page view to render cart.html
+* [33m94d74e2[m Add cart.html template with placeholder content
+* [33m5de4f4e[m Refine catalogue_detail layout
+* [33me7f7fd6[m Style catalogue_detail page
+* [33m65bcca5[m Implement Cloudinary dynamic transformation for images optimization in the model
+* [33mabf26a9[m Transition media storage to Cloudinaryfor handling uploaded images
+* [33mfa202a7[m Add links to catalogue.html to navigate to catalogue_detail based on slug
+* [33m516c2c4[m Create catalogue_detail template, add URL to connect to it using slug
+* [33mfb9c3fd[m Add catalogue_detail view and refine catalogue_home for clarity
+* [33mdd88448[m Add prepopulated slug field to CatalogueItemAdmin
+* [33mc5fa33e[m Add slug field to CatalogueItem model
+* [33m5440ca4[m Add media queries to catalogue page for screens 768px and larger
+* [33m2df8740[m Update gift card images, style cad containers
+* [33mfbe38a1[m Fix style footer and catalogue section. Add specific gift cards pictures from admin dashboard
+* [33m3afda49[m fix issue with toggler icon not visible
+* [33mb4368b6[m Add reward value to catalogue display. Add T&Cs to CatalogueItem model and admin
+* [33m23636c7[m Update README file
+* [33m18aa284[m Update README file
+* [33m3fe2624[m Add a temporary generic image to display in catalogue
+* [33mab68f96[m Add catalogue rewards display logic to catalogue template. Reload database from json
+* [33m5ca43ff[m Add catalogue items with JSON fixtures and update model
+* [33m2917222[m Enable serving of static files
+* [33m9c49a1f[m Add hero section to catalogue home page, style the section
+* [33mcae54a1[m Added and refined CSS for navbar, footer, and general styling
+* [33md2a2951[m Add catalogue template extending base.html with simple block content
+* [33m400dcd1[m Add base.html template with navigation and footer
+* [33mfaade5d[m Updated model name from Reward to CatalogueItem
+* [33m0b12a00[m Create simple Home page for catalogue
+* [33m6e5cb98[m Project structure - Added static and template folders
+* [33m5216a91[m Set up django-allauth for user authentication
+* [33mec2009c[m Add static and media files
+* [33md7b7a08[m Connect database and configure SECRET_KEY
+* [33m98113cf[m connect to database and deployment settings
+* [33mf9c14be[m Fix wsgi.py project name
+* [33m0616d39[m Add a view to catalogue to test
+* [33m55bc93a[m prepare code for deployment
+* [33mbbd9895[m Register Reward model in admin, create superuser
+* [33m3b3d8e7[m Create and Migrate models and install Pillo
+* [33m082f7f2[m Initialize Django project and add catalogue app
+* [33m5ca69dc[m Add ERD and flowchart to README
+* [33m4e4129f[m Refine README and add images folder
+* [33m59caf1b[m Update issue templates
+* [33m0bc4002[m Update issue templates
+* [33m303f385[m Update issue templates
+* [33mabb63fe[m Update issue templates
+* [33md931928[m Add wireframes and initial README template
+* [33m64c10b5[m Initial commit

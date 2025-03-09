@@ -22,7 +22,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    '.onrender.com'
     ]
 
 INSTALLED_APPS = [
@@ -90,7 +91,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'redemption_platform.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(
+        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
 
 CSRF_TRUSTED_ORIGINS = [

@@ -1,0 +1,56 @@
+[
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Sgb1P8kYIUQHFsfwft9YEG$X0KurNX2W/VRjNmqlTOehp++/rh/z1TlzfP1BPeXbAc=",
+    "last_login": "2025-03-09T16:25:49.267Z",
+    "is_superuser": true,
+    "username": "dufranesophie",
+    "first_name": "Sophie",
+    "last_name": "Dufrane",
+    "email": "dufranesophie@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-01-31T12:35:01Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$QlANQyjFP3TB6NmFtyxlol$5P3XM4qNgIOH5UCOetvOqsj7l3VKqMUnFVfubfJMGHE=",
+    "last_login": "2025-02-15T20:58:22.705Z",
+    "is_superuser": false,
+    "username": "stephanie.bertrand",
+    "first_name": "Stephanie",
+    "last_name": "Bertrand",
+    "email": "stephanie.bertrand@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-31T16:37:17Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$wrsasbNb4GG6hgFv062IIx$FPKLSPQ/kQHxHzV1/zu6Z0vvjfsX1vJWoGPoSdz7GHA=",
+    "last_login": "2025-02-03T17:47:38.809Z",
+    "is_superuser": false,
+    "username": "claire.dupont",
+    "first_name": "Claire",
+    "last_name": "Dupont",
+    "email": "claire.dupont@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-02-03T09:21:43Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
