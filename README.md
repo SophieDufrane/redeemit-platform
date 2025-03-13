@@ -2,7 +2,7 @@
 
 ## 1. **Introduction**
 
-[RedeemIt](https://redemption-website-ec86c7604627.herokuapp.com/) is a mock employee recognition platform inspired by the solutions offered by [Workhuman](https://www.workhuman.com). It allows employees to view their points balance, browse a catalogue of gift cards, and redeem rewards. Administrators can manage the catalogue and access to employee profile (personal information, point balances…), ensuring a structured and efficient rewards process.  
+[RedeemIt](https://redeemit-platform.onrender.com/) is a mock employee recognition platform inspired by the solutions offered by [Workhuman](https://www.workhuman.com). It allows employees to view their points balance, browse a catalogue of gift cards, and redeem rewards. Administrators can manage the catalogue and access to employee profile (personal information, point balances…), ensuring a structured and efficient rewards process.  
 
 Built using the **Django framework**, this project serves as a learning and portfolio exercise, demonstrating full-stack development skills in designing a functional and user-friendly web application.  
 
@@ -787,30 +787,31 @@ Since this is related to Cloudinary's external content delivery, I could not fin
 
 ## 6. Deployment
 
-### **6.1. Heroku**
+### **6.1. Render**
 
-The site was deployed successfully to [Heroku](https://redemption-website-ec86c7604627.herokuapp.com/) following the steps below:
+The site was deployed successfully to [Render](https://dashboard.render.com/) following the steps below:
 
 1. In *Gitpod*, create a list of dependencies in `requirements.txt` file:
     - Run `pip3 freeze > requirements.txt` in the terminal.
-2. In *Heroku* account, create the new App:
-    - Select `New` and `Create a new app`.
-    - Name the App and choose a region: `Europe` 
-    - Click `Create App`.
-3. In the new App page, access to the `Settings` section.
-4. In `Config Var` add :
+2. In *Render* account, create the new App:
+    - Select `New` and `Web Service`.
+    - Name the App and choose a region: `Europe`
+    - Connect to the GitHub repository and select the correct branch
+3. Configure environment variables, in `Environment` section add :
     - `DATABASE_URL` and its value.
     - `SECRET_KEY` and its value.
     - `CLOUDINARY_URL` and its value.
-    - Click `Add`.
-5. Access to the `Deploy` section.
-6. Select the deployment method:
-    - Select `GitHub`
-    - Search for the repository by taping the name in the search barre.
-    - Click on `Connect`
-7. Once App deployed, the message *Your app was successfully deployed.*
+    - Click `Save Changes`.
+4. Set up build and start commands
+    - In the Render app settings, locate the `Build & Deploy` section
+    - Add the following in the `Build Command` field: `pip install -r requirements.txt`
+    - Add the following in the `Start Command` field: `gunicorn <your_project_name>.wsgi:application`
+5. Deploy the application
+    - Click `Deploy` and wait for the process to complete.
+    - Once deployed, the message "Your app was successfully deployed." will appear.
+    - Click on the provided URL to access your live site.
 
-The live link can be found here: [ReedemIt](https://redemption-website-ec86c7604627.herokuapp.com/)
+The live link can be found here: [ReedemIt](https://redeemit-platform.onrender.com/)
 
 ---
 
